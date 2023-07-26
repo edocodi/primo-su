@@ -4898,28 +4898,22 @@ function create_fragment$6(ctx) {
 					"size": null
 				},
 				logo: {
-					"title": "VASTAR INDUSTRIAL",
+					"size": "8",
 					"image": {
-						"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/vdv_logo.PNG1680761337246",
-						"alt": ""
+						"alt": "威达阀门",
+						"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/vdv_logo.PNG1680761337246"
 					},
-					"size": "8"
+					"title": "威达阀门"
 				},
 				site_nav: [
-					{ "link": { "url": "/", "label": "About" } },
-					{
-						"link": { "url": "/", "label": "Product" }
-					},
+					{ "link": { "url": "/", "label": "关于我们" } },
+					{ "link": { "url": "/", "label": "产品中心" } },
 					{ "link": { "url": "/", "label": "Why" } },
 					{
 						"link": { "url": "/", "label": "Pricing" }
 					}
 				],
-				cta: [
-					{
-						"link": { "url": "/", "label": "Sign up" }
-					}
-				]
+				cta: [{ "link": { "url": "/", "label": "咨询" } }]
 			}
 		});
 
