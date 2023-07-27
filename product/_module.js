@@ -4819,7 +4819,12 @@ function create_fragment$6(ctx) {
 					{
 						"link": { "url": "/product", "label": "产品中心" },
 						"links": [
-							{ "link": { "url": "/", "label": "球阀" } },
+							{
+								"link": {
+									"url": "/product/ball-valve",
+									"label": "球阀"
+								}
+							},
 							{ "link": { "url": "/", "label": "蝶阀" } },
 							{ "link": { "url": "/", "label": "截止阀" } }
 						]

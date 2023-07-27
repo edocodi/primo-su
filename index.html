@@ -568,45 +568,47 @@
             }
         }
 
-        footer.svelte-5m5swo.svelte-5m5swo {
-            border-top: 1px solid var(--border-color, #e5e5e7)
+        footer.svelte-11gedy2.svelte-11gedy2 {
+            background: var(--color-background, black);
+            color: white
         }
 
-        .section-container.svelte-5m5swo.svelte-5m5swo {
-            display: grid;
+        .section-container.svelte-11gedy2.svelte-11gedy2 {
+            display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
-            align-items: center;
-            gap: 1rem;
-            padding-block: 1rem
+            gap: 4rem
         }
 
-        @media(min-width: 600px) {
-            .section-container.svelte-5m5swo.svelte-5m5swo {
-                display: flex;
-                flex-direction: row
-            }
+        .content.svelte-11gedy2.svelte-11gedy2 {
+            margin: initial;
+            padding: 0;
+            line-height: 1.1
         }
 
-        nav.svelte-5m5swo.svelte-5m5swo {
+        .nav-items.svelte-11gedy2.svelte-11gedy2 {
             display: flex;
-            gap: 1rem;
-            font-size: 1rem
+            flex-wrap: wrap;
+            gap: 4rem
         }
 
-        ul.svelte-5m5swo.svelte-5m5swo {
-            display: flex;
-            gap: 1rem;
+        .nav-items.svelte-11gedy2 ul.svelte-11gedy2 {
+            display: grid;
+            gap: 0.5rem
+        }
+
+        .nav-items.svelte-11gedy2 ul .link.svelte-11gedy2 {
+            border-bottom: 2px solid white
+        }
+
+        .nav-items.svelte-11gedy2 ul .link.svelte-11gedy2:hover {
+            border-color: transparent
+        }
+
+        .nav-items.svelte-11gedy2 h3.svelte-11gedy2 {
+            font-weight: 500;
             font-size: 1.5rem;
-            list-style: none
-        }
-
-        ul.svelte-5m5swo a.svelte-5m5swo {
-            color: var(--color-brand);
-            transition: var(--transition)
-        }
-
-        ul.svelte-5m5swo a.svelte-5m5swo:hover {
-            color: var(--color-accent)
+            margin-bottom: 1rem
         }
     </style>
 </head>
@@ -626,7 +628,7 @@
                                 <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 9l8 8l8-8" /><!-- HTML_TAG_END -->
                             </svg></span>
                     </div>
-                    <div class="dropdown svelte-xdnx5p"><a href="/" class="link svelte-xdnx5p">球阀</a><a href="/" class="link svelte-xdnx5p">蝶阀</a><a href="/" class="link svelte-xdnx5p">截止阀</a>
+                    <div class="dropdown svelte-xdnx5p"><a href="/product/ball-valve" class="link svelte-xdnx5p">球阀</a><a href="/" class="link svelte-xdnx5p">蝶阀</a><a href="/" class="link svelte-xdnx5p">截止阀</a>
                     </div>
                 </div>
                 <div class="nav-item svelte-xdnx5p">
@@ -771,24 +773,41 @@
             </div>
         </section>
     </div>
-    <div class="section" id="section-7b2d4be5">
-        <footer class="svelte-5m5swo">
-            <div class="section-container svelte-5m5swo">
-                <nav class="svelte-5m5swo"><a href="/about">About us</a><a href="/why">Why Cali</a></nav>
-                <ul class="svelte-5m5swo">
-                    <li><a href="https://twitter.com" aria-label="mdi:twitter" class="svelte-5m5swo"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 24 24" class="iconify iconify--mdi"><!-- HTML_TAG_START -->
-                                <path fill="currentColor" d="M22.46 6c-.77.35-1.6.58-2.46.69c.88-.53 1.56-1.37 1.88-2.38c-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29c0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15c0 1.49.75 2.81 1.91 3.56c-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07a4.28 4.28 0 0 0 4 2.98a8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56c.84-.6 1.56-1.36 2.14-2.23Z" /><!-- HTML_TAG_END -->
-                            </svg></a>
-                    </li>
-                    <li><a href="https://facebook.com" aria-label="mdi:facebook" class="svelte-5m5swo"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 24 24" class="iconify iconify--mdi"><!-- HTML_TAG_START -->
-                                <path fill="currentColor" d="M12 2.04c-5.5 0-10 4.49-10 10.02c0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89c1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02Z" /><!-- HTML_TAG_END -->
-                            </svg></a>
-                    </li>
-                    <li><a href="https://github.com" aria-label="mdi:github" class="svelte-5m5swo"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 24 24" class="iconify iconify--mdi"><!-- HTML_TAG_START -->
-                                <path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z" /><!-- HTML_TAG_END -->
-                            </svg></a>
-                    </li>
-                </ul>
+    <div class="section" id="section-ab14143b">
+        <footer class="svelte-11gedy2">
+            <div class="section-container svelte-11gedy2">
+                <div class="content svelte-11gedy2"><!-- HTML_TAG_START -->
+                    <h3 id="br">**青岛威达阀门工业有限公司 <br></h3>
+                    <p>**</p>
+                    <h3 id="122br">山东省 青岛市 西海岸新区 松花江路 122号 <br></h3>
+                    <p>电话：(0532) 8676-3651</p>
+                    <p>邮箱：info@vdvx.com</p><!-- HTML_TAG_END -->
+                </div>
+                <div class="nav-items svelte-11gedy2">
+                    <nav>
+                        <h3 class="svelte-11gedy2">威达阀门</h3>
+                        <ul class="svelte-11gedy2">
+                            <li><a class="link svelte-11gedy2" href="/">首页</a>
+                            </li>
+                            <li><a class="link svelte-11gedy2" href="/contact">联系我们</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <nav>
+                        <h3 class="svelte-11gedy2">产品中心</h3>
+                        <ul class="svelte-11gedy2">
+                            <li><a class="link svelte-11gedy2" href="/product/ball-valve">球阀</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <nav>
+                        <h3 class="svelte-11gedy2">咨询</h3>
+                        <ul class="svelte-11gedy2">
+                            <li><a class="link svelte-11gedy2" href="mailto:info@vdvx.com">info@vdvx.com</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </footer>
     </div>

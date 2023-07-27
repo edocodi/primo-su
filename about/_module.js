@@ -6435,7 +6435,7 @@ function create_fragment$9(ctx) {
 				descripti: "Deserunt aliquip est",
 				descriptio: "Deserunt aliquip est",
 				description: "We're passionate about building a better meeting workflow",
-				heading: "About Us",
+				heading: "关于威达",
 				subheading: "We're a team of crazy dreamers and coffee steamers",
 				buttons: [],
 				background: {

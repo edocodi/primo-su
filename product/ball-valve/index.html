@@ -278,128 +278,166 @@
             }
         }
 
-        header.svelte-1qt2bex.svelte-1qt2bex {
-            color: var(--color-white, white);
-            position: relative;
-            overflow: hidden;
-            background: var(--color-background)
+        section.svelte-1qk24ik.svelte-1qk24ik {
+            background: var(--color-brand);
+            overflow: hidden
         }
 
-        img.svelte-1qt2bex.svelte-1qt2bex {
-            position: absolute;
-            inset: 0;
-            height: 100%;
-            width: 100%;
-            -o-object-fit: cover;
-            object-fit: cover;
-            z-index: 0
+        section.image-left.svelte-1qk24ik figure.svelte-1qk24ik {
+            grid-column: 1;
+            grid-row: 1
         }
 
-        .heading-group.svelte-1qt2bex.svelte-1qt2bex {
-            background: #12121260;
-            display: grid;
-            place-items: center;
-            padding-top: 12rem;
-            padding-bottom: 12rem;
-            position: relative;
-            gap: 1rem
+        section.image-left.svelte-1qk24ik .body.svelte-1qk24ik {
+            grid-column: 2
         }
 
-        .heading-group.svelte-1qt2bex .heading.svelte-1qt2bex {
-            font-size: clamp(2rem, 10vw, 3.5rem)
-        }
-
-        .heading-group.svelte-1qt2bex .subheading.svelte-1qt2bex {
-            place-self: center;
-            font-size: 1.125rem;
-            line-height: 1.3;
-            color: var(--color-inverted)
-        }
-
-        .buttons.svelte-1qt2bex.svelte-1qt2bex {
-            margin-top: 1rem;
+        .section-container.svelte-1qk24ik.svelte-1qk24ik {
             display: flex;
-            justify-content: center;
-            gap: 1rem
-        }
-
-        .buttons.svelte-1qt2bex .button.svelte-1qt2bex {
-            background: transparent;
-            color: var(--color-inverted);
-            border: 1.5px solid white
-        }
-
-        .section-container.svelte-prx89c.svelte-prx89c {
-            max-width: 700px;
-            width: 100%;
-            margin: 0 auto;
-            gap: 1rem
-        }
-
-        .box.svelte-prx89c.svelte-prx89c {
-            padding: 3rem 3.25rem;
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius, 4px)
-        }
-
-        .heading-group.svelte-prx89c.svelte-prx89c {
-            display: grid;
-            gap: 1rem;
-            margin-bottom: 2rem
-        }
-
-        form.svelte-prx89c.svelte-prx89c {
-            display: grid;
+            flex-direction: column-reverse;
             gap: 2rem
         }
 
-        form.svelte-prx89c label.svelte-prx89c {
+        @media(min-width: 800px) {
+            .section-container.svelte-1qk24ik.svelte-1qk24ik {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                place-items: center;
+                gap: 6rem;
+                padding-block: 6rem
+            }
+        }
+
+        .body.svelte-1qk24ik.svelte-1qk24ik {
+            color: var(--color-inverted);
             display: grid;
-            gap: 0.25rem;
+            place-items: start;
+            padding-top: 2rem
+        }
+
+        .body.svelte-1qk24ik .headline.svelte-1qk24ik {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: clamp(2.75rem, 10vw, 3rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem
+        }
+
+        .body.svelte-1qk24ik .subheading.svelte-1qk24ik {
+            font-weight: 400;
+            font-size: 1.125rem;
+            line-height: 1.5;
+            margin-bottom: 2rem
+        }
+
+        .body.svelte-1qk24ik .button.svelte-1qk24ik {
             font-weight: 500
         }
 
-        form.svelte-prx89c input.svelte-prx89c,
-        form.svelte-prx89c textarea.svelte-prx89c {
+        figure.svelte-1qk24ik.svelte-1qk24ik {
+            position: relative
+        }
+
+        figure.svelte-1qk24ik img.svelte-1qk24ik {
+            border-radius: var(--border-radius);
+            z-index: 1;
+            position: relative
+        }
+
+        .section-container.svelte-sqs4td.svelte-sqs4td {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem
+        }
+
+        .heading.svelte-sqs4td.svelte-sqs4td {
+            text-align: center
+        }
+
+        ul.svelte-sqs4td.svelte-sqs4td {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+            gap: 1.75rem
+        }
+
+        ul.svelte-sqs4td li.svelte-sqs4td {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            border: 1px solid var(--border-color, #eee);
+            border-radius: var(--border-radius);
+            padding: 1.5rem
+        }
+
+        ul.svelte-sqs4td li .title.svelte-sqs4td {
+            display: flex;
+            gap: 0.5rem;
+            font-size: 1.25rem;
+            font-weight: bold;
+            align-items: center
+        }
+
+        ul.svelte-sqs4td li .title .label.svelte-sqs4td {
+            line-height: 1.1;
+            font-weight: 600
+        }
+
+        @media(min-width: 1200px) {
+            section.svelte-1elc4xu.svelte-1elc4xu {
+                gap: 6rem
+            }
+        }
+
+        .callouts.svelte-1elc4xu.svelte-1elc4xu {
+            display: grid;
+            gap: 6rem
+        }
+
+        .callout.svelte-1elc4xu.svelte-1elc4xu {
+            display: grid;
+            gap: 3rem
+        }
+
+        @media(min-width: 1200px) {
+            .callout.svelte-1elc4xu.svelte-1elc4xu {
+                gap: 6rem
+            }
+        }
+
+        .callout.svelte-1elc4xu img.svelte-1elc4xu {
             width: 100%;
-            padding: 0.75rem 0.75rem;
-            border: 1.5px solid var(--border-color);
-            border-radius: 4px
+            border-radius: var(--border-radius)
         }
 
-        form.svelte-prx89c .label.svelte-prx89c {
-            font-size: 0.85rem;
-            margin-bottom: 0.25rem
-        }
-
-        form.svelte-prx89c .placeholder.svelte-prx89c {
-            font-size: 1rem;
-            font-weight: 300
-        }
-
-        form.svelte-prx89c .button.svelte-prx89c {
-            place-self: start
-        }
-
-        .items.svelte-19cnxo1 {
+        .callout.svelte-1elc4xu .body.svelte-1elc4xu {
             display: grid;
-            gap: 3rem;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
+            padding: 0;
+            line-height: 1.5;
+            max-width: 450px
         }
 
-        .item.svelte-19cnxo1 {
-            display: grid;
-            place-items: center;
-            text-align: center;
-            gap: 1rem
+        .callout.svelte-1elc4xu .body .heading-group.svelte-1elc4xu {
+            place-content: start;
+            text-align: left;
+            margin-bottom: 1rem
         }
 
-        .title.svelte-19cnxo1 {
-            font-size: 1.25rem
-        }
+        @media(min-width: 800px) {
+            .callout.svelte-1elc4xu.svelte-1elc4xu {
+                grid-template-columns: 1fr 1fr;
+                place-items: center
+                    /* switch direction for even items */
+            }
 
-        .link.svelte-19cnxo1 {
-            font-size: 1.75rem
+            .callout.svelte-1elc4xu:nth-child(odd) img.svelte-1elc4xu {
+                grid-row: 1;
+                grid-column: 2
+            }
+
+            .callout.svelte-1elc4xu:nth-child(even) img.svelte-1elc4xu {
+                grid-row: 1;
+                grid-column: 1
+            }
         }
 
         footer.svelte-11gedy2.svelte-11gedy2 {
@@ -449,7 +487,7 @@
 
 <body id="page">
 
-    <div class="section" id="section-a5520299">
+    <div class="section" id="section-3d380bca">
         <header class="section-container svelte-xdnx5p"><a href="/" class="logo svelte-xdnx5p" style="--size: 8rem;"><img src="https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1680761337246vdv_logo.PNG" alt=""></a>
             <nav class="svelte-xdnx5p">
                 <div class="nav-item svelte-xdnx5p">
@@ -489,46 +527,116 @@
             </nav>
         </header>
     </div>
-    <div class="section" id="section-6289a7b9">
-        <header class="svelte-1qt2bex"><img src="https://images.unsplash.com/photo-1473800447596-01729482b8eb?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1740&amp;q=80" alt="" class="svelte-1qt2bex">
-            <div class="heading-group svelte-1qt2bex">
-                <h1 class="heading svelte-1qt2bex">联系我们</h1>
-                <span class="subheading svelte-1qt2bex">告诉我们您的阀门需求 - 我们将会第一时间与您联系</span>
-                <div class="buttons svelte-1qt2bex"></div>
-            </div>
-        </header>
-    </div>
-    <div class="section" id="section-fc3cbab6">
-        <section class="section-container svelte-prx89c">
-            <div class="box svelte-prx89c">
-                <div class="heading-group svelte-prx89c">
-                    <h2 class="heading">联系我们</h2>
-                    <p class="subheading">We'd love to hear from you. Drop us a line anytime.</p>
+    <div class="section" id="section-5852b272">
+        <section class="svelte-1qk24ik">
+            <div class="section-container svelte-1qk24ik">
+                <div class="body svelte-1qk24ik">
+                    <h1 class="headline svelte-1qk24ik">球阀</h1>
+                    <div class="subheading svelte-1qk24ik">多种设计组合，可定制。</div>
+                    <a href="/contact" class="button svelte-1qk24ik">咨询</a>
                 </div>
-                <form class="svelte-prx89c"><label class="svelte-prx89c"><span class="label svelte-prx89c">姓名</span>
-                        <input class="placeholder svelte-prx89c" type="text" placeholder="Name">
-                    </label><label class="svelte-prx89c"><span class="label svelte-prx89c">公司</span>
-                        <input class="placeholder svelte-prx89c" type="text" placeholder="Company">
-                    </label><label class="svelte-prx89c"><span class="label svelte-prx89c">电子邮箱</span>
-                        <input class="placeholder svelte-prx89c" type="email" placeholder="Email">
-                    </label><label class="svelte-prx89c"><span class="label svelte-prx89c">信息留言</span>
-                        <textarea class="placeholder svelte-prx89c" type="textarea" placeholder="Message"></textarea>
-                    </label>
-                    <button type="submit" class="button svelte-prx89c">提交</button>
-                </form>
+                <figure class="svelte-1qk24ik"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=2070&amp;q=80" alt="" class="svelte-1qk24ik"></figure>
             </div>
         </section>
     </div>
-    <div class="section" id="section-421a0f09">
-        <div class="section-container">
-            <div class="items svelte-19cnxo1">
-                <div class="item svelte-19cnxo1"><span class="title svelte-19cnxo1">图纸等文件请电邮</span>
-                    <a href="mailto:info@vdvx.com" class="link svelte-19cnxo1">info@vdvx.com</a>
+    <div class="section" id="section-ef06bbab">
+        <section class="section-container svelte-sqs4td">
+            <h2 class="heading svelte-sqs4td"></h2>
+            <ul class="svelte-sqs4td">
+                <li class="svelte-sqs4td">
+                    <h3 class="title svelte-sqs4td"><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="22" height="22" viewBox="0 0 24 24" style="color: var(--color-accent, rebeccapurple)" class="iconify iconify--material-symbols"><!-- HTML_TAG_START -->
+                                <path fill="currentColor" d="m10.6 13.8l-2.15-2.15q-.275-.275-.7-.275t-.7.275q-.275.275-.275.7t.275.7L9.9 15.9q.3.3.7.3t.7-.3l5.65-5.65q.275-.275.275-.7t-.275-.7q-.275-.275-.7-.275t-.7.275L10.6 13.8ZM12 22q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Z" /><!-- HTML_TAG_END -->
+                            </svg></span>
+                        <span class="label svelte-sqs4td">设计结构</span>
+                    </h3>
+                    <div class="description"><!-- HTML_TAG_START -->
+                        <p>1、2、3、5片式</p><!-- HTML_TAG_END -->
+                    </div>
+                </li>
+                <li class="svelte-sqs4td">
+                    <h3 class="title svelte-sqs4td"><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="22" height="22" viewBox="0 0 24 24" style="color: var(--color-accent, rebeccapurple)" class="iconify iconify--material-symbols"><!-- HTML_TAG_START -->
+                                <path fill="currentColor" d="m10.6 13.8l-2.15-2.15q-.275-.275-.7-.275t-.7.275q-.275.275-.275.7t.275.7L9.9 15.9q.3.3.7.3t.7-.3l5.65-5.65q.275-.275.275-.7t-.275-.7q-.275-.275-.7-.275t-.7.275L10.6 13.8ZM12 22q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Z" /><!-- HTML_TAG_END -->
+                            </svg></span>
+                        <span class="label svelte-sqs4td">材质</span>
+                    </h3>
+                    <div class="description"><!-- HTML_TAG_START -->
+                        <p>碳钢、不锈钢、镍基合金等</p><!-- HTML_TAG_END -->
+                    </div>
+                </li>
+                <li class="svelte-sqs4td">
+                    <h3 class="title svelte-sqs4td"><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="22" height="22" viewBox="0 0 24 24" style="color: var(--color-accent, rebeccapurple)" class="iconify iconify--material-symbols"><!-- HTML_TAG_START -->
+                                <path fill="currentColor" d="m10.6 13.8l-2.15-2.15q-.275-.275-.7-.275t-.7.275q-.275.275-.275.7t.275.7L9.9 15.9q.3.3.7.3t.7-.3l5.65-5.65q.275-.275.275-.7t-.275-.7q-.275-.275-.7-.275t-.7.275L10.6 13.8ZM12 22q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Z" /><!-- HTML_TAG_END -->
+                            </svg></span>
+                        <span class="label svelte-sqs4td">密封材质</span>
+                    </h3>
+                    <div class="description"><!-- HTML_TAG_START -->
+                        <p>PTFE、PEEK、PPL、石墨、全包球垫等</p><!-- HTML_TAG_END -->
+                    </div>
+                </li>
+                <li class="svelte-sqs4td">
+                    <h3 class="title svelte-sqs4td"><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="22" height="22" viewBox="0 0 24 24" style="color: var(--color-accent, rebeccapurple)" class="iconify iconify--material-symbols"><!-- HTML_TAG_START -->
+                                <path fill="currentColor" d="m10.6 13.8l-2.15-2.15q-.275-.275-.7-.275t-.7.275q-.275.275-.275.7t.275.7L9.9 15.9q.3.3.7.3t.7-.3l5.65-5.65q.275-.275.275-.7t-.275-.7q-.275-.275-.7-.275t-.7.275L10.6 13.8ZM12 22q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Z" /><!-- HTML_TAG_END -->
+                            </svg></span>
+                        <span class="label svelte-sqs4td">接口类别</span>
+                    </h3>
+                    <div class="description"><!-- HTML_TAG_START -->
+                        <p>对焊、卡箍、法兰、螺纹等</p><!-- HTML_TAG_END -->
+                    </div>
+                </li>
+                <li class="svelte-sqs4td">
+                    <h3 class="title svelte-sqs4td"><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="22" height="22" viewBox="0 0 24 24" style="color: var(--color-accent, rebeccapurple)" class="iconify iconify--material-symbols"><!-- HTML_TAG_START -->
+                                <path fill="currentColor" d="m10.6 13.8l-2.15-2.15q-.275-.275-.7-.275t-.7.275q-.275.275-.275.7t.275.7L9.9 15.9q.3.3.7.3t.7-.3l5.65-5.65q.275-.275.275-.7t-.275-.7q-.275-.275-.7-.275t-.7.275L10.6 13.8ZM12 22q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Z" /><!-- HTML_TAG_END -->
+                            </svg></span>
+                        <span class="label svelte-sqs4td">执行器</span>
+                    </h3>
+                    <div class="description"><!-- HTML_TAG_START -->
+                        <p>手动、电动、气动、带限制阀等</p><!-- HTML_TAG_END -->
+                    </div>
+                </li>
+                <li class="svelte-sqs4td">
+                    <h3 class="title svelte-sqs4td"><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="22" height="22" viewBox="0 0 24 24" style="color: var(--color-accent, rebeccapurple)" class="iconify iconify--material-symbols"><!-- HTML_TAG_START -->
+                                <path fill="currentColor" d="m10.6 13.8l-2.15-2.15q-.275-.275-.7-.275t-.7.275q-.275.275-.275.7t.275.7L9.9 15.9q.3.3.7.3t.7-.3l5.65-5.65q.275-.275.275-.7t-.275-.7q-.275-.275-.7-.275t-.7.275L10.6 13.8ZM12 22q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Z" /><!-- HTML_TAG_END -->
+                            </svg></span>
+                        <span class="label svelte-sqs4td">通路设计</span>
+                    </h3>
+                    <div class="description"><!-- HTML_TAG_START -->
+                        <p>双通、三通、多通、L型、T型、V型等</p><!-- HTML_TAG_END -->
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </div>
+    <div class="section" id="section-4eb90720">
+        <section class="svelte-1elc4xu">
+            <div class="section-container">
+                <div class="callouts svelte-1elc4xu">
+                    <div class="callout svelte-1elc4xu"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=2070&amp;q=80" alt="" class="svelte-1elc4xu">
+                        <div class="body svelte-1elc4xu">
+                            <div class="heading-group svelte-1elc4xu">
+                                <div class="superhead">Interesting Feature</div>
+                                <h2 class="heading">Some interesting info</h2>
+                            </div>
+                            <div class="content"><!-- HTML_TAG_START -->
+                                <p>Details about that interesting info, that will hopefully interest your target audience.</p><!-- HTML_TAG_END -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="callout svelte-1elc4xu"><img src="https://images.unsplash.com/photo-1508739826987-b79cd8b7da12?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60" alt="" class="svelte-1elc4xu">
+                        <div class="body svelte-1elc4xu">
+                            <div class="heading-group svelte-1elc4xu">
+                                <div class="superhead">Another one</div>
+                                <h2 class="heading">Real-time collaboration</h2>
+                            </div>
+                            <div class="content"><!-- HTML_TAG_START -->
+                                <p>Anything that will explain the title will do. You just got to get ChatGPT to help you write it.</p><!-- HTML_TAG_END -->
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
     </div>
-    <div class="section" id="section-06860a12">
+    <div class="section" id="section-3c2a3014">
         <footer class="svelte-11gedy2">
             <div class="section-container svelte-11gedy2">
                 <div class="content svelte-11gedy2"><!-- HTML_TAG_START -->
