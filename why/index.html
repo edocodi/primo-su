@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=fredoka:300,400,500,600,700|space-grotesk:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.bunny.net/css?family=fredoka:300,400,500,600,700|open-sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i|space-grotesk:300,400,500,600,700" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/primoaf/image/upload/v1659676914/favicon_roaxv0.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1680761337246vdv_logo.PNG">
     <style>
         /* Reset & standardize default styles */
         @import url("https://unpkg.com/@primo-app/primo@1.3.64/reset.css") layer;
@@ -136,11 +136,11 @@
     <style>
         @import url("https://unpkg.com/modern-normalize@1.1.0/modern-normalize.css");
 
-        header.svelte-6vjs4t.svelte-6vjs4t.svelte-6vjs4t {
+        header.svelte-1mboqbd.svelte-1mboqbd.svelte-1mboqbd {
             border-bottom: 1px solid var(--border-color)
         }
 
-        .section-container.svelte-6vjs4t.svelte-6vjs4t.svelte-6vjs4t {
+        .section-container.svelte-1mboqbd.svelte-1mboqbd.svelte-1mboqbd {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -148,7 +148,7 @@
             padding-bottom: 0.75rem
         }
 
-        .desktop-nav.svelte-6vjs4t.svelte-6vjs4t.svelte-6vjs4t {
+        .desktop-nav.svelte-1mboqbd.svelte-1mboqbd.svelte-1mboqbd {
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -156,7 +156,7 @@
             width: 100%
         }
 
-        .desktop-nav.svelte-6vjs4t .logo.svelte-6vjs4t.svelte-6vjs4t {
+        .desktop-nav.svelte-1mboqbd .logo.svelte-1mboqbd.svelte-1mboqbd {
             font-size: 1.5rem;
             font-weight: 600;
             line-height: 1.4;
@@ -164,33 +164,53 @@
             width: var(--size)
         }
 
-        .desktop-nav.svelte-6vjs4t nav.svelte-6vjs4t.svelte-6vjs4t {
+        .desktop-nav.svelte-1mboqbd nav.svelte-1mboqbd.svelte-1mboqbd {
             display: flex;
             align-items: center;
             gap: 1.5rem
         }
 
-        .desktop-nav.svelte-6vjs4t nav.svelte-6vjs4t a.svelte-6vjs4t {
+        .desktop-nav.svelte-1mboqbd nav.svelte-1mboqbd a.svelte-1mboqbd {
             font-size: 1rem;
             font-weight: 400;
             display: none
         }
 
-        .desktop-nav.svelte-6vjs4t nav a.nav-item.svelte-6vjs4t.svelte-6vjs4t {
-            border-bottom: 2px solid transparent;
-            transition: border-color 0.1s
+        .desktop-nav.svelte-1mboqbd nav .top-link.svelte-1mboqbd.svelte-1mboqbd {
+            display: none;
+            align-items: center;
+            gap: 0.5rem;
+            position: relative;
+            font-size: 1rem;
+            font-weight: 400
         }
 
-        .desktop-nav.svelte-6vjs4t nav a.nav-item.svelte-6vjs4t.svelte-6vjs4t:hover {
-            border-color: var(--color-brand)
+        .desktop-nav.svelte-1mboqbd nav .dropdown.svelte-1mboqbd.svelte-1mboqbd {
+            font-weight: 400;
+            font-size: 1rem;
+            top: 100%;
+            position: absolute;
+            display: none;
+            width: auto;
+            white-space: nowrap;
+            border: 1px solid var(--border-color);
+            padding: 1.25rem 1rem;
+            background: var(--background);
+            box-shadow: var(--box-shadow)
         }
 
-        .desktop-nav.svelte-6vjs4t button#open.svelte-6vjs4t.svelte-6vjs4t {
+        .desktop-nav.svelte-1mboqbd nav:hover .dropdown.svelte-1mboqbd.svelte-1mboqbd {
+            display: grid;
+            place-items: flex-start;
+            gap: 0.5rem
+        }
+
+        .desktop-nav.svelte-1mboqbd button#open.svelte-1mboqbd.svelte-1mboqbd {
             font-size: 1.5rem;
             margin-left: auto
         }
 
-        nav#mobile-nav.svelte-6vjs4t.svelte-6vjs4t.svelte-6vjs4t {
+        nav#mobile-nav.svelte-1mboqbd.svelte-1mboqbd.svelte-1mboqbd {
             position: absolute;
             flex-direction: column;
             text-align: center;
@@ -204,20 +224,20 @@
             z-index: 2
         }
 
-        nav#mobile-nav.svelte-6vjs4t a.svelte-6vjs4t.svelte-6vjs4t {
+        nav#mobile-nav.svelte-1mboqbd a.svelte-1mboqbd.svelte-1mboqbd {
             display: block
         }
 
-        nav#mobile-nav.svelte-6vjs4t hr.svelte-6vjs4t.svelte-6vjs4t {
+        nav#mobile-nav.svelte-1mboqbd hr.svelte-1mboqbd.svelte-1mboqbd {
             width: 100%
         }
 
-        nav#mobile-nav.svelte-6vjs4t .button.svelte-6vjs4t.svelte-6vjs4t {
+        nav#mobile-nav.svelte-1mboqbd .button.svelte-1mboqbd.svelte-1mboqbd {
             width: 100%;
             justify-content: center
         }
 
-        nav#mobile-nav.svelte-6vjs4t button#close.svelte-6vjs4t.svelte-6vjs4t {
+        nav#mobile-nav.svelte-1mboqbd button#close.svelte-1mboqbd.svelte-1mboqbd {
             display: block;
             position: absolute;
             right: 1rem;
@@ -227,12 +247,12 @@
 
         @media(min-width: 600px) {
 
-            #open.svelte-6vjs4t.svelte-6vjs4t.svelte-6vjs4t,
-            #mobile-nav.svelte-6vjs4t.svelte-6vjs4t.svelte-6vjs4t {
+            #open.svelte-1mboqbd.svelte-1mboqbd.svelte-1mboqbd,
+            #mobile-nav.svelte-1mboqbd.svelte-1mboqbd.svelte-1mboqbd {
                 display: none
             }
 
-            .desktop-nav.svelte-6vjs4t nav.svelte-6vjs4t a.svelte-6vjs4t {
+            .desktop-nav.svelte-1mboqbd nav.svelte-1mboqbd a.svelte-1mboqbd {
                 display: inline-block
             }
         }
@@ -490,15 +510,6 @@
             font-size: 1rem
         }
 
-        .primo.svelte-5m5swo.svelte-5m5swo {
-            font-weight: 600;
-            font-size: .875rem
-        }
-
-        .primo.svelte-5m5swo a.svelte-5m5swo {
-            text-decoration: underline
-        }
-
         ul.svelte-5m5swo.svelte-5m5swo {
             display: flex;
             gap: 1rem;
@@ -520,12 +531,28 @@
 <body id="page">
 
     <div class="section" id="section-a2547751">
-        <header class="svelte-6vjs4t">
-            <div class="section-container svelte-6vjs4t">
-                <div class="desktop-nav svelte-6vjs4t"><a href="/" class="logo svelte-6vjs4t" style="--size: 8rem;"><img src="https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/vdv_logo.PNG1680761337246" alt="威达阀门"></a>
-                    <nav class="svelte-6vjs4t"><a class="nav-item svelte-6vjs4t" href="/">关于我们</a><a class="nav-item svelte-6vjs4t" href="/">产品中心</a><a class="nav-item svelte-6vjs4t" href="/">Why</a><a class="nav-item svelte-6vjs4t" href="/">Pricing</a>
-                        <a class="button svelte-6vjs4t" href="/">咨询</a>
-                        <button id="open" aria-label="Open mobile navigation" class="svelte-6vjs4t"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 24 24" class="iconify iconify--ic"><!-- HTML_TAG_START -->
+        <header class="svelte-1mboqbd">
+            <div class="section-container svelte-1mboqbd">
+                <div class="desktop-nav svelte-1mboqbd"><a href="/" class="logo svelte-1mboqbd" style="--size: 8rem;"><img src="https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/vdv_logo.PNG1680761337246" alt="威达阀门"></a>
+                    <nav class="svelte-1mboqbd">
+                        <div class="nav-item">
+                            <div class="top-link svelte-1mboqbd"><a href="" class="link svelte-1mboqbd">关于我们</a></div>
+
+                        </div>
+                        <div class="nav-item">
+                            <div class="top-link svelte-1mboqbd"><a href="" class="link svelte-1mboqbd">产品中心</a></div>
+
+                        </div>
+                        <div class="nav-item">
+                            <div class="top-link svelte-1mboqbd"><a href="" class="link svelte-1mboqbd">bbb</a></div>
+
+                        </div>
+                        <div class="nav-item">
+                            <div class="top-link svelte-1mboqbd"><a href="" class="link svelte-1mboqbd">aaaa</a></div>
+
+                        </div>
+                        <a class="button svelte-1mboqbd" href="/">咨询</a>
+                        <button id="open" aria-label="Open mobile navigation" class="svelte-1mboqbd"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 24 24" class="iconify iconify--ic"><!-- HTML_TAG_START -->
                                 <path fill="currentColor" d="M4 18h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1zm0-5h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1zM3 7c0 .55.45 1 1 1h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1z" /><!-- HTML_TAG_END -->
                             </svg></button>
                     </nav>
@@ -579,12 +606,16 @@
                 </div>
                 <div class="cards svelte-iewj14">
                     <div class="card svelte-iewj14">
-                        <div class="icon svelte-iewj14"></div>
+                        <div class="icon svelte-iewj14"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 24 24" class="iconify iconify--mdi"><!-- HTML_TAG_START -->
+                                <path fill="currentColor" d="M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8h5Z" /><!-- HTML_TAG_END -->
+                            </svg></div>
                         <span class="title svelte-iewj14">User friendly &amp; fun</span>
                         <span class="description svelte-iewj14">With a clear intuitive interface, you can easily add and view events.</span>
                     </div>
                     <div class="card svelte-iewj14">
-                        <div class="icon svelte-iewj14"></div>
+                        <div class="icon svelte-iewj14"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 24 24" class="iconify iconify--mdi"><!-- HTML_TAG_START -->
+                                <path fill="currentColor" d="M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8h5Z" /><!-- HTML_TAG_END -->
+                            </svg></div>
                         <span class="title svelte-iewj14">Responsive and speedy</span>
                         <span class="description svelte-iewj14">Our desktop and web application are both super speedy.</span>
                     </div>
@@ -596,7 +627,6 @@
         <footer class="svelte-5m5swo">
             <div class="section-container svelte-5m5swo">
                 <nav class="svelte-5m5swo"><a href="/about">About us</a><a href="/why">Why Cali</a></nav>
-                <span class="primo svelte-5m5swo"><a href="https://primo.so" class="svelte-5m5swo">Primo</a> Powered </span>
                 <ul class="svelte-5m5swo">
                     <li><a href="https://twitter.com" aria-label="mdi:twitter" class="svelte-5m5swo"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 24 24" class="iconify iconify--mdi"><!-- HTML_TAG_START -->
                                 <path fill="currentColor" d="M22.46 6c-.77.35-1.6.58-2.46.69c.88-.53 1.56-1.37 1.88-2.38c-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29c0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15c0 1.49.75 2.81 1.91 3.56c-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07a4.28 4.28 0 0 0 4 2.98a8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56c.84-.6 1.56-1.36 2.14-2.23Z" /><!-- HTML_TAG_END -->

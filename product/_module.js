@@ -407,6 +407,9 @@ function set_style(node, key, value, important) {
         node.style.setProperty(key, value, important ? 'important' : '');
     }
 }
+function toggle_class(element, name, toggle) {
+    element.classList[toggle ? 'add' : 'remove'](name);
+}
 function custom_event(type, detail, { bubbles = false, cancelable = false } = {}) {
     const e = document.createEvent('CustomEvent');
     e.initCustomEvent(type, bubbles, cancelable, detail);
@@ -2995,11 +2998,20 @@ function get_each_context_2(ctx, list, i) {
 function get_each_context_3(ctx, list, i) {
 	const child_ctx = ctx.slice();
 	child_ctx[8] = list[i].link;
+	child_ctx[14] = list[i].links;
+	const constants_0 = /*links*/ child_ctx[14].length > 0;
+	child_ctx[15] = constants_0;
 	return child_ctx;
 }
 
-// (131:8) {:else}
-function create_else_block_1(ctx) {
+function get_each_context_4(ctx, list, i) {
+	const child_ctx = ctx.slice();
+	child_ctx[8] = list[i].link;
+	return child_ctx;
+}
+
+// (160:8) {:else}
+function create_else_block_2(ctx) {
 	let span;
 	let t_value = /*logo*/ ctx[0].title + "";
 	let t;
@@ -3028,8 +3040,8 @@ function create_else_block_1(ctx) {
 	};
 }
 
-// (129:8) {#if logo.image.url}
-function create_if_block_2(ctx) {
+// (158:8) {#if logo.image.url}
+function create_if_block_4(ctx) {
 	let img;
 	let img_src_value;
 	let img_alt_value;
@@ -3065,8 +3077,8 @@ function create_if_block_2(ctx) {
 	};
 }
 
-// (136:8) {#each site_nav as { link }}
-function create_each_block_3(ctx) {
+// (172:14) {:else}
+function create_else_block_1(ctx) {
 	let a;
 	let t_value = /*link*/ ctx[8].label + "";
 	let t;
@@ -3079,15 +3091,204 @@ function create_each_block_3(ctx) {
 			this.h();
 		},
 		l(nodes) {
-			a = claim_element(nodes, "A", { class: true, href: true });
+			a = claim_element(nodes, "A", { href: true, class: true });
 			var a_nodes = children(a);
 			t = claim_text(a_nodes, t_value);
 			a_nodes.forEach(detach);
 			this.h();
 		},
 		h() {
-			attr(a, "class", "nav-item svelte-6vjs4t");
 			attr(a, "href", a_href_value = /*link*/ ctx[8].url);
+			attr(a, "class", "link svelte-1mboqbd");
+			toggle_class(a, "active", /*link*/ ctx[8].url === window.location.pathname);
+		},
+		m(target, anchor) {
+			insert_hydration(target, a, anchor);
+			append_hydration(a, t);
+		},
+		p(ctx, dirty) {
+			if (dirty & /*site_nav*/ 2 && t_value !== (t_value = /*link*/ ctx[8].label + "")) set_data(t, t_value);
+
+			if (dirty & /*site_nav*/ 2 && a_href_value !== (a_href_value = /*link*/ ctx[8].url)) {
+				attr(a, "href", a_href_value);
+			}
+
+			if (dirty & /*site_nav, window*/ 2) {
+				toggle_class(a, "active", /*link*/ ctx[8].url === window.location.pathname);
+			}
+		},
+		i: noop,
+		o: noop,
+		d(detaching) {
+			if (detaching) detach(a);
+		}
+	};
+}
+
+// (169:14) {#if hasDropdown}
+function create_if_block_3(ctx) {
+	let span0;
+	let t0_value = /*link*/ ctx[8].label + "";
+	let t0;
+	let t1;
+	let span1;
+	let icon;
+	let current;
+
+	icon = new Component$1({
+			props: { icon: "akar-icons:chevron-down" }
+		});
+
+	return {
+		c() {
+			span0 = element("span");
+			t0 = text(t0_value);
+			t1 = space();
+			span1 = element("span");
+			create_component(icon.$$.fragment);
+			this.h();
+		},
+		l(nodes) {
+			span0 = claim_element(nodes, "SPAN", {});
+			var span0_nodes = children(span0);
+			t0 = claim_text(span0_nodes, t0_value);
+			span0_nodes.forEach(detach);
+			t1 = claim_space(nodes);
+			span1 = claim_element(nodes, "SPAN", { class: true });
+			var span1_nodes = children(span1);
+			claim_component(icon.$$.fragment, span1_nodes);
+			span1_nodes.forEach(detach);
+			this.h();
+		},
+		h() {
+			attr(span1, "class", "icon");
+		},
+		m(target, anchor) {
+			insert_hydration(target, span0, anchor);
+			append_hydration(span0, t0);
+			insert_hydration(target, t1, anchor);
+			insert_hydration(target, span1, anchor);
+			mount_component(icon, span1, null);
+			current = true;
+		},
+		p(ctx, dirty) {
+			if ((!current || dirty & /*site_nav*/ 2) && t0_value !== (t0_value = /*link*/ ctx[8].label + "")) set_data(t0, t0_value);
+		},
+		i(local) {
+			if (current) return;
+			transition_in(icon.$$.fragment, local);
+			current = true;
+		},
+		o(local) {
+			transition_out(icon.$$.fragment, local);
+			current = false;
+		},
+		d(detaching) {
+			if (detaching) detach(span0);
+			if (detaching) detach(t1);
+			if (detaching) detach(span1);
+			destroy_component(icon);
+		}
+	};
+}
+
+// (179:12) {#if hasDropdown}
+function create_if_block_2(ctx) {
+	let div;
+	let each_value_4 = /*links*/ ctx[14];
+	let each_blocks = [];
+
+	for (let i = 0; i < each_value_4.length; i += 1) {
+		each_blocks[i] = create_each_block_4(get_each_context_4(ctx, each_value_4, i));
+	}
+
+	return {
+		c() {
+			div = element("div");
+
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				each_blocks[i].c();
+			}
+
+			this.h();
+		},
+		l(nodes) {
+			div = claim_element(nodes, "DIV", { class: true });
+			var div_nodes = children(div);
+
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				each_blocks[i].l(div_nodes);
+			}
+
+			div_nodes.forEach(detach);
+			this.h();
+		},
+		h() {
+			attr(div, "class", "dropdown svelte-1mboqbd");
+		},
+		m(target, anchor) {
+			insert_hydration(target, div, anchor);
+
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				if (each_blocks[i]) {
+					each_blocks[i].m(div, null);
+				}
+			}
+		},
+		p(ctx, dirty) {
+			if (dirty & /*site_nav*/ 2) {
+				each_value_4 = /*links*/ ctx[14];
+				let i;
+
+				for (i = 0; i < each_value_4.length; i += 1) {
+					const child_ctx = get_each_context_4(ctx, each_value_4, i);
+
+					if (each_blocks[i]) {
+						each_blocks[i].p(child_ctx, dirty);
+					} else {
+						each_blocks[i] = create_each_block_4(child_ctx);
+						each_blocks[i].c();
+						each_blocks[i].m(div, null);
+					}
+				}
+
+				for (; i < each_blocks.length; i += 1) {
+					each_blocks[i].d(1);
+				}
+
+				each_blocks.length = each_value_4.length;
+			}
+		},
+		d(detaching) {
+			if (detaching) detach(div);
+			destroy_each(each_blocks, detaching);
+		}
+	};
+}
+
+// (181:16) {#each links as { link }}
+function create_each_block_4(ctx) {
+	let a;
+	let t_value = /*link*/ ctx[8].label + "";
+	let t;
+	let a_href_value;
+
+	return {
+		c() {
+			a = element("a");
+			t = text(t_value);
+			this.h();
+		},
+		l(nodes) {
+			a = claim_element(nodes, "A", { href: true, class: true });
+			var a_nodes = children(a);
+			t = claim_text(a_nodes, t_value);
+			a_nodes.forEach(detach);
+			this.h();
+		},
+		h() {
+			attr(a, "href", a_href_value = /*link*/ ctx[8].url);
+			attr(a, "class", "link svelte-1mboqbd");
 		},
 		m(target, anchor) {
 			insert_hydration(target, a, anchor);
@@ -3106,7 +3307,117 @@ function create_each_block_3(ctx) {
 	};
 }
 
-// (139:8) {#each cta as { link }
+// (165:8) {#each site_nav as { link, links }}
+function create_each_block_3(ctx) {
+	let div1;
+	let div0;
+	let current_block_type_index;
+	let if_block0;
+	let t;
+	let current;
+	const if_block_creators = [create_if_block_3, create_else_block_1];
+	const if_blocks = [];
+
+	function select_block_type_1(ctx, dirty) {
+		if (/*hasDropdown*/ ctx[15]) return 0;
+		return 1;
+	}
+
+	current_block_type_index = select_block_type_1(ctx);
+	if_block0 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+	let if_block1 = /*hasDropdown*/ ctx[15] && create_if_block_2(ctx);
+
+	return {
+		c() {
+			div1 = element("div");
+			div0 = element("div");
+			if_block0.c();
+			t = space();
+			if (if_block1) if_block1.c();
+			this.h();
+		},
+		l(nodes) {
+			div1 = claim_element(nodes, "DIV", { class: true });
+			var div1_nodes = children(div1);
+			div0 = claim_element(div1_nodes, "DIV", { class: true });
+			var div0_nodes = children(div0);
+			if_block0.l(div0_nodes);
+			div0_nodes.forEach(detach);
+			t = claim_space(div1_nodes);
+			if (if_block1) if_block1.l(div1_nodes);
+			div1_nodes.forEach(detach);
+			this.h();
+		},
+		h() {
+			attr(div0, "class", "top-link svelte-1mboqbd");
+			attr(div1, "class", "nav-item");
+		},
+		m(target, anchor) {
+			insert_hydration(target, div1, anchor);
+			append_hydration(div1, div0);
+			if_blocks[current_block_type_index].m(div0, null);
+			append_hydration(div1, t);
+			if (if_block1) if_block1.m(div1, null);
+			current = true;
+		},
+		p(ctx, dirty) {
+			let previous_block_index = current_block_type_index;
+			current_block_type_index = select_block_type_1(ctx);
+
+			if (current_block_type_index === previous_block_index) {
+				if_blocks[current_block_type_index].p(ctx, dirty);
+			} else {
+				group_outros();
+
+				transition_out(if_blocks[previous_block_index], 1, 1, () => {
+					if_blocks[previous_block_index] = null;
+				});
+
+				check_outros();
+				if_block0 = if_blocks[current_block_type_index];
+
+				if (!if_block0) {
+					if_block0 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+					if_block0.c();
+				} else {
+					if_block0.p(ctx, dirty);
+				}
+
+				transition_in(if_block0, 1);
+				if_block0.m(div0, null);
+			}
+
+			if (/*hasDropdown*/ ctx[15]) {
+				if (if_block1) {
+					if_block1.p(ctx, dirty);
+				} else {
+					if_block1 = create_if_block_2(ctx);
+					if_block1.c();
+					if_block1.m(div1, null);
+				}
+			} else if (if_block1) {
+				if_block1.d(1);
+				if_block1 = null;
+			}
+		},
+		i(local) {
+			if (current) return;
+			transition_in(if_block0);
+			current = true;
+		},
+		o(local) {
+			transition_out(if_block0);
+			current = false;
+		},
+		d(detaching) {
+			if (detaching) detach(div1);
+			if_blocks[current_block_type_index].d();
+			if (if_block1) if_block1.d();
+		}
+	};
+}
+
+// (188:8) {#each cta as { link }
 function create_each_block_2(ctx) {
 	let a;
 	let t_value = /*link*/ ctx[8].label + "";
@@ -3127,7 +3438,7 @@ function create_each_block_2(ctx) {
 			this.h();
 		},
 		h() {
-			attr(a, "class", "button svelte-6vjs4t");
+			attr(a, "class", "button svelte-1mboqbd");
 			attr(a, "href", a_href_value = /*link*/ ctx[8].url);
 		},
 		m(target, anchor) {
@@ -3147,7 +3458,7 @@ function create_each_block_2(ctx) {
 	};
 }
 
-// (150:4) {#if mobileNavOpen}
+// (199:4) {#if mobileNavOpen}
 function create_if_block$1(ctx) {
 	let nav;
 	let t0;
@@ -3162,12 +3473,12 @@ function create_if_block$1(ctx) {
 	let mounted;
 	let dispose;
 
-	function select_block_type_1(ctx, dirty) {
+	function select_block_type_2(ctx, dirty) {
 		if (/*logo*/ ctx[0].image.url) return create_if_block_1$1;
 		return create_else_block$1;
 	}
 
-	let current_block_type = select_block_type_1(ctx);
+	let current_block_type = select_block_type_2(ctx);
 	let if_block = current_block_type(ctx);
 	let each_value_1 = /*site_nav*/ ctx[1];
 	let each_blocks_1 = [];
@@ -3241,12 +3552,12 @@ function create_if_block$1(ctx) {
 			this.h();
 		},
 		h() {
-			attr(hr, "class", "svelte-6vjs4t");
+			attr(hr, "class", "svelte-1mboqbd");
 			attr(button, "id", "close");
 			attr(button, "aria-label", "Close Navigation");
-			attr(button, "class", "svelte-6vjs4t");
+			attr(button, "class", "svelte-1mboqbd");
 			attr(nav, "id", "mobile-nav");
-			attr(nav, "class", "svelte-6vjs4t");
+			attr(nav, "class", "svelte-1mboqbd");
 		},
 		m(target, anchor) {
 			insert_hydration(target, nav, anchor);
@@ -3280,7 +3591,7 @@ function create_if_block$1(ctx) {
 			}
 		},
 		p(ctx, dirty) {
-			if (current_block_type === (current_block_type = select_block_type_1(ctx)) && if_block) {
+			if (current_block_type === (current_block_type = select_block_type_2(ctx)) && if_block) {
 				if_block.p(ctx, dirty);
 			} else {
 				if_block.d(1);
@@ -3369,7 +3680,7 @@ function create_if_block$1(ctx) {
 	};
 }
 
-// (154:8) {:else}
+// (203:8) {:else}
 function create_else_block$1(ctx) {
 	let span;
 	let t_value = /*logo*/ ctx[0].title + "";
@@ -3399,7 +3710,7 @@ function create_else_block$1(ctx) {
 	};
 }
 
-// (152:8) {#if logo.image.url}
+// (201:8) {#if logo.image.url}
 function create_if_block_1$1(ctx) {
 	let img;
 	let img_src_value;
@@ -3436,7 +3747,7 @@ function create_if_block_1$1(ctx) {
 	};
 }
 
-// (157:8) {#each site_nav as { link }}
+// (206:8) {#each site_nav as { link }}
 function create_each_block_1(ctx) {
 	let a;
 	let t_value = /*link*/ ctx[8].label + "";
@@ -3458,7 +3769,7 @@ function create_each_block_1(ctx) {
 		},
 		h() {
 			attr(a, "href", a_href_value = /*link*/ ctx[8].url);
-			attr(a, "class", "svelte-6vjs4t");
+			attr(a, "class", "svelte-1mboqbd");
 		},
 		m(target, anchor) {
 			insert_hydration(target, a, anchor);
@@ -3477,7 +3788,7 @@ function create_each_block_1(ctx) {
 	};
 }
 
-// (161:8) {#each cta as { link }
+// (210:8) {#each cta as { link }
 function create_each_block(ctx) {
 	let a;
 	let t_value = /*link*/ ctx[8].label + "";
@@ -3499,7 +3810,7 @@ function create_each_block(ctx) {
 		},
 		h() {
 			attr(a, "href", a_href_value = /*link*/ ctx[8].url);
-			attr(a, "class", "button svelte-6vjs4t");
+			attr(a, "class", "button svelte-1mboqbd");
 		},
 		m(target, anchor) {
 			insert_hydration(target, a, anchor);
@@ -3537,8 +3848,8 @@ function create_fragment$2(ctx) {
 	let dispose;
 
 	function select_block_type(ctx, dirty) {
-		if (/*logo*/ ctx[0].image.url) return create_if_block_2;
-		return create_else_block_1;
+		if (/*logo*/ ctx[0].image.url) return create_if_block_4;
+		return create_else_block_2;
 	}
 
 	let current_block_type = select_block_type(ctx);
@@ -3549,6 +3860,10 @@ function create_fragment$2(ctx) {
 	for (let i = 0; i < each_value_3.length; i += 1) {
 		each_blocks_1[i] = create_each_block_3(get_each_context_3(ctx, each_value_3, i));
 	}
+
+	const out = i => transition_out(each_blocks_1[i], 1, 1, () => {
+		each_blocks_1[i] = null;
+	});
 
 	let each_value_2 = /*cta*/ ctx[2];
 	let each_blocks = [];
@@ -3637,15 +3952,15 @@ function create_fragment$2(ctx) {
 		},
 		h() {
 			attr(a, "href", "/");
-			attr(a, "class", "logo svelte-6vjs4t");
+			attr(a, "class", "logo svelte-1mboqbd");
 			set_style(a, "--size", style___size);
 			attr(button, "id", "open");
 			attr(button, "aria-label", "Open mobile navigation");
-			attr(button, "class", "svelte-6vjs4t");
-			attr(nav, "class", "svelte-6vjs4t");
-			attr(div0, "class", "desktop-nav svelte-6vjs4t");
-			attr(div1, "class", "section-container svelte-6vjs4t");
-			attr(header, "class", "svelte-6vjs4t");
+			attr(button, "class", "svelte-1mboqbd");
+			attr(nav, "class", "svelte-1mboqbd");
+			attr(div0, "class", "desktop-nav svelte-1mboqbd");
+			attr(div1, "class", "section-container svelte-1mboqbd");
+			attr(header, "class", "svelte-1mboqbd");
 			attr(div2, "class", "section");
 			attr(div2, "id", "section-11a89b13");
 		},
@@ -3702,7 +4017,7 @@ function create_fragment$2(ctx) {
 				set_style(a, "--size", style___size);
 			}
 
-			if (dirty & /*site_nav*/ 2) {
+			if (dirty & /*site_nav, window*/ 2) {
 				each_value_3 = /*site_nav*/ ctx[1];
 				let i;
 
@@ -3711,18 +4026,22 @@ function create_fragment$2(ctx) {
 
 					if (each_blocks_1[i]) {
 						each_blocks_1[i].p(child_ctx, dirty);
+						transition_in(each_blocks_1[i], 1);
 					} else {
 						each_blocks_1[i] = create_each_block_3(child_ctx);
 						each_blocks_1[i].c();
+						transition_in(each_blocks_1[i], 1);
 						each_blocks_1[i].m(nav, t1);
 					}
 				}
 
-				for (; i < each_blocks_1.length; i += 1) {
-					each_blocks_1[i].d(1);
+				group_outros();
+
+				for (i = each_value_3.length; i < each_blocks_1.length; i += 1) {
+					out(i);
 				}
 
-				each_blocks_1.length = each_value_3.length;
+				check_outros();
 			}
 
 			if (dirty & /*cta*/ 4) {
@@ -3773,11 +4092,22 @@ function create_fragment$2(ctx) {
 		},
 		i(local) {
 			if (current) return;
+
+			for (let i = 0; i < each_value_3.length; i += 1) {
+				transition_in(each_blocks_1[i]);
+			}
+
 			transition_in(icon.$$.fragment, local);
 			transition_in(if_block1);
 			current = true;
 		},
 		o(local) {
+			each_blocks_1 = each_blocks_1.filter(Boolean);
+
+			for (let i = 0; i < each_blocks_1.length; i += 1) {
+				transition_out(each_blocks_1[i]);
+			}
+
 			transition_out(icon.$$.fragment, local);
 			transition_out(if_block1);
 			current = false;
@@ -4535,7 +4865,7 @@ function create_each_block_1$1(ctx) {
 	};
 }
 
-// (70:6) {#each social as { link, icon }}
+// (69:6) {#each social as { link, icon }}
 function create_each_block$3(ctx) {
 	let li;
 	let a;
@@ -4617,12 +4947,7 @@ function create_fragment$5(ctx) {
 	let footer;
 	let div0;
 	let nav;
-	let t0;
-	let span;
-	let a;
-	let t1;
-	let t2;
-	let t3;
+	let t;
 	let ul;
 	let current;
 	let each_value_1 = /*footer_nav*/ ctx[0];
@@ -4654,12 +4979,7 @@ function create_fragment$5(ctx) {
 				each_blocks_1[i].c();
 			}
 
-			t0 = space();
-			span = element("span");
-			a = element("a");
-			t1 = text("Primo");
-			t2 = text(" Powered");
-			t3 = space();
+			t = space();
 			ul = element("ul");
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -4683,16 +5003,7 @@ function create_fragment$5(ctx) {
 			}
 
 			nav_nodes.forEach(detach);
-			t0 = claim_space(div0_nodes);
-			span = claim_element(div0_nodes, "SPAN", { class: true });
-			var span_nodes = children(span);
-			a = claim_element(span_nodes, "A", { href: true, class: true });
-			var a_nodes = children(a);
-			t1 = claim_text(a_nodes, "Primo");
-			a_nodes.forEach(detach);
-			t2 = claim_text(span_nodes, " Powered");
-			span_nodes.forEach(detach);
-			t3 = claim_space(div0_nodes);
+			t = claim_space(div0_nodes);
 			ul = claim_element(div0_nodes, "UL", { class: true });
 			var ul_nodes = children(ul);
 
@@ -4708,9 +5019,6 @@ function create_fragment$5(ctx) {
 		},
 		h() {
 			attr(nav, "class", "svelte-5m5swo");
-			attr(a, "href", "https://primo.so");
-			attr(a, "class", "svelte-5m5swo");
-			attr(span, "class", "primo svelte-5m5swo");
 			attr(ul, "class", "svelte-5m5swo");
 			attr(div0, "class", "section-container svelte-5m5swo");
 			attr(footer, "class", "svelte-5m5swo");
@@ -4729,12 +5037,7 @@ function create_fragment$5(ctx) {
 				}
 			}
 
-			append_hydration(div0, t0);
-			append_hydration(div0, span);
-			append_hydration(span, a);
-			append_hydration(a, t1);
-			append_hydration(span, t2);
-			append_hydration(div0, t3);
+			append_hydration(div0, t);
 			append_hydration(div0, ul);
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -4881,10 +5184,10 @@ function create_fragment$6(ctx) {
 	component_0 = new Component({
 			props: {
 				favicon: {
-					"alt": "",
-					"src": "https://res.cloudinary.com/primoaf/image/upload/v1659676914/favicon_roaxv0.png",
-					"url": "https://res.cloudinary.com/primoaf/image/upload/v1659676914/favicon_roaxv0.png",
-					"size": null
+					"alt": "威达阀门",
+					"src": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1680761337246vdv_logo.PNG",
+					"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1680761337246vdv_logo.PNG",
+					"size": 3
 				}
 			}
 		});
@@ -4892,10 +5195,10 @@ function create_fragment$6(ctx) {
 	component_1 = new Component$2({
 			props: {
 				favicon: {
-					"alt": "",
-					"src": "https://res.cloudinary.com/primoaf/image/upload/v1659676914/favicon_roaxv0.png",
-					"url": "https://res.cloudinary.com/primoaf/image/upload/v1659676914/favicon_roaxv0.png",
-					"size": null
+					"alt": "威达阀门",
+					"src": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1680761337246vdv_logo.PNG",
+					"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1680761337246vdv_logo.PNG",
+					"size": 3
 				},
 				logo: {
 					"size": "8",
@@ -4906,11 +5209,37 @@ function create_fragment$6(ctx) {
 					"title": "威达阀门"
 				},
 				site_nav: [
-					{ "link": { "url": "/", "label": "关于我们" } },
-					{ "link": { "url": "/", "label": "产品中心" } },
-					{ "link": { "url": "/", "label": "Why" } },
 					{
-						"link": { "url": "/", "label": "Pricing" }
+						"link": {
+							"url": "",
+							"label": "关于我们",
+							"active": false
+						},
+						"links": []
+					},
+					{
+						"link": {
+							"url": "",
+							"label": "产品中心",
+							"active": false
+						},
+						"links": []
+					},
+					{
+						"link": {
+							"url": "",
+							"label": "bbb",
+							"active": false
+						},
+						"links": []
+					},
+					{
+						"link": {
+							"url": "",
+							"label": "aaaa",
+							"active": false
+						},
+						"links": []
 					}
 				],
 				cta: [{ "link": { "url": "/", "label": "咨询" } }]
@@ -4920,10 +5249,10 @@ function create_fragment$6(ctx) {
 	component_2 = new Component$3({
 			props: {
 				favicon: {
-					"alt": "",
-					"src": "https://res.cloudinary.com/primoaf/image/upload/v1659676914/favicon_roaxv0.png",
-					"url": "https://res.cloudinary.com/primoaf/image/upload/v1659676914/favicon_roaxv0.png",
-					"size": null
+					"alt": "威达阀门",
+					"src": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1680761337246vdv_logo.PNG",
+					"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1680761337246vdv_logo.PNG",
+					"size": 3
 				},
 				callouts: [
 					{
@@ -4961,10 +5290,10 @@ function create_fragment$6(ctx) {
 	component_3 = new Component$4({
 			props: {
 				favicon: {
-					"alt": "",
-					"src": "https://res.cloudinary.com/primoaf/image/upload/v1659676914/favicon_roaxv0.png",
-					"url": "https://res.cloudinary.com/primoaf/image/upload/v1659676914/favicon_roaxv0.png",
-					"size": null
+					"alt": "威达阀门",
+					"src": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1680761337246vdv_logo.PNG",
+					"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1680761337246vdv_logo.PNG",
+					"size": 3
 				},
 				heading: "We're moving fast, signup for updates and more.",
 				form: {
@@ -4990,10 +5319,10 @@ function create_fragment$6(ctx) {
 	component_4 = new Component$5({
 			props: {
 				favicon: {
-					"alt": "",
-					"src": "https://res.cloudinary.com/primoaf/image/upload/v1659676914/favicon_roaxv0.png",
-					"url": "https://res.cloudinary.com/primoaf/image/upload/v1659676914/favicon_roaxv0.png",
-					"size": null
+					"alt": "威达阀门",
+					"src": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1680761337246vdv_logo.PNG",
+					"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1680761337246vdv_logo.PNG",
+					"size": 3
 				},
 				footer_nav: [
 					{
@@ -5032,10 +5361,10 @@ function create_fragment$6(ctx) {
 	component_5 = new Component$6({
 			props: {
 				favicon: {
-					"alt": "",
-					"src": "https://res.cloudinary.com/primoaf/image/upload/v1659676914/favicon_roaxv0.png",
-					"url": "https://res.cloudinary.com/primoaf/image/upload/v1659676914/favicon_roaxv0.png",
-					"size": null
+					"alt": "威达阀门",
+					"src": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1680761337246vdv_logo.PNG",
+					"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1680761337246vdv_logo.PNG",
+					"size": 3
 				}
 			}
 		});
