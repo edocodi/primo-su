@@ -3005,7 +3005,7 @@ function get_each_context_3(ctx, list, i) {
 	return child_ctx;
 }
 
-// (172:4) {:else}
+// (173:4) {:else}
 function create_else_block_2(ctx) {
 	let span;
 	let t_value = /*logo*/ ctx[0].title + "";
@@ -3035,7 +3035,7 @@ function create_else_block_2(ctx) {
 	};
 }
 
-// (170:4) {#if logo.image.url}
+// (171:4) {#if logo.image.url}
 function create_if_block_4(ctx) {
 	let img;
 	let img_src_value;
@@ -3072,7 +3072,7 @@ function create_if_block_4(ctx) {
 	};
 }
 
-// (184:10) {:else}
+// (185:10) {:else}
 function create_else_block_1(ctx) {
 	let a;
 	let t_value = /*link*/ ctx[5].label + "";
@@ -3094,7 +3094,7 @@ function create_else_block_1(ctx) {
 		},
 		h() {
 			attr(a, "href", a_href_value = /*link*/ ctx[5].url);
-			attr(a, "class", "link svelte-xdnx5p");
+			attr(a, "class", "link svelte-1aiq08s");
 			toggle_class(a, "active", /*link*/ ctx[5].url === window.location.pathname);
 		},
 		m(target, anchor) {
@@ -3120,7 +3120,7 @@ function create_else_block_1(ctx) {
 	};
 }
 
-// (181:10) {#if hasDropdown}
+// (182:10) {#if hasDropdown}
 function create_if_block_3(ctx) {
 	let span0;
 	let t0_value = /*link*/ ctx[5].label + "";
@@ -3156,8 +3156,8 @@ function create_if_block_3(ctx) {
 			this.h();
 		},
 		h() {
-			attr(span0, "class", "svelte-xdnx5p");
-			attr(span1, "class", "icon svelte-xdnx5p");
+			attr(span0, "class", "svelte-1aiq08s");
+			attr(span1, "class", "icon svelte-1aiq08s");
 		},
 		m(target, anchor) {
 			insert_hydration(target, span0, anchor);
@@ -3188,7 +3188,7 @@ function create_if_block_3(ctx) {
 	};
 }
 
-// (191:8) {#if hasDropdown}
+// (192:8) {#if hasDropdown}
 function create_if_block_2(ctx) {
 	let div;
 	let each_value_3 = /*links*/ ctx[6];
@@ -3220,7 +3220,7 @@ function create_if_block_2(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div, "class", "dropdown svelte-xdnx5p");
+			attr(div, "class", "dropdown svelte-1aiq08s");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div, anchor);
@@ -3262,7 +3262,7 @@ function create_if_block_2(ctx) {
 	};
 }
 
-// (193:12) {#each links as { link }}
+// (194:12) {#each links as { link }}
 function create_each_block_3(ctx) {
 	let a;
 	let t_value = /*link*/ ctx[5].label + "";
@@ -3284,7 +3284,7 @@ function create_each_block_3(ctx) {
 		},
 		h() {
 			attr(a, "href", a_href_value = /*link*/ ctx[5].url);
-			attr(a, "class", "link svelte-xdnx5p");
+			attr(a, "class", "link svelte-1aiq08s");
 		},
 		m(target, anchor) {
 			insert_hydration(target, a, anchor);
@@ -3303,7 +3303,7 @@ function create_each_block_3(ctx) {
 	};
 }
 
-// (177:4) {#each nav as { link, links }}
+// (178:4) {#each nav as { link, links }}
 function create_each_block_2(ctx) {
 	let div1;
 	let div0;
@@ -3345,8 +3345,8 @@ function create_each_block_2(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "top-link svelte-xdnx5p");
-			attr(div1, "class", "nav-item svelte-xdnx5p");
+			attr(div0, "class", "top-link svelte-1aiq08s");
+			attr(div1, "class", "nav-item svelte-1aiq08s");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div1, anchor);
@@ -3413,7 +3413,7 @@ function create_each_block_2(ctx) {
 	};
 }
 
-// (204:2) {#if mobileNavOpen}
+// (205:2) {#if mobileNavOpen}
 function create_if_block$1(ctx) {
 	let nav_1;
 	let t;
@@ -3470,9 +3470,9 @@ function create_if_block$1(ctx) {
 		h() {
 			attr(button, "id", "close");
 			attr(button, "aria-label", "Close Navigation");
-			attr(button, "class", "svelte-xdnx5p");
+			attr(button, "class", "svelte-1aiq08s");
 			attr(nav_1, "id", "mobile-nav");
-			attr(nav_1, "class", "svelte-xdnx5p");
+			attr(nav_1, "class", "svelte-1aiq08s");
 		},
 		m(target, anchor) {
 			insert_hydration(target, nav_1, anchor);
@@ -3546,7 +3546,7 @@ function create_if_block$1(ctx) {
 	};
 }
 
-// (212:8) {:else}
+// (213:8) {:else}
 function create_else_block$1(ctx) {
 	let a;
 	let t_value = /*link*/ ctx[5].label + "";
@@ -3568,7 +3568,7 @@ function create_else_block$1(ctx) {
 		},
 		h() {
 			attr(a, "href", a_href_value = /*link*/ ctx[5].url);
-			attr(a, "class", "link svelte-xdnx5p");
+			attr(a, "class", "link svelte-1aiq08s");
 		},
 		m(target, anchor) {
 			insert_hydration(target, a, anchor);
@@ -3587,7 +3587,7 @@ function create_else_block$1(ctx) {
 	};
 }
 
-// (208:8) {#if hasDropdown}
+// (209:8) {#if hasDropdown}
 function create_if_block_1$1(ctx) {
 	let each_1_anchor;
 	let each_value_1 = /*links*/ ctx[6];
@@ -3652,7 +3652,7 @@ function create_if_block_1$1(ctx) {
 	};
 }
 
-// (209:10) {#each links as { link }}
+// (210:10) {#each links as { link }}
 function create_each_block_1(ctx) {
 	let a;
 	let t_value = /*link*/ ctx[5].label + "";
@@ -3674,7 +3674,7 @@ function create_each_block_1(ctx) {
 		},
 		h() {
 			attr(a, "href", a_href_value = /*link*/ ctx[5].url);
-			attr(a, "class", "link svelte-xdnx5p");
+			attr(a, "class", "link svelte-1aiq08s");
 		},
 		m(target, anchor) {
 			insert_hydration(target, a, anchor);
@@ -3693,7 +3693,7 @@ function create_each_block_1(ctx) {
 	};
 }
 
-// (206:6) {#each nav as { link, links }}
+// (207:6) {#each nav as { link, links }}
 function create_each_block(ctx) {
 	let if_block_anchor;
 
@@ -3830,13 +3830,13 @@ function create_fragment$2(ctx) {
 		},
 		h() {
 			attr(a, "href", "/");
-			attr(a, "class", "logo svelte-xdnx5p");
+			attr(a, "class", "logo svelte-1aiq08s");
 			set_style(a, "--size", style___size);
-			attr(div0, "class", "menu-icon svelte-xdnx5p");
+			attr(div0, "class", "menu-icon svelte-1aiq08s");
 			attr(button, "id", "open");
-			attr(button, "class", "svelte-xdnx5p");
-			attr(nav_1, "class", "svelte-xdnx5p");
-			attr(header, "class", "section-container svelte-xdnx5p");
+			attr(button, "class", "svelte-1aiq08s");
+			attr(nav_1, "class", "svelte-1aiq08s");
+			attr(header, "class", "section-container svelte-1aiq08s");
 			attr(div1, "class", "section");
 			attr(div1, "id", "section-7256b84f");
 		},
@@ -4755,7 +4755,7 @@ function create_fragment$5(ctx) {
 			attr(div0, "class", "items svelte-9mvvox");
 			attr(section, "class", "section-container svelte-9mvvox");
 			attr(div1, "class", "section");
-			attr(div1, "id", "section-30663959");
+			attr(div1, "id", "section-f08b3612");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div1, anchor);
@@ -6045,8 +6045,7 @@ function create_fragment$9(ctx) {
 					{
 						"link": {
 							"url": "/product/ball-valve",
-							"label": "",
-							"active": false
+							"label": "eu"
 						},
 						"image": {
 							"alt": "",
@@ -6055,10 +6054,10 @@ function create_fragment$9(ctx) {
 							"size": null
 						},
 						"title": "球阀",
-						"description": "2片式 3片式 5片式"
+						"description": "Abstract photography invites viewers to interpret and engage with the image in their own unique way."
 					},
 					{
-						"link": { "url": "", "label": "", "active": false },
+						"link": { "url": "/", "label": "consequat" },
 						"image": {
 							"alt": "",
 							"src": "https://images.unsplash.com/photo-1686062096176-bfd55776c915?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80",
@@ -6066,29 +6065,29 @@ function create_fragment$9(ctx) {
 							"size": null
 						},
 						"title": "蝶阀",
-						"description": ""
+						"description": " Landscape photography showcases the beauty and grandeur of natural environments, capturing expansive vistas and dramatic lighting."
 					},
 					{
-						"link": { "url": "", "label": "", "active": false },
+						"link": { "url": "/", "label": "reprehenderit" },
 						"image": {
 							"alt": "",
-							"src": "https://picsum.photos/600/400?blur=10",
-							"url": "https://picsum.photos/600/400?blur=10",
+							"src": "https://images.unsplash.com/photo-1686062096176-bfd55776c915?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80",
+							"url": "https://images.unsplash.com/photo-1686062096176-bfd55776c915?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80",
 							"size": null
 						},
 						"title": "执行器",
-						"description": "手动 电动 气动"
+						"description": "Duis qui aliqua"
 					},
 					{
-						"link": { "url": "", "label": "", "active": false },
+						"link": { "url": "/", "label": "sit" },
 						"image": {
 							"alt": "",
-							"src": "https://picsum.photos/600/400?blur=10",
-							"url": "https://picsum.photos/600/400?blur=10",
+							"src": "https://images.unsplash.com/photo-1686062096176-bfd55776c915?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80",
+							"url": "https://images.unsplash.com/photo-1686062096176-bfd55776c915?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80",
 							"size": null
 						},
 						"title": "密封件",
-						"description": "PTFE PEEK TFM1600"
+						"description": "Mollit non do"
 					}
 				]
 			}
@@ -6186,7 +6185,7 @@ function create_fragment$9(ctx) {
 				},
 				content: {
 					"html": "<h3 id=\"br\">青岛威达阀门工业有限公司 <br></h3>\n<h3 id=\"122br\">山东省 青岛市 西海岸新区 松花江路 122号 <br></h3>\n<p>电话：(0532) 8676-3651</p>\n<p>邮箱：info@vdvx.com</p>",
-					"markdown": "### 青岛威达阀门工业有限公司 <br>\n\n\n### 山东省 青岛市 西海岸新区 松花江路 122号 <br>\n\n\n电话：(0532) 8676-3651\n\n邮箱：info@vdvx.com\n\n"
+					"markdown": "### 青岛威达阀门工业有限公司 <br>\n\n\n\n### 山东省 青岛市 西海岸新区 松花江路 122号 <br>\n\n\n\n电话：(0532) 8676-3651\n\n邮箱：info@vdvx.com\n\n"
 				},
 				menus: [
 					{
