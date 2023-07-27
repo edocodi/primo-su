@@ -4575,26 +4575,33 @@ function get_each_context$2(ctx, list, i) {
 
 // (58:8) {#if item.image.url}
 function create_if_block$4(ctx) {
+	let a;
 	let img;
 	let img_src_value;
 	let img_alt_value;
 
 	return {
 		c() {
+			a = element("a");
 			img = element("img");
 			this.h();
 		},
 		l(nodes) {
-			img = claim_element(nodes, "IMG", { src: true, alt: true, class: true });
+			a = claim_element(nodes, "A", { href: true });
+			var a_nodes = children(a);
+			img = claim_element(a_nodes, "IMG", { src: true, alt: true, class: true });
+			a_nodes.forEach(detach);
 			this.h();
 		},
 		h() {
 			if (!src_url_equal(img.src, img_src_value = /*item*/ ctx[3].image.url)) attr(img, "src", img_src_value);
 			attr(img, "alt", img_alt_value = /*item*/ ctx[3].image.alt);
 			attr(img, "class", "svelte-9mvvox");
+			attr(a, "href", "link.url");
 		},
 		m(target, anchor) {
-			insert_hydration(target, img, anchor);
+			insert_hydration(target, a, anchor);
+			append_hydration(a, img);
 		},
 		p(ctx, dirty) {
 			if (dirty & /*items*/ 2 && !src_url_equal(img.src, img_src_value = /*item*/ ctx[3].image.url)) {
@@ -4606,7 +4613,7 @@ function create_if_block$4(ctx) {
 			}
 		},
 		d(detaching) {
-			if (detaching) detach(img);
+			if (detaching) detach(a);
 		}
 	};
 }
@@ -4616,6 +4623,7 @@ function create_each_block$2(ctx) {
 	let div2;
 	let t0;
 	let div1;
+	let a;
 	let h2;
 	let t1_value = /*item*/ ctx[3].title + "";
 	let t1;
@@ -4631,6 +4639,7 @@ function create_each_block$2(ctx) {
 			if (if_block) if_block.c();
 			t0 = space();
 			div1 = element("div");
+			a = element("a");
 			h2 = element("h2");
 			t1 = text(t1_value);
 			t2 = space();
@@ -4645,10 +4654,13 @@ function create_each_block$2(ctx) {
 			t0 = claim_space(div2_nodes);
 			div1 = claim_element(div2_nodes, "DIV", { class: true });
 			var div1_nodes = children(div1);
-			h2 = claim_element(div1_nodes, "H2", { class: true });
+			a = claim_element(div1_nodes, "A", { href: true });
+			var a_nodes = children(a);
+			h2 = claim_element(a_nodes, "H2", { class: true });
 			var h2_nodes = children(h2);
 			t1 = claim_text(h2_nodes, t1_value);
 			h2_nodes.forEach(detach);
+			a_nodes.forEach(detach);
 			t2 = claim_space(div1_nodes);
 			div0 = claim_element(div1_nodes, "DIV", { class: true });
 			var div0_nodes = children(div0);
@@ -4660,6 +4672,7 @@ function create_each_block$2(ctx) {
 		},
 		h() {
 			attr(h2, "class", "title heading svelte-9mvvox");
+			attr(a, "href", "link.url");
 			attr(div0, "class", "description");
 			attr(div1, "class", "body svelte-9mvvox");
 			attr(div2, "class", "item svelte-9mvvox");
@@ -4669,7 +4682,8 @@ function create_each_block$2(ctx) {
 			if (if_block) if_block.m(div2, null);
 			append_hydration(div2, t0);
 			append_hydration(div2, div1);
-			append_hydration(div1, h2);
+			append_hydration(div1, a);
+			append_hydration(a, h2);
 			append_hydration(h2, t1);
 			append_hydration(div1, t2);
 			append_hydration(div1, div0);
@@ -6045,7 +6059,7 @@ function create_fragment$9(ctx) {
 					{
 						"link": {
 							"url": "/product/ball-valve",
-							"label": "eu"
+							"label": "球阀"
 						},
 						"image": {
 							"alt": "",
