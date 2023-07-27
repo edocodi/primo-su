@@ -5946,7 +5946,7 @@ function create_fragment$9(ctx) {
 				},
 				heading: "威达阀门工业有限公司",
 				subheading: "专注阀门30年，品质至上，服务贴心。",
-				link: { "url": "/", "label": "Schedule a demo" },
+				link: { "url": "/contact", "label": "咨询" },
 				image: {
 					"alt": "",
 					"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/hdl.PNG1664734595494"
