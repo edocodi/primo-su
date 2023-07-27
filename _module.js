@@ -5916,7 +5916,8 @@ function create_fragment$9(ctx) {
 								}
 							},
 							{ "link": { "url": "/", "label": "蝶阀" } },
-							{ "link": { "url": "/", "label": "截止阀" } }
+							{ "link": { "url": "/", "label": "执行器" } },
+							{ "link": { "url": "/", "label": "密封件" } }
 						]
 					},
 					{
@@ -6042,7 +6043,11 @@ function create_fragment$9(ctx) {
 				heading: "产品中心",
 				items: [
 					{
-						"link": { "url": "/", "label": "" },
+						"link": {
+							"url": "/product/ball-valve",
+							"label": "",
+							"active": false
+						},
 						"image": {
 							"alt": "",
 							"src": "https://images.unsplash.com/photo-1686062095898-de61c74f2a2e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80",
@@ -6053,7 +6058,7 @@ function create_fragment$9(ctx) {
 						"description": "2片式 3片式 5片式"
 					},
 					{
-						"link": { "url": "/", "label": "" },
+						"link": { "url": "", "label": "", "active": false },
 						"image": {
 							"alt": "",
 							"src": "https://images.unsplash.com/photo-1686062096176-bfd55776c915?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80",
@@ -6064,7 +6069,7 @@ function create_fragment$9(ctx) {
 						"description": ""
 					},
 					{
-						"link": { "url": "/", "label": "" },
+						"link": { "url": "", "label": "", "active": false },
 						"image": {
 							"alt": "",
 							"src": "https://picsum.photos/600/400?blur=10",
@@ -6075,7 +6080,7 @@ function create_fragment$9(ctx) {
 						"description": "手动 电动 气动"
 					},
 					{
-						"link": { "url": "/", "label": "" },
+						"link": { "url": "", "label": "", "active": false },
 						"image": {
 							"alt": "",
 							"src": "https://picsum.photos/600/400?blur=10",
@@ -6180,21 +6185,20 @@ function create_fragment$9(ctx) {
 					"size": 3
 				},
 				content: {
-					"html": "<h3 id=\"br\">**青岛威达阀门工业有限公司 <br></h3>\n<p>**</p>\n<h3 id=\"122br\">山东省 青岛市 西海岸新区 松花江路 122号 <br></h3>\n<p>电话：(0532) 8676-3651</p>\n<p>邮箱：info@vdvx.com</p>",
-					"markdown": "### **青岛威达阀门工业有限公司 <br>\n\n**\n\n### 山东省 青岛市 西海岸新区 松花江路 122号 <br>\n\n\n\n电话：(0532) 8676-3651\n\n邮箱：info@vdvx.com\n\n"
+					"html": "<h3 id=\"br\">青岛威达阀门工业有限公司 <br></h3>\n<h3 id=\"122br\">山东省 青岛市 西海岸新区 松花江路 122号 <br></h3>\n<p>电话：(0532) 8676-3651</p>\n<p>邮箱：info@vdvx.com</p>",
+					"markdown": "### 青岛威达阀门工业有限公司 <br>\n\n\n### 山东省 青岛市 西海岸新区 松花江路 122号 <br>\n\n\n电话：(0532) 8676-3651\n\n邮箱：info@vdvx.com\n\n"
 				},
 				menus: [
 					{
-						"title": "威达阀门",
 						"links": [
 							{ "link": { "url": "/", "label": "首页" } },
 							{
 								"link": { "url": "/contact", "label": "联系我们" }
 							}
-						]
+						],
+						"title": "威达阀门"
 					},
 					{
-						"title": "产品中心",
 						"links": [
 							{
 								"link": {
@@ -6202,10 +6206,10 @@ function create_fragment$9(ctx) {
 									"label": "球阀"
 								}
 							}
-						]
+						],
+						"title": "产品中心"
 					},
 					{
-						"title": "咨询",
 						"links": [
 							{
 								"link": {
@@ -6213,7 +6217,8 @@ function create_fragment$9(ctx) {
 									"label": "info@vdvx.com"
 								}
 							}
-						]
+						],
+						"title": "咨询"
 					}
 				]
 			}

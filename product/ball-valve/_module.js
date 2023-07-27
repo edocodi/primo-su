@@ -5129,7 +5129,8 @@ function create_fragment$7(ctx) {
 								}
 							},
 							{ "link": { "url": "/", "label": "蝶阀" } },
-							{ "link": { "url": "/", "label": "截止阀" } }
+							{ "link": { "url": "/", "label": "执行器" } },
+							{ "link": { "url": "/", "label": "密封件" } }
 						]
 					},
 					{
@@ -5281,21 +5282,20 @@ function create_fragment$7(ctx) {
 					"size": 3
 				},
 				content: {
-					"html": "<h3 id=\"br\">**青岛威达阀门工业有限公司 <br></h3>\n<p>**</p>\n<h3 id=\"122br\">山东省 青岛市 西海岸新区 松花江路 122号 <br></h3>\n<p>电话：(0532) 8676-3651</p>\n<p>邮箱：info@vdvx.com</p>",
-					"markdown": "### **青岛威达阀门工业有限公司 <br>\n\n**\n\n### 山东省 青岛市 西海岸新区 松花江路 122号 <br>\n\n\n\n电话：(0532) 8676-3651\n\n邮箱：info@vdvx.com\n\n"
+					"html": "<h3 id=\"br\">青岛威达阀门工业有限公司 <br></h3>\n<h3 id=\"122br\">山东省 青岛市 西海岸新区 松花江路 122号 <br></h3>\n<p>电话：(0532) 8676-3651</p>\n<p>邮箱：info@vdvx.com</p>",
+					"markdown": "### 青岛威达阀门工业有限公司 <br>\n\n\n### 山东省 青岛市 西海岸新区 松花江路 122号 <br>\n\n\n电话：(0532) 8676-3651\n\n邮箱：info@vdvx.com\n\n"
 				},
 				menus: [
 					{
-						"title": "威达阀门",
 						"links": [
 							{ "link": { "url": "/", "label": "首页" } },
 							{
 								"link": { "url": "/contact", "label": "联系我们" }
 							}
-						]
+						],
+						"title": "威达阀门"
 					},
 					{
-						"title": "产品中心",
 						"links": [
 							{
 								"link": {
@@ -5303,10 +5303,10 @@ function create_fragment$7(ctx) {
 									"label": "球阀"
 								}
 							}
-						]
+						],
+						"title": "产品中心"
 					},
 					{
-						"title": "咨询",
 						"links": [
 							{
 								"link": {
@@ -5314,7 +5314,8 @@ function create_fragment$7(ctx) {
 									"label": "info@vdvx.com"
 								}
 							}
-						]
+						],
+						"title": "咨询"
 					}
 				]
 			}
