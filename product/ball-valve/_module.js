@@ -4797,7 +4797,7 @@ function create_each_block_1$1(ctx) {
 			this.h();
 		},
 		h() {
-			attr(a, "class", "link svelte-11gedy2");
+			attr(a, "class", "link svelte-1xojwgl");
 			attr(a, "href", a_href_value = /*link*/ ctx[7].url);
 		},
 		m(target, anchor) {
@@ -4871,8 +4871,8 @@ function create_each_block$3(ctx) {
 			this.h();
 		},
 		h() {
-			attr(h3, "class", "svelte-11gedy2");
-			attr(ul, "class", "svelte-11gedy2");
+			attr(h3, "class", "svelte-1xojwgl");
+			attr(ul, "class", "svelte-1xojwgl");
 		},
 		m(target, anchor) {
 			insert_hydration(target, nav, anchor);
@@ -4977,10 +4977,10 @@ function create_fragment$6(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "content svelte-11gedy2");
-			attr(div1, "class", "nav-items svelte-11gedy2");
-			attr(div2, "class", "section-container svelte-11gedy2");
-			attr(footer, "class", "svelte-11gedy2");
+			attr(div0, "class", "content svelte-1xojwgl");
+			attr(div1, "class", "nav-items svelte-1xojwgl");
+			attr(div2, "class", "section-container svelte-1xojwgl");
+			attr(footer, "class", "svelte-1xojwgl");
 			attr(div3, "class", "section");
 			attr(div3, "id", "section-3c2a3014");
 		},
@@ -5286,8 +5286,8 @@ function create_fragment$7(ctx) {
 					"size": 3
 				},
 				content: {
-					"html": "<h3>青岛威达阀门工业有限公司 <br></h3><h3>山东省 青岛市 西海岸新区 松花江路 122号 <br></h3><p>电话：(0532) 8676-3651</p><p>邮箱：info@vdvx.com</p>",
-					"markdown": "### 青岛威达阀门工业有限公司 <br>\n\n\n\n### 山东省 青岛市 西海岸新区 松花江路 122号 <br>\n\n\n\n电话：(0532) 8676-3651\n\n邮箱：info@vdvx.com\n\n"
+					"html": "<h3 id=\"br\">青岛威达阀门工业有限公司 <br></h3>\n<p>山东省 青岛市 西海岸新区</p>\n<p>松花江路 122号</p>\n<p>电话：(0532) 8676-3651</p>\n<p>邮箱：info@vdvx.com</p>",
+					"markdown": "### 青岛威达阀门工业有限公司 <br>\n\n山东省 青岛市 西海岸新区\n\n松花江路 122号\n\n电话：(0532) 8676-3651\n\n邮箱：info@vdvx.com\n\n"
 				},
 				menus: [
 					{
