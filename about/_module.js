@@ -3922,7 +3922,7 @@ function create_each_block(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "top-link svelte-1q9ur");
+			attr(div0, "class", "link svelte-1q9ur");
 			attr(div1, "class", "nav-item svelte-1q9ur");
 		},
 		m(target, anchor) {
