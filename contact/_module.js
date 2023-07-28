@@ -4814,12 +4814,14 @@ function create_fragment$6(ctx) {
 					"size": 3
 				},
 				logo: {
-					"size": "20",
+					"title": "威达阀门",
 					"image": {
 						"alt": "",
-						"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/logo%20name%20small.png1690533682730"
+						"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690536473454logo%20R%20name%20small.png",
+						"src": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690536473454logo%20R%20name%20small.png",
+						"size": 123
 					},
-					"title": "威达阀门"
+					"size": "20"
 				},
 				nav: [
 					{
