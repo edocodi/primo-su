@@ -5335,9 +5335,9 @@ function create_fragment$7(ctx) {
 			props: {
 				favicon: {
 					"alt": "威达阀门",
-					"src": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1680761337246vdv_logo.PNG",
-					"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1680761337246vdv_logo.PNG",
-					"size": 3
+					"src": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690578965858logo%20r%20small.png",
+					"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690578965858logo%20r%20small.png",
+					"size": 9
 				}
 			}
 		});
@@ -5346,9 +5346,9 @@ function create_fragment$7(ctx) {
 			props: {
 				favicon: {
 					"alt": "威达阀门",
-					"src": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1680761337246vdv_logo.PNG",
-					"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1680761337246vdv_logo.PNG",
-					"size": 3
+					"src": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690578965858logo%20r%20small.png",
+					"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690578965858logo%20r%20small.png",
+					"size": 9
 				},
 				logo: {
 					"size": "8",
@@ -5400,9 +5400,9 @@ function create_fragment$7(ctx) {
 			props: {
 				favicon: {
 					"alt": "威达阀门",
-					"src": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1680761337246vdv_logo.PNG",
-					"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1680761337246vdv_logo.PNG",
-					"size": 3
+					"src": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690578965858logo%20r%20small.png",
+					"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690578965858logo%20r%20small.png",
+					"size": 9
 				},
 				heading: "\nWhy Cali\n",
 				subheading: "We're pioneering in the calendar scheduling world. We're way ahead of the game and we want to help make you more productive.",
@@ -5421,9 +5421,9 @@ function create_fragment$7(ctx) {
 			props: {
 				favicon: {
 					"alt": "威达阀门",
-					"src": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1680761337246vdv_logo.PNG",
-					"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1680761337246vdv_logo.PNG",
-					"size": 3
+					"src": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690578965858logo%20r%20small.png",
+					"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690578965858logo%20r%20small.png",
+					"size": 9
 				},
 				content: {
 					"html": "<h1>Our track record</h1><p>For decades we've been scheduling meetings the old fashioned way. with email. It's an endless back and forth that can happen over the span of days just to schedule a simple 20-minute call with someone. Now, you can automate these processes in one simple app. We're the first to offer an open source version of a modern calendar software.</p><p>Our calendar software company is better than others because we offer a user-friendly and intuitive interface that makes it easy for people to manage their schedules. Our software is designed to be clear and simple to use, so that anyone can quickly add and view events, <em>set reminders</em>, and invite others for events.</p><p>We also offer a variety of views, including daily, weekly, and monthly, so that users can view their schedules in the way that <em>makes the most sense to them.</em></p><h2>Cali vs. other scheduling software</h2><p>What really sets our calendar software apart is its powerful search functionality. With just a few keystrokes, users can quickly find and manage their events, making it easy to stay organized and on top of their schedules. This is a level of convenience and efficiency that simply can't be found in other scheduling tools.</p><h1>heading 1</h1><p>Overall, our calendar software is the <em>perfect tool</em> for managing your time and staying organized. With its user-friendly interface and powerful search functionality, it's the ideal solution for anyone looking to take control of their schedule and make the most of their time.</p><h2>heading 2</h2><p>Additionally, our software integrates seamlessly with <mark>popular email services,</mark> so that users can easily invite others and receive updates about events.</p><h3>heading 3</h3><p>Try it out today and see the difference for yourself. Overall, our calendar software is a comprehensive and effective tool for managing your time.</p><blockquote><p>Some interesting quote info</p></blockquote>",
@@ -5436,9 +5436,9 @@ function create_fragment$7(ctx) {
 			props: {
 				favicon: {
 					"alt": "威达阀门",
-					"src": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1680761337246vdv_logo.PNG",
-					"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1680761337246vdv_logo.PNG",
-					"size": 3
+					"src": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690578965858logo%20r%20small.png",
+					"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690578965858logo%20r%20small.png",
+					"size": 9
 				},
 				heading: "We're moving fast, signup for updates and more.",
 				form: {
@@ -5465,9 +5465,9 @@ function create_fragment$7(ctx) {
 			props: {
 				favicon: {
 					"alt": "威达阀门",
-					"src": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1680761337246vdv_logo.PNG",
-					"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1680761337246vdv_logo.PNG",
-					"size": 3
+					"src": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690578965858logo%20r%20small.png",
+					"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690578965858logo%20r%20small.png",
+					"size": 9
 				},
 				footer_nav: [
 					{
@@ -5507,9 +5507,9 @@ function create_fragment$7(ctx) {
 			props: {
 				favicon: {
 					"alt": "威达阀门",
-					"src": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1680761337246vdv_logo.PNG",
-					"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1680761337246vdv_logo.PNG",
-					"size": 3
+					"src": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690578965858logo%20r%20small.png",
+					"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690578965858logo%20r%20small.png",
+					"size": 9
 				}
 			}
 		});
