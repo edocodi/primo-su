@@ -5111,12 +5111,10 @@ function create_fragment$7(ctx) {
 					"size": 3
 				},
 				logo: {
-					"size": "8",
+					"size": "20",
 					"image": {
 						"alt": "",
-						"src": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1680761337246vdv_logo.PNG",
-						"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1680761337246vdv_logo.PNG",
-						"size": 3
+						"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/logo%20name%20small.png1690533682730"
 					},
 					"title": "威达阀门"
 				},
@@ -5288,7 +5286,7 @@ function create_fragment$7(ctx) {
 					"size": 3
 				},
 				content: {
-					"html": "<h3 id=\"br\">青岛威达阀门工业有限公司 <br></h3>\n<h3 id=\"122br\">山东省 青岛市 西海岸新区 松花江路 122号 <br></h3>\n<p>电话：(0532) 8676-3651</p>\n<p>邮箱：info@vdvx.com</p>",
+					"html": "<h3>青岛威达阀门工业有限公司 <br></h3><h3>山东省 青岛市 西海岸新区 松花江路 122号 <br></h3><p>电话：(0532) 8676-3651</p><p>邮箱：info@vdvx.com</p>",
 					"markdown": "### 青岛威达阀门工业有限公司 <br>\n\n\n\n### 山东省 青岛市 西海岸新区 松花江路 122号 <br>\n\n\n\n电话：(0532) 8676-3651\n\n邮箱：info@vdvx.com\n\n"
 				},
 				menus: [

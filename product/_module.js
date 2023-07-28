@@ -4808,12 +4808,10 @@ function create_fragment$6(ctx) {
 					"size": 3
 				},
 				logo: {
-					"size": "8",
+					"size": "20",
 					"image": {
 						"alt": "",
-						"src": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1680761337246vdv_logo.PNG",
-						"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1680761337246vdv_logo.PNG",
-						"size": 3
+						"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/logo%20name%20small.png1690533682730"
 					},
 					"title": "威达阀门"
 				},
