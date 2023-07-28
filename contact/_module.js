@@ -3505,7 +3505,7 @@ function create_if_block$1(ctx) {
 			}
 		},
 		p(ctx, dirty) {
-			if (dirty & /*nav, window*/ 2) {
+			if (dirty & /*nav*/ 2) {
 				each_value = /*nav*/ ctx[1];
 				let i;
 
@@ -3595,7 +3595,6 @@ function create_else_block$1(ctx) {
 		h() {
 			attr(a, "href", a_href_value = /*link*/ ctx[5].url);
 			attr(a, "class", "link svelte-1q9ur");
-			toggle_class(a, "active", /*link*/ ctx[5].url === window.location.pathname);
 		},
 		m(target, anchor) {
 			insert_hydration(target, a, anchor);
@@ -3606,10 +3605,6 @@ function create_else_block$1(ctx) {
 
 			if (dirty & /*nav*/ 2 && a_href_value !== (a_href_value = /*link*/ ctx[5].url)) {
 				attr(a, "href", a_href_value);
-			}
-
-			if (dirty & /*nav, window*/ 2) {
-				toggle_class(a, "active", /*link*/ ctx[5].url === window.location.pathname);
 			}
 		},
 		i: noop,
@@ -3688,7 +3683,7 @@ function create_if_block_2(ctx) {
 	};
 }
 
-// (223:10) {#if hasDropdown}
+// (222:10) {#if hasDropdown}
 function create_if_block_1$1(ctx) {
 	let div;
 	let each_value_1 = /*links*/ ctx[6];
@@ -3762,7 +3757,7 @@ function create_if_block_1$1(ctx) {
 	};
 }
 
-// (225:14) {#each links as { link }}
+// (224:14) {#each links as { link }}
 function create_each_block_1(ctx) {
 	let a;
 	let t_value = /*link*/ ctx[5].label + "";
