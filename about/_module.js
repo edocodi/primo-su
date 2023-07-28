@@ -3125,7 +3125,7 @@ function create_else_block_2(ctx) {
 }
 
 // (188:4) {#if logo.image.url}
-function create_if_block_4(ctx) {
+function create_if_block_5(ctx) {
 	let img;
 	let img_src_value;
 	let img_alt_value;
@@ -3210,7 +3210,7 @@ function create_else_block_1(ctx) {
 }
 
 // (199:10) {#if hasDropdown}
-function create_if_block_3(ctx) {
+function create_if_block_4(ctx) {
 	let span0;
 	let t0_value = /*link*/ ctx[21].label + "";
 	let t0;
@@ -3278,7 +3278,7 @@ function create_if_block_3(ctx) {
 }
 
 // (209:8) {#if hasDropdown}
-function create_if_block_2(ctx) {
+function create_if_block_3(ctx) {
 	let div;
 	let each_value_3 = /*links*/ ctx[22];
 	let each_blocks = [];
@@ -3400,7 +3400,7 @@ function create_each_block_2(ctx) {
 	let if_block0;
 	let t_1;
 	let current;
-	const if_block_creators = [create_if_block_3, create_else_block_1];
+	const if_block_creators = [create_if_block_4, create_else_block_1];
 	const if_blocks = [];
 
 	function select_block_type_1(ctx, dirty) {
@@ -3410,7 +3410,7 @@ function create_each_block_2(ctx) {
 
 	current_block_type_index = select_block_type_1(ctx);
 	if_block0 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
-	let if_block1 = /*hasDropdown*/ ctx[23] && create_if_block_2(ctx);
+	let if_block1 = /*hasDropdown*/ ctx[23] && create_if_block_3(ctx);
 
 	return {
 		c() {
@@ -3476,7 +3476,7 @@ function create_each_block_2(ctx) {
 				if (if_block1) {
 					if_block1.p(ctx, dirty);
 				} else {
-					if_block1 = create_if_block_2(ctx);
+					if_block1 = create_if_block_3(ctx);
 					if_block1.c();
 					if_block1.m(div1, null);
 				}
@@ -3518,6 +3518,10 @@ function create_if_block$1(ctx) {
 	for (let i = 0; i < each_value.length; i += 1) {
 		each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
 	}
+
+	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+		each_blocks[i] = null;
+	});
 
 	icon = new Component$1({ props: { icon: "bi:x-lg" } });
 
@@ -3592,22 +3596,31 @@ function create_if_block$1(ctx) {
 
 					if (each_blocks[i]) {
 						each_blocks[i].p(child_ctx, dirty);
+						transition_in(each_blocks[i], 1);
 					} else {
 						each_blocks[i] = create_each_block(child_ctx);
 						each_blocks[i].c();
+						transition_in(each_blocks[i], 1);
 						each_blocks[i].m(nav_1, t_1);
 					}
 				}
 
-				for (; i < each_blocks.length; i += 1) {
-					each_blocks[i].d(1);
+				group_outros();
+
+				for (i = each_value.length; i < each_blocks.length; i += 1) {
+					out(i);
 				}
 
-				each_blocks.length = each_value.length;
+				check_outros();
 			}
 		},
 		i(local) {
 			if (current) return;
+
+			for (let i = 0; i < each_value.length; i += 1) {
+				transition_in(each_blocks[i]);
+			}
+
 			transition_in(icon.$$.fragment, local);
 
 			add_render_callback(() => {
@@ -3619,6 +3632,12 @@ function create_if_block$1(ctx) {
 			current = true;
 		},
 		o(local) {
+			each_blocks = each_blocks.filter(Boolean);
+
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				transition_out(each_blocks[i]);
+			}
+
 			transition_out(icon.$$.fragment, local);
 			if (!nav_1_transition) nav_1_transition = create_bidirectional_transition(nav_1, fade, { duration: 200 }, false);
 			nav_1_transition.run(0);
@@ -3635,7 +3654,7 @@ function create_if_block$1(ctx) {
 	};
 }
 
-// (230:8) {:else}
+// (232:12) {:else}
 function create_else_block$1(ctx) {
 	let a;
 	let t_1_value = /*link*/ ctx[21].label + "";
@@ -3658,6 +3677,7 @@ function create_else_block$1(ctx) {
 		h() {
 			attr(a, "href", a_href_value = /*link*/ ctx[21].url);
 			attr(a, "class", "link svelte-1q9ur");
+			toggle_class(a, "active", /*link*/ ctx[21].url === window.location.pathname);
 		},
 		m(target, anchor) {
 			insert_hydration(target, a, anchor);
@@ -3669,16 +3689,90 @@ function create_else_block$1(ctx) {
 			if (dirty[0] & /*nav*/ 2 && a_href_value !== (a_href_value = /*link*/ ctx[21].url)) {
 				attr(a, "href", a_href_value);
 			}
+
+			if (dirty[0] & /*nav*/ 2) {
+				toggle_class(a, "active", /*link*/ ctx[21].url === window.location.pathname);
+			}
 		},
+		i: noop,
+		o: noop,
 		d(detaching) {
 			if (detaching) detach(a);
 		}
 	};
 }
 
-// (226:8) {#if hasDropdown}
+// (229:12) {#if hasDropdown}
+function create_if_block_2(ctx) {
+	let span0;
+	let t0_value = /*link*/ ctx[21].label + "";
+	let t0;
+	let t1;
+	let span1;
+	let icon;
+	let current;
+
+	icon = new Component$1({
+			props: { icon: "akar-icons:chevron-down" }
+		});
+
+	return {
+		c() {
+			span0 = element("span");
+			t0 = text(t0_value);
+			t1 = space();
+			span1 = element("span");
+			create_component(icon.$$.fragment);
+			this.h();
+		},
+		l(nodes) {
+			span0 = claim_element(nodes, "SPAN", { class: true });
+			var span0_nodes = children(span0);
+			t0 = claim_text(span0_nodes, t0_value);
+			span0_nodes.forEach(detach);
+			t1 = claim_space(nodes);
+			span1 = claim_element(nodes, "SPAN", { class: true });
+			var span1_nodes = children(span1);
+			claim_component(icon.$$.fragment, span1_nodes);
+			span1_nodes.forEach(detach);
+			this.h();
+		},
+		h() {
+			attr(span0, "class", "svelte-1q9ur");
+			attr(span1, "class", "icon svelte-1q9ur");
+		},
+		m(target, anchor) {
+			insert_hydration(target, span0, anchor);
+			append_hydration(span0, t0);
+			insert_hydration(target, t1, anchor);
+			insert_hydration(target, span1, anchor);
+			mount_component(icon, span1, null);
+			current = true;
+		},
+		p(ctx, dirty) {
+			if ((!current || dirty[0] & /*nav*/ 2) && t0_value !== (t0_value = /*link*/ ctx[21].label + "")) set_data(t0, t0_value);
+		},
+		i(local) {
+			if (current) return;
+			transition_in(icon.$$.fragment, local);
+			current = true;
+		},
+		o(local) {
+			transition_out(icon.$$.fragment, local);
+			current = false;
+		},
+		d(detaching) {
+			if (detaching) detach(span0);
+			if (detaching) detach(t1);
+			if (detaching) detach(span1);
+			destroy_component(icon);
+		}
+	};
+}
+
+// (239:10) {#if hasDropdown}
 function create_if_block_1$1(ctx) {
-	let each_1_anchor;
+	let div;
 	let each_value_1 = /*links*/ ctx[22];
 	let each_blocks = [];
 
@@ -3688,27 +3782,36 @@ function create_if_block_1$1(ctx) {
 
 	return {
 		c() {
+			div = element("div");
+
 			for (let i = 0; i < each_blocks.length; i += 1) {
 				each_blocks[i].c();
 			}
 
-			each_1_anchor = empty();
+			this.h();
 		},
 		l(nodes) {
+			div = claim_element(nodes, "DIV", { class: true });
+			var div_nodes = children(div);
+
 			for (let i = 0; i < each_blocks.length; i += 1) {
-				each_blocks[i].l(nodes);
+				each_blocks[i].l(div_nodes);
 			}
 
-			each_1_anchor = empty();
+			div_nodes.forEach(detach);
+			this.h();
+		},
+		h() {
+			attr(div, "class", "dropdown svelte-1q9ur");
 		},
 		m(target, anchor) {
+			insert_hydration(target, div, anchor);
+
 			for (let i = 0; i < each_blocks.length; i += 1) {
 				if (each_blocks[i]) {
-					each_blocks[i].m(target, anchor);
+					each_blocks[i].m(div, null);
 				}
 			}
-
-			insert_hydration(target, each_1_anchor, anchor);
 		},
 		p(ctx, dirty) {
 			if (dirty[0] & /*nav*/ 2) {
@@ -3723,7 +3826,7 @@ function create_if_block_1$1(ctx) {
 					} else {
 						each_blocks[i] = create_each_block_1(child_ctx);
 						each_blocks[i].c();
-						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+						each_blocks[i].m(div, null);
 					}
 				}
 
@@ -3735,13 +3838,13 @@ function create_if_block_1$1(ctx) {
 			}
 		},
 		d(detaching) {
+			if (detaching) detach(div);
 			destroy_each(each_blocks, detaching);
-			if (detaching) detach(each_1_anchor);
 		}
 	};
 }
 
-// (227:10) {#each links as { link }}
+// (241:14) {#each links as { link }}
 function create_each_block_1(ctx) {
 	let a;
 	let t_1_value = /*link*/ ctx[21].label + "";
@@ -3782,47 +3885,112 @@ function create_each_block_1(ctx) {
 	};
 }
 
-// (224:6) {#each nav as { link, links }}
+// (225:6) {#each nav as { link, links }}
 function create_each_block(ctx) {
-	let if_block_anchor;
+	let div1;
+	let div0;
+	let current_block_type_index;
+	let if_block0;
+	let t_1;
+	let current;
+	const if_block_creators = [create_if_block_2, create_else_block$1];
+	const if_blocks = [];
 
 	function select_block_type_2(ctx, dirty) {
-		if (/*hasDropdown*/ ctx[23]) return create_if_block_1$1;
-		return create_else_block$1;
+		if (/*hasDropdown*/ ctx[23]) return 0;
+		return 1;
 	}
 
-	let current_block_type = select_block_type_2(ctx);
-	let if_block = current_block_type(ctx);
+	current_block_type_index = select_block_type_2(ctx);
+	if_block0 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+	let if_block1 = /*hasDropdown*/ ctx[23] && create_if_block_1$1(ctx);
 
 	return {
 		c() {
-			if_block.c();
-			if_block_anchor = empty();
+			div1 = element("div");
+			div0 = element("div");
+			if_block0.c();
+			t_1 = space();
+			if (if_block1) if_block1.c();
+			this.h();
 		},
 		l(nodes) {
-			if_block.l(nodes);
-			if_block_anchor = empty();
+			div1 = claim_element(nodes, "DIV", { class: true });
+			var div1_nodes = children(div1);
+			div0 = claim_element(div1_nodes, "DIV", { class: true });
+			var div0_nodes = children(div0);
+			if_block0.l(div0_nodes);
+			div0_nodes.forEach(detach);
+			t_1 = claim_space(div1_nodes);
+			if (if_block1) if_block1.l(div1_nodes);
+			div1_nodes.forEach(detach);
+			this.h();
+		},
+		h() {
+			attr(div0, "class", "top-link svelte-1q9ur");
+			attr(div1, "class", "nav-item svelte-1q9ur");
 		},
 		m(target, anchor) {
-			if_block.m(target, anchor);
-			insert_hydration(target, if_block_anchor, anchor);
+			insert_hydration(target, div1, anchor);
+			append_hydration(div1, div0);
+			if_blocks[current_block_type_index].m(div0, null);
+			append_hydration(div1, t_1);
+			if (if_block1) if_block1.m(div1, null);
+			current = true;
 		},
 		p(ctx, dirty) {
-			if (current_block_type === (current_block_type = select_block_type_2(ctx)) && if_block) {
-				if_block.p(ctx, dirty);
-			} else {
-				if_block.d(1);
-				if_block = current_block_type(ctx);
+			let previous_block_index = current_block_type_index;
+			current_block_type_index = select_block_type_2(ctx);
 
-				if (if_block) {
-					if_block.c();
-					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+			if (current_block_type_index === previous_block_index) {
+				if_blocks[current_block_type_index].p(ctx, dirty);
+			} else {
+				group_outros();
+
+				transition_out(if_blocks[previous_block_index], 1, 1, () => {
+					if_blocks[previous_block_index] = null;
+				});
+
+				check_outros();
+				if_block0 = if_blocks[current_block_type_index];
+
+				if (!if_block0) {
+					if_block0 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+					if_block0.c();
+				} else {
+					if_block0.p(ctx, dirty);
 				}
+
+				transition_in(if_block0, 1);
+				if_block0.m(div0, null);
+			}
+
+			if (/*hasDropdown*/ ctx[23]) {
+				if (if_block1) {
+					if_block1.p(ctx, dirty);
+				} else {
+					if_block1 = create_if_block_1$1(ctx);
+					if_block1.c();
+					if_block1.m(div1, null);
+				}
+			} else if (if_block1) {
+				if_block1.d(1);
+				if_block1 = null;
 			}
 		},
+		i(local) {
+			if (current) return;
+			transition_in(if_block0);
+			current = true;
+		},
+		o(local) {
+			transition_out(if_block0);
+			current = false;
+		},
 		d(detaching) {
-			if_block.d(detaching);
-			if (detaching) detach(if_block_anchor);
+			if (detaching) detach(div1);
+			if_blocks[current_block_type_index].d();
+			if (if_block1) if_block1.d();
 		}
 	};
 }
@@ -3844,7 +4012,7 @@ function create_fragment$2(ctx) {
 	let dispose;
 
 	function select_block_type(ctx, dirty) {
-		if (/*logo*/ ctx[0].image.url) return create_if_block_4;
+		if (/*logo*/ ctx[0].image.url) return create_if_block_5;
 		return create_else_block_2;
 	}
 
