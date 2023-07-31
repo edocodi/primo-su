@@ -4579,7 +4579,7 @@ function get_each_context$2(ctx, list, i) {
 	return child_ctx;
 }
 
-// (66:8) {#if item.image.url}
+// (69:8) {#if item.image.url}
 function create_if_block$4(ctx) {
 	let a;
 	let img;
@@ -4603,7 +4603,7 @@ function create_if_block$4(ctx) {
 		h() {
 			if (!src_url_equal(img.src, img_src_value = /*item*/ ctx[3].image.url)) attr(img, "src", img_src_value);
 			attr(img, "alt", img_alt_value = /*item*/ ctx[3].image.alt);
-			attr(img, "class", "svelte-wm3qz1");
+			attr(img, "class", "svelte-1ugjodd");
 			attr(a, "href", a_href_value = /*item*/ ctx[3].link.url);
 		},
 		m(target, anchor) {
@@ -4629,7 +4629,7 @@ function create_if_block$4(ctx) {
 	};
 }
 
-// (64:4) {#each items as item}
+// (67:4) {#each items as item}
 function create_each_block$2(ctx) {
 	let div2;
 	let t0;
@@ -4683,11 +4683,11 @@ function create_each_block$2(ctx) {
 			this.h();
 		},
 		h() {
-			attr(h2, "class", "title heading svelte-wm3qz1");
+			attr(h2, "class", "title heading svelte-1ugjodd");
 			attr(a, "href", a_href_value = /*item*/ ctx[3].link.url);
 			attr(div0, "class", "description");
-			attr(div1, "class", "body svelte-wm3qz1");
-			attr(div2, "class", "item svelte-wm3qz1");
+			attr(div1, "class", "body svelte-1ugjodd");
+			attr(div2, "class", "item svelte-1ugjodd");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div2, anchor);
@@ -4782,9 +4782,9 @@ function create_fragment$5(ctx) {
 			this.h();
 		},
 		h() {
-			attr(h2, "class", "heading svelte-wm3qz1");
-			attr(div0, "class", "items svelte-wm3qz1");
-			attr(section, "class", "section-container svelte-wm3qz1");
+			attr(h2, "class", "heading svelte-1ugjodd");
+			attr(div0, "class", "items svelte-1ugjodd");
+			attr(section, "class", "section-container svelte-1ugjodd");
 			attr(div1, "class", "section");
 			attr(div1, "id", "section-f08b3612");
 		},
@@ -6080,9 +6080,7 @@ function create_fragment$9(ctx) {
 						},
 						"image": {
 							"alt": "",
-							"src": "https://images.unsplash.com/photo-1686062095898-de61c74f2a2e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80",
-							"url": "https://images.unsplash.com/photo-1686062095898-de61c74f2a2e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80",
-							"size": null
+							"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/V-32F.png1690842901237"
 						},
 						"title": "球阀",
 						"description": "1、2、3、5片式"

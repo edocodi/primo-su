@@ -5196,7 +5196,7 @@ function create_fragment$7(ctx) {
 					},
 					{
 						"icon": "material-symbols:check-circle-rounded",
-						"title": "材质",
+						"title": "阀体材质",
 						"description": {
 							"html": "<p>碳钢、不锈钢、镍基合金等</p>",
 							"markdown": "碳钢、不锈钢、镍基合金等"
@@ -5212,7 +5212,7 @@ function create_fragment$7(ctx) {
 					},
 					{
 						"icon": "material-symbols:check-circle-rounded",
-						"title": "接口类别",
+						"title": "连接方式",
 						"description": {
 							"html": "<p>对焊、卡箍、法兰、螺纹等</p>",
 							"markdown": "对焊、卡箍、法兰、螺纹等"
@@ -5220,7 +5220,7 @@ function create_fragment$7(ctx) {
 					},
 					{
 						"icon": "material-symbols:check-circle-rounded",
-						"title": "执行器",
+						"title": "驱动方式",
 						"description": {
 							"html": "<p>手动、电动、气动、带限制阀等</p>",
 							"markdown": "手动、电动、气动、带限制阀等"
@@ -5250,29 +5250,25 @@ function create_fragment$7(ctx) {
 					{
 						"image": {
 							"alt": "",
-							"src": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-							"url": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-							"size": null
+							"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/V-30F.png1690842810733"
 						},
 						"content": {
-							"html": "<p>Details about that interesting info, that will hopefully interest your target audience.</p>",
-							"markdown": "Details about that interesting info, that will hopefully interest your target audience."
+							"html": "<p>公称通径：</p>\n<p>公称压力：</p>\n<p>适用温度：</p>",
+							"markdown": "公称通径：\n\n\n公称压力：\n\n\n适用温度：\n"
 						},
-						"heading": "Some interesting info",
+						"heading": "参数范围",
 						"superhead": "Interesting Feature"
 					},
 					{
 						"image": {
 							"alt": "",
-							"src": "https://images.unsplash.com/photo-1508739826987-b79cd8b7da12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=900&q=60",
-							"url": "https://images.unsplash.com/photo-1508739826987-b79cd8b7da12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=900&q=60",
-							"size": null
+							"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/V-70W.jpg1690843203059"
 						},
 						"content": {
-							"html": "<p>Anything that will explain the title will do. You just got to get ChatGPT to help you write it.</p>",
-							"markdown": "Anything that will explain the title will do. You just got to get ChatGPT to help you write it."
+							"html": "<p>全包球垫</p><p>加长中轴</p><p>特殊材质密封</p><p>品牌定制</p>",
+							"markdown": "全包球垫\n\n加长中轴\n\n特殊材质密封\n\n品牌定制\n\n"
 						},
-						"heading": "Real-time collaboration",
+						"heading": "特种需求",
 						"superhead": "Another one"
 					}
 				]
