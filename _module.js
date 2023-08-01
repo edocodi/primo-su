@@ -5947,8 +5947,8 @@ function create_fragment$9(ctx) {
 								}
 							},
 							{ "link": { "url": "/", "label": "蝶阀" } },
-							{ "link": { "url": "/", "label": "执行器" } },
-							{ "link": { "url": "/", "label": "密封件" } }
+							{ "link": { "url": "/", "label": "止回阀" } },
+							{ "link": { "url": "/", "label": "执行器" } }
 						]
 					},
 					{
@@ -6104,7 +6104,7 @@ function create_fragment$9(ctx) {
 							"url": "https://images.unsplash.com/photo-1686062096176-bfd55776c915?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80",
 							"size": null
 						},
-						"title": "执行器",
+						"title": "止回阀",
 						"description": "Duis qui aliqua"
 					},
 					{
@@ -6115,7 +6115,7 @@ function create_fragment$9(ctx) {
 							"url": "https://images.unsplash.com/photo-1686062096176-bfd55776c915?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80",
 							"size": null
 						},
-						"title": "密封件",
+						"title": "执行器",
 						"description": "Mollit non do"
 					}
 				]
@@ -6220,6 +6220,9 @@ function create_fragment$9(ctx) {
 					{
 						"links": [
 							{ "link": { "url": "/", "label": "首页" } },
+							{
+								"link": { "url": "/about", "label": "关于我们" }
+							},
 							{
 								"link": { "url": "/contact", "label": "联系我们" }
 							}

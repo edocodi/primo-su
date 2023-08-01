@@ -4838,8 +4838,8 @@ function create_fragment$6(ctx) {
 								}
 							},
 							{ "link": { "url": "/", "label": "蝶阀" } },
-							{ "link": { "url": "/", "label": "执行器" } },
-							{ "link": { "url": "/", "label": "密封件" } }
+							{ "link": { "url": "/", "label": "止回阀" } },
+							{ "link": { "url": "/", "label": "执行器" } }
 						]
 					},
 					{
@@ -4921,6 +4921,9 @@ function create_fragment$6(ctx) {
 					{
 						"links": [
 							{ "link": { "url": "/", "label": "首页" } },
+							{
+								"link": { "url": "/about", "label": "关于我们" }
+							},
 							{
 								"link": { "url": "/contact", "label": "联系我们" }
 							}
