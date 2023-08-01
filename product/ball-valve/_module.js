@@ -5253,8 +5253,8 @@ function create_fragment$7(ctx) {
 							"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/V-30F.png1690842810733"
 						},
 						"content": {
-							"html": "<p>公称通径：</p>\n<p>公称压力：</p>\n<p>适用温度：</p>",
-							"markdown": "公称通径：\n\n\n公称压力：\n\n\n适用温度：\n"
+							"html": "<p>公称通径：</p><p>公称压力：</p><p>适用温度：</p>",
+							"markdown": "公称通径：\n\n公称压力：\n\n适用温度：\n\n"
 						},
 						"heading": "参数范围",
 						"superhead": "Interesting Feature"

@@ -6197,7 +6197,7 @@ function create_fragment$9(ctx) {
 						"title": "WHITE LABEL 贴牌服务",
 						"content": {
 							"html": "<p>您的品牌 + 我们的设计（我们的现有设计，或根据您的需求设计）</p>",
-							"markdown": "您的品牌 + 我们的设计（我们的现有设计，或根据您的需求设计）\n"
+							"markdown": "您的品牌 + 我们的设计（我们的现有设计，或根据您的需求设计）\n\n"
 						}
 					}
 				]
