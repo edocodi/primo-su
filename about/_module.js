@@ -6262,9 +6262,7 @@ function create_fragment$8(ctx) {
 						"link": { "url": "", "label": "", "active": false },
 						"image": {
 							"alt": "",
-							"src": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1664734595681hdl2.PNG",
-							"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1664734595681hdl2.PNG",
-							"size": 1196
+							"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/hdl2.jpg1690867950356"
 						},
 						"title": "公司简介",
 						"content": {

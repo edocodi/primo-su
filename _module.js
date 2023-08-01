@@ -5980,7 +5980,7 @@ function create_fragment$9(ctx) {
 				link: { "url": "/contact", "label": "咨询" },
 				image: {
 					"alt": "",
-					"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/hdl.PNG1664734595494"
+					"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/hdl.jpg1690867979948"
 				},
 				variation: ""
 			}
