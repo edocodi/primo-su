@@ -4281,7 +4281,7 @@ function get_each_context$2(ctx, list, i) {
 	return child_ctx;
 }
 
-// (80:6) {:else}
+// (78:6) {:else}
 function create_else_block$2(ctx) {
 	let label;
 	let span;
@@ -4358,7 +4358,7 @@ function create_else_block$2(ctx) {
 	};
 }
 
-// (75:6) {#if type === "textarea"}
+// (73:6) {#if type === "textarea"}
 function create_if_block$3(ctx) {
 	let label;
 	let span;
@@ -4436,7 +4436,7 @@ function create_if_block$3(ctx) {
 	};
 }
 
-// (74:4) {#each inputs as { label, type, placeholder }}
+// (72:4) {#each inputs as { label, type, placeholder }}
 function create_each_block$2(ctx) {
 	let if_block_anchor;
 
@@ -4546,14 +4546,7 @@ function create_fragment$4(ctx) {
 			p_nodes.forEach(detach);
 			div0_nodes.forEach(detach);
 			t3 = claim_space(div1_nodes);
-
-			form = claim_element(div1_nodes, "FORM", {
-				action: true,
-				method: true,
-				onsubmit: true,
-				class: true
-			});
-
+			form = claim_element(div1_nodes, "FORM", { action: true, method: true, class: true });
 			var form_nodes = children(form);
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -4579,7 +4572,6 @@ function create_fragment$4(ctx) {
 			attr(button, "class", "button svelte-prx89c");
 			attr(form, "action", "https://fabform.io/f/oAWsO6G");
 			attr(form, "method", "post");
-			attr(form, "onsubmit", "myFunction()");
 			attr(form, "class", "svelte-prx89c");
 			attr(div1, "class", "box svelte-prx89c");
 			attr(section, "class", "section-container svelte-prx89c");
