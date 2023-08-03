@@ -4289,6 +4289,7 @@ function create_else_block$2(ctx) {
 	let t0;
 	let t1;
 	let input;
+	let input_name_value;
 	let input_type_value;
 	let input_placeholder_value;
 
@@ -4322,7 +4323,7 @@ function create_else_block$2(ctx) {
 		},
 		h() {
 			attr(span, "class", "label svelte-prx89c");
-			attr(input, "name", "label");
+			attr(input, "name", input_name_value = /*label*/ ctx[4]);
 			attr(input, "class", "placeholder svelte-prx89c");
 			attr(input, "type", input_type_value = /*type*/ ctx[5]);
 			attr(input, "placeholder", input_placeholder_value = /*placeholder*/ ctx[6]);
@@ -4337,6 +4338,10 @@ function create_else_block$2(ctx) {
 		},
 		p(ctx, dirty) {
 			if (dirty & /*inputs*/ 4 && t0_value !== (t0_value = /*label*/ ctx[4] + "")) set_data(t0, t0_value);
+
+			if (dirty & /*inputs*/ 4 && input_name_value !== (input_name_value = /*label*/ ctx[4])) {
+				attr(input, "name", input_name_value);
+			}
 
 			if (dirty & /*inputs*/ 4 && input_type_value !== (input_type_value = /*type*/ ctx[5])) {
 				attr(input, "type", input_type_value);
@@ -4360,6 +4365,7 @@ function create_if_block$3(ctx) {
 	let t0;
 	let t1;
 	let textarea;
+	let textarea_name_value;
 	let textarea_type_value;
 	let textarea_placeholder_value;
 
@@ -4394,7 +4400,7 @@ function create_if_block$3(ctx) {
 		},
 		h() {
 			attr(span, "class", "label svelte-prx89c");
-			attr(textarea, "name", "label");
+			attr(textarea, "name", textarea_name_value = /*label*/ ctx[4]);
 			attr(textarea, "class", "placeholder svelte-prx89c");
 			attr(textarea, "type", textarea_type_value = /*type*/ ctx[5]);
 			attr(textarea, "placeholder", textarea_placeholder_value = /*placeholder*/ ctx[6]);
@@ -4409,6 +4415,10 @@ function create_if_block$3(ctx) {
 		},
 		p(ctx, dirty) {
 			if (dirty & /*inputs*/ 4 && t0_value !== (t0_value = /*label*/ ctx[4] + "")) set_data(t0, t0_value);
+
+			if (dirty & /*inputs*/ 4 && textarea_name_value !== (textarea_name_value = /*label*/ ctx[4])) {
+				attr(textarea, "name", textarea_name_value);
+			}
 
 			if (dirty & /*inputs*/ 4 && textarea_type_value !== (textarea_type_value = /*type*/ ctx[5])) {
 				attr(textarea, "type", textarea_type_value);
