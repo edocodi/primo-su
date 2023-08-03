@@ -4599,6 +4599,298 @@ class Component$3 extends SvelteComponent {
 
 function get_each_context$2(ctx, list, i) {
 	const child_ctx = ctx.slice();
+	child_ctx[20] = list[i];
+	return child_ctx;
+}
+
+// (69:4) {#each cards as card}
+function create_each_block$2(ctx) {
+	let div;
+	let span0;
+	let t0_value = /*card*/ ctx[20].stat + "";
+	let t0;
+	let t1;
+	let span1;
+	let t2_value = /*card*/ ctx[20].title + "";
+	let t2;
+	let t3;
+
+	return {
+		c() {
+			div = element("div");
+			span0 = element("span");
+			t0 = text(t0_value);
+			t1 = space();
+			span1 = element("span");
+			t2 = text(t2_value);
+			t3 = space();
+			this.h();
+		},
+		l(nodes) {
+			div = claim_element(nodes, "DIV", { class: true });
+			var div_nodes = children(div);
+			span0 = claim_element(div_nodes, "SPAN", { class: true });
+			var span0_nodes = children(span0);
+			t0 = claim_text(span0_nodes, t0_value);
+			span0_nodes.forEach(detach);
+			t1 = claim_space(div_nodes);
+			span1 = claim_element(div_nodes, "SPAN", { class: true });
+			var span1_nodes = children(span1);
+			t2 = claim_text(span1_nodes, t2_value);
+			span1_nodes.forEach(detach);
+			t3 = claim_space(div_nodes);
+			div_nodes.forEach(detach);
+			this.h();
+		},
+		h() {
+			attr(span0, "class", "stat svelte-l5de5u");
+			attr(span1, "class", "title svelte-l5de5u");
+			attr(div, "class", "card svelte-l5de5u");
+		},
+		m(target, anchor) {
+			insert_hydration(target, div, anchor);
+			append_hydration(div, span0);
+			append_hydration(span0, t0);
+			append_hydration(div, t1);
+			append_hydration(div, span1);
+			append_hydration(span1, t2);
+			append_hydration(div, t3);
+		},
+		p(ctx, dirty) {
+			if (dirty & /*cards*/ 4 && t0_value !== (t0_value = /*card*/ ctx[20].stat + "")) set_data(t0, t0_value);
+			if (dirty & /*cards*/ 4 && t2_value !== (t2_value = /*card*/ ctx[20].title + "")) set_data(t2, t2_value);
+		},
+		d(detaching) {
+			if (detaching) detach(div);
+		}
+	};
+}
+
+function create_fragment$4(ctx) {
+	let div1;
+	let section;
+	let h2;
+	let t0;
+	let t1;
+	let h3;
+	let t2;
+	let t3;
+	let div0;
+	let each_value = /*cards*/ ctx[2];
+	let each_blocks = [];
+
+	for (let i = 0; i < each_value.length; i += 1) {
+		each_blocks[i] = create_each_block$2(get_each_context$2(ctx, each_value, i));
+	}
+
+	return {
+		c() {
+			div1 = element("div");
+			section = element("section");
+			h2 = element("h2");
+			t0 = text(/*heading*/ ctx[0]);
+			t1 = space();
+			h3 = element("h3");
+			t2 = text(/*subheading*/ ctx[1]);
+			t3 = space();
+			div0 = element("div");
+
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				each_blocks[i].c();
+			}
+
+			this.h();
+		},
+		l(nodes) {
+			div1 = claim_element(nodes, "DIV", { class: true, id: true });
+			var div1_nodes = children(div1);
+			section = claim_element(div1_nodes, "SECTION", { class: true });
+			var section_nodes = children(section);
+			h2 = claim_element(section_nodes, "H2", { class: true });
+			var h2_nodes = children(h2);
+			t0 = claim_text(h2_nodes, /*heading*/ ctx[0]);
+			h2_nodes.forEach(detach);
+			t1 = claim_space(section_nodes);
+			h3 = claim_element(section_nodes, "H3", { class: true });
+			var h3_nodes = children(h3);
+			t2 = claim_text(h3_nodes, /*subheading*/ ctx[1]);
+			h3_nodes.forEach(detach);
+			t3 = claim_space(section_nodes);
+			div0 = claim_element(section_nodes, "DIV", { class: true });
+			var div0_nodes = children(div0);
+
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				each_blocks[i].l(div0_nodes);
+			}
+
+			div0_nodes.forEach(detach);
+			section_nodes.forEach(detach);
+			div1_nodes.forEach(detach);
+			this.h();
+		},
+		h() {
+			attr(h2, "class", "heading svelte-l5de5u");
+			attr(h3, "class", "subheading svelte-l5de5u");
+			attr(div0, "class", "cards svelte-l5de5u");
+			attr(section, "class", "section-container svelte-l5de5u");
+			attr(div1, "class", "section");
+			attr(div1, "id", "section-fbdb63d9");
+		},
+		m(target, anchor) {
+			insert_hydration(target, div1, anchor);
+			append_hydration(div1, section);
+			append_hydration(section, h2);
+			append_hydration(h2, t0);
+			append_hydration(section, t1);
+			append_hydration(section, h3);
+			append_hydration(h3, t2);
+			append_hydration(section, t3);
+			append_hydration(section, div0);
+
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				if (each_blocks[i]) {
+					each_blocks[i].m(div0, null);
+				}
+			}
+		},
+		p(ctx, [dirty]) {
+			if (dirty & /*heading*/ 1) set_data(t0, /*heading*/ ctx[0]);
+			if (dirty & /*subheading*/ 2) set_data(t2, /*subheading*/ ctx[1]);
+
+			if (dirty & /*cards*/ 4) {
+				each_value = /*cards*/ ctx[2];
+				let i;
+
+				for (i = 0; i < each_value.length; i += 1) {
+					const child_ctx = get_each_context$2(ctx, each_value, i);
+
+					if (each_blocks[i]) {
+						each_blocks[i].p(child_ctx, dirty);
+					} else {
+						each_blocks[i] = create_each_block$2(child_ctx);
+						each_blocks[i].c();
+						each_blocks[i].m(div0, null);
+					}
+				}
+
+				for (; i < each_blocks.length; i += 1) {
+					each_blocks[i].d(1);
+				}
+
+				each_blocks.length = each_value.length;
+			}
+		},
+		i: noop,
+		o: noop,
+		d(detaching) {
+			if (detaching) detach(div1);
+			destroy_each(each_blocks, detaching);
+		}
+	};
+}
+
+function instance$4($$self, $$props, $$invalidate) {
+	let { favicon } = $$props;
+	let { d } = $$props;
+	let { t } = $$props;
+	let { de } = $$props;
+	let { ti } = $$props;
+	let { des } = $$props;
+	let { tit } = $$props;
+	let { desc } = $$props;
+	let { titl } = $$props;
+	let { descr } = $$props;
+	let { title } = $$props;
+	let { descri } = $$props;
+	let { descrip } = $$props;
+	let { descript } = $$props;
+	let { descripti } = $$props;
+	let { descriptio } = $$props;
+	let { description } = $$props;
+	let { heading } = $$props;
+	let { subheading } = $$props;
+	let { cards } = $$props;
+
+	$$self.$$set = $$props => {
+		if ('favicon' in $$props) $$invalidate(3, favicon = $$props.favicon);
+		if ('d' in $$props) $$invalidate(4, d = $$props.d);
+		if ('t' in $$props) $$invalidate(5, t = $$props.t);
+		if ('de' in $$props) $$invalidate(6, de = $$props.de);
+		if ('ti' in $$props) $$invalidate(7, ti = $$props.ti);
+		if ('des' in $$props) $$invalidate(8, des = $$props.des);
+		if ('tit' in $$props) $$invalidate(9, tit = $$props.tit);
+		if ('desc' in $$props) $$invalidate(10, desc = $$props.desc);
+		if ('titl' in $$props) $$invalidate(11, titl = $$props.titl);
+		if ('descr' in $$props) $$invalidate(12, descr = $$props.descr);
+		if ('title' in $$props) $$invalidate(13, title = $$props.title);
+		if ('descri' in $$props) $$invalidate(14, descri = $$props.descri);
+		if ('descrip' in $$props) $$invalidate(15, descrip = $$props.descrip);
+		if ('descript' in $$props) $$invalidate(16, descript = $$props.descript);
+		if ('descripti' in $$props) $$invalidate(17, descripti = $$props.descripti);
+		if ('descriptio' in $$props) $$invalidate(18, descriptio = $$props.descriptio);
+		if ('description' in $$props) $$invalidate(19, description = $$props.description);
+		if ('heading' in $$props) $$invalidate(0, heading = $$props.heading);
+		if ('subheading' in $$props) $$invalidate(1, subheading = $$props.subheading);
+		if ('cards' in $$props) $$invalidate(2, cards = $$props.cards);
+	};
+
+	return [
+		heading,
+		subheading,
+		cards,
+		favicon,
+		d,
+		t,
+		de,
+		ti,
+		des,
+		tit,
+		desc,
+		titl,
+		descr,
+		title,
+		descri,
+		descrip,
+		descript,
+		descripti,
+		descriptio,
+		description
+	];
+}
+
+class Component$4 extends SvelteComponent {
+	constructor(options) {
+		super();
+
+		init(this, options, instance$4, create_fragment$4, safe_not_equal, {
+			favicon: 3,
+			d: 4,
+			t: 5,
+			de: 6,
+			ti: 7,
+			des: 8,
+			tit: 9,
+			desc: 10,
+			titl: 11,
+			descr: 12,
+			title: 13,
+			descri: 14,
+			descrip: 15,
+			descript: 16,
+			descripti: 17,
+			descriptio: 18,
+			description: 19,
+			heading: 0,
+			subheading: 1,
+			cards: 2
+		});
+	}
+}
+
+/* generated by Svelte v3.59.1 */
+
+function get_each_context$3(ctx, list, i) {
+	const child_ctx = ctx.slice();
 	child_ctx[18] = list[i];
 	return child_ctx;
 }
@@ -4683,7 +4975,7 @@ function create_if_block$3(ctx) {
 }
 
 // (95:4) {#each teasers as teaser}
-function create_each_block$2(ctx) {
+function create_each_block$3(ctx) {
 	let div2;
 	let t0;
 	let div1;
@@ -4792,7 +5084,7 @@ function create_each_block$2(ctx) {
 	};
 }
 
-function create_fragment$4(ctx) {
+function create_fragment$5(ctx) {
 	let div1;
 	let section;
 	let div0;
@@ -4800,7 +5092,7 @@ function create_fragment$4(ctx) {
 	let each_blocks = [];
 
 	for (let i = 0; i < each_value.length; i += 1) {
-		each_blocks[i] = create_each_block$2(get_each_context$2(ctx, each_value, i));
+		each_blocks[i] = create_each_block$3(get_each_context$3(ctx, each_value, i));
 	}
 
 	return {
@@ -4855,12 +5147,12 @@ function create_fragment$4(ctx) {
 				let i;
 
 				for (i = 0; i < each_value.length; i += 1) {
-					const child_ctx = get_each_context$2(ctx, each_value, i);
+					const child_ctx = get_each_context$3(ctx, each_value, i);
 
 					if (each_blocks[i]) {
 						each_blocks[i].p(child_ctx, dirty);
 					} else {
-						each_blocks[i] = create_each_block$2(child_ctx);
+						each_blocks[i] = create_each_block$3(child_ctx);
 						each_blocks[i].c();
 						each_blocks[i].m(div0, null);
 					}
@@ -4882,7 +5174,7 @@ function create_fragment$4(ctx) {
 	};
 }
 
-function instance$4($$self, $$props, $$invalidate) {
+function instance$5($$self, $$props, $$invalidate) {
 	let { favicon } = $$props;
 	let { d } = $$props;
 	let { t } = $$props;
@@ -4945,11 +5237,11 @@ function instance$4($$self, $$props, $$invalidate) {
 	];
 }
 
-class Component$4 extends SvelteComponent {
+class Component$5 extends SvelteComponent {
 	constructor(options) {
 		super();
 
-		init(this, options, instance$4, create_fragment$4, safe_not_equal, {
+		init(this, options, instance$5, create_fragment$5, safe_not_equal, {
 			favicon: 1,
 			d: 2,
 			t: 3,
@@ -4974,199 +5266,48 @@ class Component$4 extends SvelteComponent {
 
 /* generated by Svelte v3.59.1 */
 
-function get_each_context$3(ctx, list, i) {
-	const child_ctx = ctx.slice();
-	child_ctx[20] = list[i];
-	return child_ctx;
-}
-
-// (69:4) {#each cards as card}
-function create_each_block$3(ctx) {
-	let div;
-	let span0;
-	let t0_value = /*card*/ ctx[20].stat + "";
-	let t0;
-	let t1;
-	let span1;
-	let t2_value = /*card*/ ctx[20].title + "";
-	let t2;
-	let t3;
-
-	return {
-		c() {
-			div = element("div");
-			span0 = element("span");
-			t0 = text(t0_value);
-			t1 = space();
-			span1 = element("span");
-			t2 = text(t2_value);
-			t3 = space();
-			this.h();
-		},
-		l(nodes) {
-			div = claim_element(nodes, "DIV", { class: true });
-			var div_nodes = children(div);
-			span0 = claim_element(div_nodes, "SPAN", { class: true });
-			var span0_nodes = children(span0);
-			t0 = claim_text(span0_nodes, t0_value);
-			span0_nodes.forEach(detach);
-			t1 = claim_space(div_nodes);
-			span1 = claim_element(div_nodes, "SPAN", { class: true });
-			var span1_nodes = children(span1);
-			t2 = claim_text(span1_nodes, t2_value);
-			span1_nodes.forEach(detach);
-			t3 = claim_space(div_nodes);
-			div_nodes.forEach(detach);
-			this.h();
-		},
-		h() {
-			attr(span0, "class", "stat svelte-l5de5u");
-			attr(span1, "class", "title svelte-l5de5u");
-			attr(div, "class", "card svelte-l5de5u");
-		},
-		m(target, anchor) {
-			insert_hydration(target, div, anchor);
-			append_hydration(div, span0);
-			append_hydration(span0, t0);
-			append_hydration(div, t1);
-			append_hydration(div, span1);
-			append_hydration(span1, t2);
-			append_hydration(div, t3);
-		},
-		p(ctx, dirty) {
-			if (dirty & /*cards*/ 4 && t0_value !== (t0_value = /*card*/ ctx[20].stat + "")) set_data(t0, t0_value);
-			if (dirty & /*cards*/ 4 && t2_value !== (t2_value = /*card*/ ctx[20].title + "")) set_data(t2, t2_value);
-		},
-		d(detaching) {
-			if (detaching) detach(div);
-		}
-	};
-}
-
-function create_fragment$5(ctx) {
+function create_fragment$6(ctx) {
 	let div1;
-	let section;
-	let h2;
-	let t0;
-	let t1;
-	let h3;
-	let t2;
-	let t3;
 	let div0;
-	let each_value = /*cards*/ ctx[2];
-	let each_blocks = [];
-
-	for (let i = 0; i < each_value.length; i += 1) {
-		each_blocks[i] = create_each_block$3(get_each_context$3(ctx, each_value, i));
-	}
+	let hr;
 
 	return {
 		c() {
 			div1 = element("div");
-			section = element("section");
-			h2 = element("h2");
-			t0 = text(/*heading*/ ctx[0]);
-			t1 = space();
-			h3 = element("h3");
-			t2 = text(/*subheading*/ ctx[1]);
-			t3 = space();
 			div0 = element("div");
-
-			for (let i = 0; i < each_blocks.length; i += 1) {
-				each_blocks[i].c();
-			}
-
+			hr = element("hr");
 			this.h();
 		},
 		l(nodes) {
 			div1 = claim_element(nodes, "DIV", { class: true, id: true });
 			var div1_nodes = children(div1);
-			section = claim_element(div1_nodes, "SECTION", { class: true });
-			var section_nodes = children(section);
-			h2 = claim_element(section_nodes, "H2", { class: true });
-			var h2_nodes = children(h2);
-			t0 = claim_text(h2_nodes, /*heading*/ ctx[0]);
-			h2_nodes.forEach(detach);
-			t1 = claim_space(section_nodes);
-			h3 = claim_element(section_nodes, "H3", { class: true });
-			var h3_nodes = children(h3);
-			t2 = claim_text(h3_nodes, /*subheading*/ ctx[1]);
-			h3_nodes.forEach(detach);
-			t3 = claim_space(section_nodes);
-			div0 = claim_element(section_nodes, "DIV", { class: true });
+			div0 = claim_element(div1_nodes, "DIV", { class: true });
 			var div0_nodes = children(div0);
-
-			for (let i = 0; i < each_blocks.length; i += 1) {
-				each_blocks[i].l(div0_nodes);
-			}
-
+			hr = claim_element(div0_nodes, "HR", {});
 			div0_nodes.forEach(detach);
-			section_nodes.forEach(detach);
 			div1_nodes.forEach(detach);
 			this.h();
 		},
 		h() {
-			attr(h2, "class", "heading svelte-l5de5u");
-			attr(h3, "class", "subheading svelte-l5de5u");
-			attr(div0, "class", "cards svelte-l5de5u");
-			attr(section, "class", "section-container svelte-l5de5u");
+			attr(div0, "class", "section-container svelte-1nxn5fd");
 			attr(div1, "class", "section");
-			attr(div1, "id", "section-fbdb63d9");
+			attr(div1, "id", "section-b43aa185");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div1, anchor);
-			append_hydration(div1, section);
-			append_hydration(section, h2);
-			append_hydration(h2, t0);
-			append_hydration(section, t1);
-			append_hydration(section, h3);
-			append_hydration(h3, t2);
-			append_hydration(section, t3);
-			append_hydration(section, div0);
-
-			for (let i = 0; i < each_blocks.length; i += 1) {
-				if (each_blocks[i]) {
-					each_blocks[i].m(div0, null);
-				}
-			}
+			append_hydration(div1, div0);
+			append_hydration(div0, hr);
 		},
-		p(ctx, [dirty]) {
-			if (dirty & /*heading*/ 1) set_data(t0, /*heading*/ ctx[0]);
-			if (dirty & /*subheading*/ 2) set_data(t2, /*subheading*/ ctx[1]);
-
-			if (dirty & /*cards*/ 4) {
-				each_value = /*cards*/ ctx[2];
-				let i;
-
-				for (i = 0; i < each_value.length; i += 1) {
-					const child_ctx = get_each_context$3(ctx, each_value, i);
-
-					if (each_blocks[i]) {
-						each_blocks[i].p(child_ctx, dirty);
-					} else {
-						each_blocks[i] = create_each_block$3(child_ctx);
-						each_blocks[i].c();
-						each_blocks[i].m(div0, null);
-					}
-				}
-
-				for (; i < each_blocks.length; i += 1) {
-					each_blocks[i].d(1);
-				}
-
-				each_blocks.length = each_value.length;
-			}
-		},
+		p: noop,
 		i: noop,
 		o: noop,
 		d(detaching) {
 			if (detaching) detach(div1);
-			destroy_each(each_blocks, detaching);
 		}
 	};
 }
 
-function instance$5($$self, $$props, $$invalidate) {
+function instance$6($$self, $$props, $$invalidate) {
 	let { favicon } = $$props;
 	let { d } = $$props;
 	let { t } = $$props;
@@ -5184,37 +5325,28 @@ function instance$5($$self, $$props, $$invalidate) {
 	let { descripti } = $$props;
 	let { descriptio } = $$props;
 	let { description } = $$props;
-	let { heading } = $$props;
-	let { subheading } = $$props;
-	let { cards } = $$props;
 
 	$$self.$$set = $$props => {
-		if ('favicon' in $$props) $$invalidate(3, favicon = $$props.favicon);
-		if ('d' in $$props) $$invalidate(4, d = $$props.d);
-		if ('t' in $$props) $$invalidate(5, t = $$props.t);
-		if ('de' in $$props) $$invalidate(6, de = $$props.de);
-		if ('ti' in $$props) $$invalidate(7, ti = $$props.ti);
-		if ('des' in $$props) $$invalidate(8, des = $$props.des);
-		if ('tit' in $$props) $$invalidate(9, tit = $$props.tit);
-		if ('desc' in $$props) $$invalidate(10, desc = $$props.desc);
-		if ('titl' in $$props) $$invalidate(11, titl = $$props.titl);
-		if ('descr' in $$props) $$invalidate(12, descr = $$props.descr);
-		if ('title' in $$props) $$invalidate(13, title = $$props.title);
-		if ('descri' in $$props) $$invalidate(14, descri = $$props.descri);
-		if ('descrip' in $$props) $$invalidate(15, descrip = $$props.descrip);
-		if ('descript' in $$props) $$invalidate(16, descript = $$props.descript);
-		if ('descripti' in $$props) $$invalidate(17, descripti = $$props.descripti);
-		if ('descriptio' in $$props) $$invalidate(18, descriptio = $$props.descriptio);
-		if ('description' in $$props) $$invalidate(19, description = $$props.description);
-		if ('heading' in $$props) $$invalidate(0, heading = $$props.heading);
-		if ('subheading' in $$props) $$invalidate(1, subheading = $$props.subheading);
-		if ('cards' in $$props) $$invalidate(2, cards = $$props.cards);
+		if ('favicon' in $$props) $$invalidate(0, favicon = $$props.favicon);
+		if ('d' in $$props) $$invalidate(1, d = $$props.d);
+		if ('t' in $$props) $$invalidate(2, t = $$props.t);
+		if ('de' in $$props) $$invalidate(3, de = $$props.de);
+		if ('ti' in $$props) $$invalidate(4, ti = $$props.ti);
+		if ('des' in $$props) $$invalidate(5, des = $$props.des);
+		if ('tit' in $$props) $$invalidate(6, tit = $$props.tit);
+		if ('desc' in $$props) $$invalidate(7, desc = $$props.desc);
+		if ('titl' in $$props) $$invalidate(8, titl = $$props.titl);
+		if ('descr' in $$props) $$invalidate(9, descr = $$props.descr);
+		if ('title' in $$props) $$invalidate(10, title = $$props.title);
+		if ('descri' in $$props) $$invalidate(11, descri = $$props.descri);
+		if ('descrip' in $$props) $$invalidate(12, descrip = $$props.descrip);
+		if ('descript' in $$props) $$invalidate(13, descript = $$props.descript);
+		if ('descripti' in $$props) $$invalidate(14, descripti = $$props.descripti);
+		if ('descriptio' in $$props) $$invalidate(15, descriptio = $$props.descriptio);
+		if ('description' in $$props) $$invalidate(16, description = $$props.description);
 	};
 
 	return [
-		heading,
-		subheading,
-		cards,
 		favicon,
 		d,
 		t,
@@ -5235,31 +5367,28 @@ function instance$5($$self, $$props, $$invalidate) {
 	];
 }
 
-class Component$5 extends SvelteComponent {
+class Component$6 extends SvelteComponent {
 	constructor(options) {
 		super();
 
-		init(this, options, instance$5, create_fragment$5, safe_not_equal, {
-			favicon: 3,
-			d: 4,
-			t: 5,
-			de: 6,
-			ti: 7,
-			des: 8,
-			tit: 9,
-			desc: 10,
-			titl: 11,
-			descr: 12,
-			title: 13,
-			descri: 14,
-			descrip: 15,
-			descript: 16,
-			descripti: 17,
-			descriptio: 18,
-			description: 19,
-			heading: 0,
-			subheading: 1,
-			cards: 2
+		init(this, options, instance$6, create_fragment$6, safe_not_equal, {
+			favicon: 0,
+			d: 1,
+			t: 2,
+			de: 3,
+			ti: 4,
+			des: 5,
+			tit: 6,
+			desc: 7,
+			titl: 8,
+			descr: 9,
+			title: 10,
+			descri: 11,
+			descrip: 12,
+			descript: 13,
+			descripti: 14,
+			descriptio: 15,
+			description: 16
 		});
 	}
 }
@@ -5390,7 +5519,7 @@ function create_each_block$4(ctx) {
 	};
 }
 
-function create_fragment$6(ctx) {
+function create_fragment$7(ctx) {
 	let div1;
 	let section;
 	let div0;
@@ -5520,7 +5649,7 @@ function create_fragment$6(ctx) {
 	};
 }
 
-function instance$6($$self, $$props, $$invalidate) {
+function instance$7($$self, $$props, $$invalidate) {
 	let { favicon } = $$props;
 	let { d } = $$props;
 	let { t } = $$props;
@@ -5589,11 +5718,11 @@ function instance$6($$self, $$props, $$invalidate) {
 	];
 }
 
-class Component$6 extends SvelteComponent {
+class Component$7 extends SvelteComponent {
 	constructor(options) {
 		super();
 
-		init(this, options, instance$6, create_fragment$6, safe_not_equal, {
+		init(this, options, instance$7, create_fragment$7, safe_not_equal, {
 			favicon: 3,
 			d: 4,
 			t: 5,
@@ -5620,7 +5749,7 @@ class Component$6 extends SvelteComponent {
 
 /* generated by Svelte v3.59.1 */
 
-function create_fragment$7(ctx) {
+function create_fragment$8(ctx) {
 	let div1;
 	let div0;
 	let hr;
@@ -5645,7 +5774,7 @@ function create_fragment$7(ctx) {
 		h() {
 			attr(div0, "class", "section-container svelte-1nxn5fd");
 			attr(div1, "class", "section");
-			attr(div1, "id", "section-b43aa185");
+			attr(div1, "id", "section-af5e10ac");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div1, anchor);
@@ -5661,7 +5790,7 @@ function create_fragment$7(ctx) {
 	};
 }
 
-function instance$7($$self, $$props, $$invalidate) {
+function instance$8($$self, $$props, $$invalidate) {
 	let { favicon } = $$props;
 	let { d } = $$props;
 	let { t } = $$props;
@@ -5721,11 +5850,11 @@ function instance$7($$self, $$props, $$invalidate) {
 	];
 }
 
-class Component$7 extends SvelteComponent {
+class Component$8 extends SvelteComponent {
 	constructor(options) {
 		super();
 
-		init(this, options, instance$7, create_fragment$7, safe_not_equal, {
+		init(this, options, instance$8, create_fragment$8, safe_not_equal, {
 			favicon: 0,
 			d: 1,
 			t: 2,
@@ -5916,7 +6045,7 @@ function create_each_block$5(ctx) {
 	};
 }
 
-function create_fragment$8(ctx) {
+function create_fragment$9(ctx) {
 	let div3;
 	let footer;
 	let div2;
@@ -6027,7 +6156,7 @@ function create_fragment$8(ctx) {
 	};
 }
 
-function instance$8($$self, $$props, $$invalidate) {
+function instance$9($$self, $$props, $$invalidate) {
 	let { favicon } = $$props;
 	let { d } = $$props;
 	let { t } = $$props;
@@ -6093,11 +6222,11 @@ function instance$8($$self, $$props, $$invalidate) {
 	];
 }
 
-class Component$8 extends SvelteComponent {
+class Component$9 extends SvelteComponent {
 	constructor(options) {
 		super();
 
-		init(this, options, instance$8, create_fragment$8, safe_not_equal, {
+		init(this, options, instance$9, create_fragment$9, safe_not_equal, {
 			favicon: 3,
 			d: 4,
 			t: 5,
@@ -6123,7 +6252,7 @@ class Component$8 extends SvelteComponent {
 
 /* generated by Svelte v3.59.1 */
 
-function instance$9($$self, $$props, $$invalidate) {
+function instance$a($$self, $$props, $$invalidate) {
 	let { favicon } = $$props;
 	let { d } = $$props;
 	let { t } = $$props;
@@ -6183,11 +6312,11 @@ function instance$9($$self, $$props, $$invalidate) {
 	];
 }
 
-class Component$9 extends SvelteComponent {
+class Component$a extends SvelteComponent {
 	constructor(options) {
 		super();
 
-		init(this, options, instance$9, null, safe_not_equal, {
+		init(this, options, instance$a, null, safe_not_equal, {
 			favicon: 0,
 			d: 1,
 			t: 2,
@@ -6211,7 +6340,7 @@ class Component$9 extends SvelteComponent {
 
 /* generated by Svelte v3.59.1 */
 
-function create_fragment$9(ctx) {
+function create_fragment$a(ctx) {
 	let component_0;
 	let t0;
 	let component_1;
@@ -6229,6 +6358,8 @@ function create_fragment$9(ctx) {
 	let component_7;
 	let t7;
 	let component_8;
+	let t8;
+	let component_9;
 	let current;
 
 	component_0 = new Component({
@@ -6388,19 +6519,12 @@ function create_fragment$9(ctx) {
 				descripti: "Deserunt aliquip est",
 				descriptio: "Deserunt aliquip est",
 				description: "We're passionate about building a better meeting workflow",
-				teasers: [
-					{
-						"link": { "url": "", "label": "", "active": false },
-						"image": {
-							"alt": "",
-							"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/hdl2.jpg1690867950356"
-						},
-						"title": "公司简介",
-						"content": {
-							"html": "<h3>青岛威达阀门工业有限公司成立于2003年6月，坐落在景色秀丽的海滨城市青岛西海岸新区。公司现有员工60余人，其中各类专业人员15人。拥有主要生产设备，检验测试设备30台（套），年产阀门能力20万台（套）。<br></h3><h3>自主研发设计有15个系列300多种规格型号的球阀以及蝶阀、止回阀。适用条件从全包/半包，真空，V型流道，温度(-49℃～260℃)，压力，加长延杆等都可依据实际使用工况环境选择。执行国家标准GB以及ANSI,DIN,JIS等国外标准。阀体/盖主要材质有WCB/1.0619，CF8/1.4301，CF8M/1.4408，CF3M/1.4435等。密封件材质主要有PTFE，RTFE，TFM1600，PPL，PEEK，PTFE+50%SS等。端口连接方式有螺纹、对焊、承插焊、法兰、卡箍等。控制方式有手动、齿轮、气动、电动等。广泛应用于石油，化工，钢铁，电力，工业环保，水处理，医药，饮料，食品等多个领域。<br></h3><h3>威达阀门多年来秉持以客户满意为公司的质量目标，产品销往欧美，日本，韩国，台湾等多个国家和地区。主要客户有BP（UK），KSB，GEMU（Germany），AKZO NOBEL（Holland），TETRA PAK，ARMSTRONG Machinery。<br></h3><h3>为了更快捷方便的为国内外客户提供优质服务，我们在上海、南京、深圳、美国等地设立了办事处。<br></h3><h3>竭诚欢迎各界朋友到企业参观，洽谈和指导！威达阀门与您携手并进，共创辉煌明天！</h3>",
-							"markdown": "### 青岛威达阀门工业有限公司成立于2003年6月，坐落在景色秀丽的海滨城市青岛西海岸新区。公司现有员工60余人，其中各类专业人员15人。拥有主要生产设备，检验测试设备30台（套），年产阀门能力20万台（套）。<br>\n\n\n\n### 自主研发设计有15个系列300多种规格型号的球阀以及蝶阀、止回阀。适用条件从全包/半包，真空，V型流道，温度(-49℃～260℃)，压力，加长延杆等都可依据实际使用工况环境选择。执行国家标准GB以及ANSI,DIN,JIS等国外标准。阀体/盖主要材质有WCB/1.0619，CF8/1.4301，CF8M/1.4408，CF3M/1.4435等。密封件材质主要有PTFE，RTFE，TFM1600，PPL，PEEK，PTFE+50%SS等。端口连接方式有螺纹、对焊、承插焊、法兰、卡箍等。控制方式有手动、齿轮、气动、电动等。广泛应用于石油，化工，钢铁，电力，工业环保，水处理，医药，饮料，食品等多个领域。<br>\n\n\n\n### 威达阀门多年来秉持以客户满意为公司的质量目标，产品销往欧美，日本，韩国，台湾等多个国家和地区。主要客户有BP（UK），KSB，GEMU（Germany），AKZO NOBEL（Holland），TETRA PAK，ARMSTRONG Machinery。<br>\n\n\n\n### 为了更快捷方便的为国内外客户提供优质服务，我们在上海、南京、深圳、美国等地设立了办事处。<br>\n\n\n\n### 竭诚欢迎各界朋友到企业参观，洽谈和指导！威达阀门与您携手并进，共创辉煌明天！\n\n"
-						}
-					}
+				heading: "威达专注于",
+				subheading: "",
+				cards: [
+					{ "stat": "您的需求", "title": "" },
+					{ "stat": "品质+服务", "title": "" },
+					{ "stat": "专业+责任", "title": "" }
 				]
 			}
 		});
@@ -6429,17 +6553,51 @@ function create_fragment$9(ctx) {
 				descripti: "Deserunt aliquip est",
 				descriptio: "Deserunt aliquip est",
 				description: "We're passionate about building a better meeting workflow",
-				heading: "威达专注于",
-				subheading: "",
-				cards: [
-					{ "stat": "您的需求", "title": "" },
-					{ "stat": "品质+服务", "title": "" },
-					{ "stat": "专业+责任", "title": "" }
+				teasers: [
+					{
+						"link": { "url": "", "label": "", "active": false },
+						"image": {
+							"alt": "",
+							"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/hdl2.jpg1690867950356"
+						},
+						"title": "公司简介",
+						"content": {
+							"html": "<h3>青岛威达阀门工业有限公司成立于2003年6月，坐落在景色秀丽的海滨城市青岛西海岸新区。公司现有员工60余人，其中各类专业人员15人。拥有主要生产设备，检验测试设备30台（套），年产阀门能力20万台（套）。<br></h3><h3>自主研发设计有15个系列300多种规格型号的球阀以及蝶阀、止回阀。适用条件从全包/半包，真空，V型流道，温度(-49℃～260℃)，压力，加长延杆等都可依据实际使用工况环境选择。执行国家标准GB以及ANSI,DIN,JIS等国外标准。阀体/盖主要材质有WCB/1.0619，CF8/1.4301，CF8M/1.4408，CF3M/1.4435等。密封件材质主要有PTFE，RTFE，TFM1600，PPL，PEEK，PTFE+50%SS等。端口连接方式有螺纹、对焊、承插焊、法兰、卡箍等。控制方式有手动、齿轮、气动、电动等。广泛应用于石油，化工，钢铁，电力，工业环保，水处理，医药，饮料，食品等多个领域。<br></h3><h3>威达阀门多年来秉持以客户满意为公司的质量目标，产品销往欧美，日本，韩国，台湾等多个国家和地区。主要客户有BP（UK），KSB，GEMU（Germany），AKZO NOBEL（Holland），TETRA PAK，ARMSTRONG Machinery。<br></h3><h3>为了更快捷方便的为国内外客户提供优质服务，我们在上海、南京、深圳、美国等地设立了办事处。<br></h3><h3>竭诚欢迎各界朋友到企业参观，洽谈和指导！威达阀门与您携手并进，共创辉煌明天！</h3>",
+							"markdown": "### 青岛威达阀门工业有限公司成立于2003年6月，坐落在景色秀丽的海滨城市青岛西海岸新区。公司现有员工60余人，其中各类专业人员15人。拥有主要生产设备，检验测试设备30台（套），年产阀门能力20万台（套）。<br>\n\n\n\n### 自主研发设计有15个系列300多种规格型号的球阀以及蝶阀、止回阀。适用条件从全包/半包，真空，V型流道，温度(-49℃～260℃)，压力，加长延杆等都可依据实际使用工况环境选择。执行国家标准GB以及ANSI,DIN,JIS等国外标准。阀体/盖主要材质有WCB/1.0619，CF8/1.4301，CF8M/1.4408，CF3M/1.4435等。密封件材质主要有PTFE，RTFE，TFM1600，PPL，PEEK，PTFE+50%SS等。端口连接方式有螺纹、对焊、承插焊、法兰、卡箍等。控制方式有手动、齿轮、气动、电动等。广泛应用于石油，化工，钢铁，电力，工业环保，水处理，医药，饮料，食品等多个领域。<br>\n\n\n\n### 威达阀门多年来秉持以客户满意为公司的质量目标，产品销往欧美，日本，韩国，台湾等多个国家和地区。主要客户有BP（UK），KSB，GEMU（Germany），AKZO NOBEL（Holland），TETRA PAK，ARMSTRONG Machinery。<br>\n\n\n\n### 为了更快捷方便的为国内外客户提供优质服务，我们在上海、南京、深圳、美国等地设立了办事处。<br>\n\n\n\n### 竭诚欢迎各界朋友到企业参观，洽谈和指导！威达阀门与您携手并进，共创辉煌明天！\n\n"
+						}
+					}
 				]
 			}
 		});
 
 	component_5 = new Component$6({
+			props: {
+				favicon: {
+					"alt": "威达阀门",
+					"src": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690578965858logo%20r%20small.png",
+					"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690578965858logo%20r%20small.png",
+					"size": 9
+				},
+				d: "Deserunt aliquip est",
+				t: "Sint incididunt culpa",
+				de: "Deserunt aliquip est",
+				ti: "Sint incididunt culpa",
+				des: "Deserunt aliquip est",
+				tit: "Sint incididunt culpa",
+				desc: "Deserunt aliquip est",
+				titl: "Sint incididunt culpa",
+				descr: "Deserunt aliquip est",
+				title: "About Us",
+				descri: "Deserunt aliquip est",
+				descrip: "Deserunt aliquip est",
+				descript: "Deserunt aliquip est",
+				descripti: "Deserunt aliquip est",
+				descriptio: "Deserunt aliquip est",
+				description: "We're passionate about building a better meeting workflow"
+			}
+		});
+
+	component_6 = new Component$7({
 			props: {
 				favicon: {
 					"alt": "威达阀门",
@@ -6526,7 +6684,7 @@ function create_fragment$9(ctx) {
 			}
 		});
 
-	component_6 = new Component$7({
+	component_7 = new Component$8({
 			props: {
 				favicon: {
 					"alt": "威达阀门",
@@ -6553,7 +6711,7 @@ function create_fragment$9(ctx) {
 			}
 		});
 
-	component_7 = new Component$8({
+	component_8 = new Component$9({
 			props: {
 				favicon: {
 					"alt": "威达阀门",
@@ -6620,7 +6778,7 @@ function create_fragment$9(ctx) {
 			}
 		});
 
-	component_8 = new Component$9({
+	component_9 = new Component$a({
 			props: {
 				favicon: {
 					"alt": "威达阀门",
@@ -6666,6 +6824,8 @@ function create_fragment$9(ctx) {
 			create_component(component_7.$$.fragment);
 			t7 = space();
 			create_component(component_8.$$.fragment);
+			t8 = space();
+			create_component(component_9.$$.fragment);
 		},
 		l(nodes) {
 			claim_component(component_0.$$.fragment, nodes);
@@ -6685,6 +6845,8 @@ function create_fragment$9(ctx) {
 			claim_component(component_7.$$.fragment, nodes);
 			t7 = claim_space(nodes);
 			claim_component(component_8.$$.fragment, nodes);
+			t8 = claim_space(nodes);
+			claim_component(component_9.$$.fragment, nodes);
 		},
 		m(target, anchor) {
 			mount_component(component_0, target, anchor);
@@ -6704,6 +6866,8 @@ function create_fragment$9(ctx) {
 			mount_component(component_7, target, anchor);
 			insert_hydration(target, t7, anchor);
 			mount_component(component_8, target, anchor);
+			insert_hydration(target, t8, anchor);
+			mount_component(component_9, target, anchor);
 			current = true;
 		},
 		p: noop,
@@ -6718,6 +6882,7 @@ function create_fragment$9(ctx) {
 			transition_in(component_6.$$.fragment, local);
 			transition_in(component_7.$$.fragment, local);
 			transition_in(component_8.$$.fragment, local);
+			transition_in(component_9.$$.fragment, local);
 			current = true;
 		},
 		o(local) {
@@ -6730,6 +6895,7 @@ function create_fragment$9(ctx) {
 			transition_out(component_6.$$.fragment, local);
 			transition_out(component_7.$$.fragment, local);
 			transition_out(component_8.$$.fragment, local);
+			transition_out(component_9.$$.fragment, local);
 			current = false;
 		},
 		d(detaching) {
@@ -6750,15 +6916,17 @@ function create_fragment$9(ctx) {
 			destroy_component(component_7, detaching);
 			if (detaching) detach(t7);
 			destroy_component(component_8, detaching);
+			if (detaching) detach(t8);
+			destroy_component(component_9, detaching);
 		}
 	};
 }
 
-class Component$a extends SvelteComponent {
+class Component$b extends SvelteComponent {
 	constructor(options) {
 		super();
-		init(this, options, null, create_fragment$9, safe_not_equal, {});
+		init(this, options, null, create_fragment$a, safe_not_equal, {});
 	}
 }
 
-export default Component$a;
+export default Component$b;
