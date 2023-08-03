@@ -1,777 +1,233 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta name="generator" content="Primo" />
-    <title>About Us</title><!-- HEAD_svelte-1az0o38_START -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=fredoka:300,400,500,600,700|space-grotesk:300,400,500,600,700" rel="stylesheet">
-    <link href="https://fonts.bunny.net/css?family=fredoka:300,400,500,600,700|open-sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i|space-grotesk:300,400,500,600,700" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690578965858logo%20r%20small.png">
-    <meta name="description" content="We're passionate about building a better meeting workflow">
-    <style>
-        /* Reset & standardize default styles */
-        @import url("https://unpkg.com/@primo-app/primo@1.3.64/reset.css") layer;
-
-        /* Design tokens (apply to components) */
-        :root {
-            --color-tint: #f8fbff;
-
-            --font-heading: "Space Grotesk", sans-serif;
-            --font-body: "Open Sans", sans-serif;
-
-            /* Colors */
-            --color-base: #183b56;
-            --color-brand: #1565d8;
-            --color-accent: #36b37e;
-            --color-accent-2: #0d2436;
-            --color-light: #fcfcfd;
-            --color-shade: #cbcace;
-            --color-inverted: white;
-            --color-tint: #e5eaf4;
-
-            /* Base values */
-            --color: var(--color-base);
-            --box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);
-            --border-radius: 8px;
-            --border-color: #eee;
-            --background: white;
-        }
-
-        /* Root element (use instead of `body`) */
-        #page {
-            font-family: var(--font-body);
-            color: var(--color-base);
-            line-height: 1.2;
-            font-size: 1.125rem;
-            background: var(--background);
-        }
-
-        .section.has-content {
-            display: flex;
-            justify-content: center;
-            padding: 5rem 2rem;
-        }
-
-        .section.has-content .content {
-            max-width: 800px;
-            width: 100%;
-        }
-
-        .section-container {
-            max-width: 1250px;
-            margin: 0 auto;
-            padding: 5rem 2rem;
-        }
-
-        .heading-group {
-            display: grid;
-            gap: 1rem;
-            place-content: center;
-            text-align: center;
-        }
-
-        .heading-group .superhead {
-            font-family: var(--font-body);
-            color: var(--color-accent);
-            font-size: 0.875rem;
-            font-weight: 500;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-        }
-
-        .heading-group .subheading {
-            color: #4f6373;
-            line-height: 1.4;
-            max-width: 600px;
-            font-weight: 400;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .heading {
-            font-family: var(--font-heading);
-            font-size: 2rem;
-            line-height: 1.1;
-            font-weight: 500;
-            max-width: 600px;
-        }
-
-        .button {
-            color: var(--color-brand, white);
-            background: var(--color-inverted);
-            border: 2px solid var(--color-brand);
-            border-radius: 6px;
-            padding: 8px 20px;
-            transition: 0.1s background, 0.1s color;
-        }
-
-        .button:hover {
-            color: var(--color-inverted);
-            background: var(--color-brand);
-            border-color: var(--color-inverted);
-        }
-
-        .button.inverted {
-            background: var(--color-white);
-            color: var(--color-brand);
-            border-color: #0d2436;
-        }
-
-        .link {
-            font-size: 1.125rem;
-            font-weight: 400;
-            color: var(--color-brand);
-        }
-
-        .link .arrow {
-            transition: transform 0.1s;
-        }
-
-        .link:hover .arrow {
-            transform: translateX(4px);
-        }
-    </style><!-- HEAD_svelte-1az0o38_END -->
-    <style>
-        header.svelte-138qntj.svelte-138qntj {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 1rem;
-            padding-bottom: 1rem
-        }
-
-        .logo.svelte-138qntj.svelte-138qntj {
-            font-size: 1.5rem;
-            font-weight: 600;
-            line-height: 1.4;
-            margin-right: 1.5rem;
-            width: var(--size)
-        }
-
-        .link.svelte-138qntj.svelte-138qntj {
-            border-color: transparent;
-            font-weight: bold
-        }
-
-        .link.svelte-138qntj.svelte-138qntj:hover {
-            border-color: var(--color-accent)
-        }
-
-        button#open.svelte-138qntj.svelte-138qntj {
-            font-size: 3rem
-        }
-
-        nav.svelte-138qntj.svelte-138qntj {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 0.5rem
-        }
-
-        @media(min-width: 700px) {
-            nav.svelte-138qntj.svelte-138qntj {
-                gap: 1.5rem
-            }
-        }
-
-        nav.svelte-138qntj select {
-            background: transparent
-        }
-
-        nav.svelte-138qntj .menu-icon.svelte-138qntj {
-            font-size: 2rem
-        }
-
-        nav.svelte-138qntj button#close.svelte-138qntj {
-            display: none
-        }
-
-        nav.svelte-138qntj .nav-item.svelte-138qntj {
-            position: relative
-        }
-
-        nav.svelte-138qntj .nav-item .top-link.svelte-138qntj {
-            display: none;
-            align-items: center;
-            gap: 0.5rem;
-            position: relative;
-            font-weight: bold;
-            color: var(--color-brand)
-        }
-
-        nav.svelte-138qntj .nav-item .top-link span.svelte-138qntj {
-            border-bottom: 2px solid transparent
-        }
-
-        nav.svelte-138qntj .nav-item .top-link .icon.svelte-138qntj {
-            font-size: .9rem
-        }
-
-        nav.svelte-138qntj .nav-item .top-link.svelte-138qntj:hover {
-            border-color: var(--color-accent);
-            color: red
-        }
-
-        nav.svelte-138qntj .nav-item .top-link a.svelte-138qntj {
-            border-bottom: 2px solid transparent
-        }
-
-        nav.svelte-138qntj .nav-item .top-link a.svelte-138qntj:hover,
-        nav.svelte-138qntj .nav-item .top-link a.active.svelte-138qntj {
-            border-color: var(--color-accent);
-            color: red
-        }
-
-        nav.svelte-138qntj .nav-item .dropdown.svelte-138qntj {
-            font-weight: 400;
-            font-size: 1rem;
-            top: 100%;
-            position: absolute;
-            display: none;
-            width: auto;
-            white-space: nowrap;
-            border: 1px solid var(--border-color);
-            padding: 1.25rem 1rem;
-            background: var(--background);
-            box-shadow: var(--box-shadow);
-            z-index: 999
-        }
-
-        nav.svelte-138qntj .nav-item .dropdown a.svelte-138qntj {
-            border-bottom: 2px solid transparent
-        }
-
-        nav.svelte-138qntj .nav-item .dropdown a.svelte-138qntj:hover,
-        nav.svelte-138qntj .nav-item .dropdown a.active.svelte-138qntj {
-            border-color: var(--color-accent);
-            color: red
-        }
-
-        nav.svelte-138qntj .nav-item:focus-within .dropdown.svelte-138qntj {
-            display: grid;
-            place-items: flex-start;
-            gap: 0.5rem
-        }
-
-        nav#mobile-nav.svelte-138qntj.svelte-138qntj {
-            position: absolute;
-            flex-direction: column;
-            text-align: center;
-            background: var(--background);
-            border: var(--border);
-            box-shadow: var(--box-shadow);
-            border-radius: var(--border-radius);
-            left: 0.5rem;
-            top: 0.5rem;
-            right: 0.5rem;
-            padding: 2rem;
-            z-index: 999
-        }
-
-        nav#mobile-nav.svelte-138qntj a.link.svelte-138qntj {
-            display: block
-        }
-
-        nav#mobile-nav.svelte-138qntj button#close.svelte-138qntj {
-            display: block;
-            position: absolute;
-            right: 1rem;
-            top: 1rem;
-            color: var(--color-accent, #154bf4);
-            font-size: 1.5rem
-        }
-
-        @media(min-width: 700px) {
-
-            #open.svelte-138qntj.svelte-138qntj,
-            #mobile-nav.svelte-138qntj.svelte-138qntj {
-                display: none
-            }
-
-            nav.svelte-138qntj .nav-item .top-link.svelte-138qntj {
-                display: flex
-            }
-        }
-
-        header.svelte-oai1pc.svelte-oai1pc {
-            color: var(--color-inverted);
-            position: relative;
-            overflow: hidden;
-            background: var(--color-brand)
-        }
-
-        header.simple.svelte-oai1pc.svelte-oai1pc {
-            background: var(--background)
-        }
-
-        header.simple.svelte-oai1pc .heading-group.svelte-oai1pc {
-            color: var(--color);
-            background: linear-gradient(180deg, transparent 0%, #f8fbff 100%)
-        }
-
-        header.simple.svelte-oai1pc svg.svelte-oai1pc {
-            background: #f8fbff
-        }
-
-        img.svelte-oai1pc.svelte-oai1pc {
-            position: absolute;
-            inset: 0;
-            height: 100%;
-            width: 100%;
-            -o-object-fit: cover;
-            object-fit: cover;
-            z-index: 0
-        }
-
-        .heading-group.svelte-oai1pc.svelte-oai1pc {
-            background: #183b56a6;
-            display: grid;
-            padding-top: 6rem;
-            padding-bottom: 3rem;
-            position: relative;
-            gap: 2rem
-        }
-
-        .heading-group.svelte-oai1pc .heading.svelte-oai1pc {
-            font-size: clamp(2rem, 10vw, 3.5rem)
-        }
-
-        .heading-group.svelte-oai1pc .subheading.svelte-oai1pc {
-            place-self: center;
-            font-size: 1.125rem;
-            line-height: 1.3;
-            color: var(--color-inverted)
-        }
-
-        .buttons.svelte-oai1pc.svelte-oai1pc {
-            margin-top: 1rem;
-            display: flex;
-            justify-content: center;
-            gap: 1rem
-        }
-
-        .buttons.svelte-oai1pc .button.svelte-oai1pc {
-            background: transparent;
-            color: var(--color-inverted);
-            border: 1.5px solid white
-        }
-
-        svg.svelte-oai1pc.svelte-oai1pc {
-            width: 100%;
-            background: #183b56a6;
-            position: relative;
-            fill: var(--background)
-        }
-
-        .teasers.svelte-1re4jxk.svelte-1re4jxk {
-            display: grid;
-            gap: 6rem
-        }
-
-        .teaser.svelte-1re4jxk.svelte-1re4jxk {
-            display: grid;
-            gap: 3rem
-        }
-
-        @media(min-width: 1200px) {
-            .teaser.svelte-1re4jxk.svelte-1re4jxk {
-                gap: 6rem
-            }
-        }
-
-        .teaser.svelte-1re4jxk img.svelte-1re4jxk {
-            width: 100%;
-            border-radius: var(--border-radius)
-        }
-
-        .teaser.svelte-1re4jxk .body.svelte-1re4jxk {
-            display: grid;
-            place-items: flex-start;
-            gap: 1rem;
-            padding: 0;
-            line-height: 1.5;
-            max-width: 450px
-        }
-
-        .teaser.svelte-1re4jxk .body .title.svelte-1re4jxk {
-            font-size: 2rem;
-            font-family: var(--font-heading);
-            font-weight: 500;
-            line-height: 1.1
-        }
-
-        .teaser.svelte-1re4jxk .body a.link.svelte-1re4jxk {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem
-        }
-
-        @media(min-width: 800px) {
-            .teaser.svelte-1re4jxk.svelte-1re4jxk {
-                grid-template-columns: 1fr 1fr;
-                place-items: center
-                    /* switch direction for even items */
-            }
-
-            .teaser.svelte-1re4jxk:nth-child(odd) img.svelte-1re4jxk {
-                grid-row: 1;
-                grid-column: 2
-            }
-
-            .teaser.svelte-1re4jxk:nth-child(even) img.svelte-1re4jxk {
-                grid-row: 1;
-                grid-column: 1
-            }
-        }
-
-        .section-container.svelte-l5de5u.svelte-l5de5u {
-            text-align: center
-        }
-
-        .heading.svelte-l5de5u.svelte-l5de5u {
-            margin-bottom: 3rem
-        }
-
-        .subheading.svelte-l5de5u.svelte-l5de5u {
-            font-size: 1.25rem;
-            margin-bottom: 2rem
-        }
-
-        .cards.svelte-l5de5u.svelte-l5de5u {
-            display: grid;
-            gap: 1rem;
-            grid-template-columns: repeat(auto-fit, minmax(10rem, 15rem));
-            justify-content: center
-        }
-
-        .cards.svelte-l5de5u .card.svelte-l5de5u {
-            display: grid;
-            gap: .5rem;
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius);
-            padding: 1.5rem 2rem
-        }
-
-        .cards.svelte-l5de5u .card .stat.svelte-l5de5u {
-            color: var(--color-accent, rebeccapurple);
-            font-size: 2rem;
-            font-weight: bold
-        }
-
-        .cards.svelte-l5de5u .card .title.svelte-l5de5u {
-            font-weight: 500
-        }
-
-        .section-container.svelte-1u7vqb1.svelte-1u7vqb1 {
-            display: grid;
-            gap: 4rem
-        }
-
-        .heading-group.svelte-1u7vqb1.svelte-1u7vqb1 {
-            display: grid;
-            gap: .5rem;
-            place-content: center;
-            text-align: center
-        }
-
-        .heading-group.svelte-1u7vqb1 .superhead.svelte-1u7vqb1 {
-            font-family: var(--font-body);
-            color: var(--color-accent);
-            font-size: 0.875rem;
-            font-weight: 500;
-            letter-spacing: 1.5px;
-            text-transform: uppercase
-        }
-
-        ul.svelte-1u7vqb1.svelte-1u7vqb1 {
-            display: grid;
-            place-content: center;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 4rem
-        }
-
-        ul.svelte-1u7vqb1 li.svelte-1u7vqb1 {
-            display: grid;
-            place-content: start;
-            gap: 2rem
-        }
-
-        ul.svelte-1u7vqb1 li .quote.svelte-1u7vqb1 {
-            font-size: 1.125rem;
-            line-height: 1.5
-        }
-
-        ul.svelte-1u7vqb1 li .person.svelte-1u7vqb1 {
-            display: flex;
-            gap: 1rem
-        }
-
-        ul.svelte-1u7vqb1 li .person img.svelte-1u7vqb1 {
-            width: 40px;
-            height: 40px;
-            -o-object-fit: cover;
-            object-fit: cover;
-            border-radius: 50%
-        }
-
-        ul.svelte-1u7vqb1 li .person .text.svelte-1u7vqb1 {
-            display: grid;
-            gap: 0.25rem
-        }
-
-        ul.svelte-1u7vqb1 li .person .name.svelte-1u7vqb1 {
-            font-weight: 600
-        }
-
-        ul.svelte-1u7vqb1 li .person .subtitle.svelte-1u7vqb1 {
-            font-size: 0.875rem
-        }
-
-        .section-container.svelte-1nxn5fd {
-            padding-block: 5rem
-        }
-
-        footer.svelte-1xojwgl.svelte-1xojwgl {
-            background: var(--color-background, black);
-            color: white
-        }
-
-        .section-container.svelte-1xojwgl.svelte-1xojwgl {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 4rem
-        }
-
-        .content.svelte-1xojwgl.svelte-1xojwgl {
-            margin: initial;
-            padding: 0;
-            line-height: 1.5
-        }
-
-        .nav-items.svelte-1xojwgl.svelte-1xojwgl {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 4rem
-        }
-
-        .nav-items.svelte-1xojwgl ul.svelte-1xojwgl {
-            display: grid;
-            gap: 0.5rem
-        }
-
-        .nav-items.svelte-1xojwgl ul .link.svelte-1xojwgl {
-            border-bottom: 2px solid white
-        }
-
-        .nav-items.svelte-1xojwgl ul .link.svelte-1xojwgl:hover {
-            border-color: transparent
-        }
-
-        .nav-items.svelte-1xojwgl h3.svelte-1xojwgl {
-            font-weight: 400;
-            font-size: 1.2rem;
-            margin-bottom: 0.6rem
-        }
-    </style>
-</head>
-
-<body id="page">
-
-    <div class="section" id="section-445c982f">
-        <header class="section-container svelte-138qntj"><a href="/" class="logo svelte-138qntj" style="--size: 20rem;"><img src="https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690536473454logo%20R%20name%20small.png" alt=""></a>
-            <nav class="svelte-138qntj">
-                <div class="nav-item svelte-138qntj">
-                    <div class="top-link svelte-138qntj"><a href="/" class="link svelte-138qntj">首页</a></div>
-
-                </div>
-                <div class="nav-item svelte-138qntj">
-                    <div class="top-link svelte-138qntj"><button tabindex="0" class="top-link svelte-138qntj"><span class="svelte-138qntj">产品中心</span>
-                            <span class="icon svelte-138qntj"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 24 24" class="iconify iconify--akar-icons"><!-- HTML_TAG_START -->
-                                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 9l8 8l8-8" /><!-- HTML_TAG_END -->
-                                </svg></span>
-                        </button></div>
-                    <div class="dropdown svelte-138qntj"><a href="/product/ball-valve" class="link svelte-138qntj">球阀</a><a href="/" class="link svelte-138qntj">蝶阀</a><a href="/" class="link svelte-138qntj">止回阀</a><a href="/" class="link svelte-138qntj">执行器</a>
-                    </div>
-                </div>
-                <div class="nav-item svelte-138qntj">
-                    <div class="top-link svelte-138qntj"><a href="/about" class="link svelte-138qntj">关于我们</a></div>
-
-                </div>
-                <div class="nav-item svelte-138qntj">
-                    <div class="top-link svelte-138qntj"><a href="/contact" class="link svelte-138qntj">联系我们</a></div>
-
-                </div>
-                <button id="open" class="svelte-138qntj">
-                    <div class="menu-icon svelte-138qntj"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 24 24" class="iconify iconify--eva"><!-- HTML_TAG_START -->
-                            <g id="iconifySvelte0">
-                                <g id="iconifySvelte1">
-                                    <g id="iconifySvelte2" fill="currentColor">
-                                        <rect width="18" height="2" x="3" y="11" rx=".95" ry=".95" />
-                                        <rect width="18" height="2" x="3" y="16" rx=".95" ry=".95" />
-                                        <rect width="18" height="2" x="3" y="6" rx=".95" ry=".95" />
-                                    </g>
-                                </g>
-                            </g><!-- HTML_TAG_END -->
-                        </svg></div>
-                </button>
-            </nav>
-        </header>
-    </div>
-    <div class="section" id="section-0d85c1dd">
-        <header class=" svelte-oai1pc"><img src="https://images.unsplash.com/photo-1564069114553-7215e1ff1890?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2832&amp;q=80" alt="" class="svelte-oai1pc">
-            <div class="heading-group svelte-oai1pc">
-                <h1 class="heading svelte-oai1pc">关于威达</h1>
-                <span class="subheading svelte-oai1pc"></span>
-                <div class="buttons svelte-oai1pc"></div>
-            </div>
-        </header>
-    </div>
-    <div class="section" id="section-ea1beada">
-        <section class="section-container">
-            <div class="teasers svelte-1re4jxk">
-                <div class="teaser svelte-1re4jxk"><img src="https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/hdl2.jpg1690867950356" alt="" class="svelte-1re4jxk">
-                    <div class="body svelte-1re4jxk">
-                        <h2 class="title svelte-1re4jxk">公司简介</h2>
-                        <div class="content"><!-- HTML_TAG_START -->
-                            <h3>青岛威达阀门工业有限公司成立于2003年6月，坐落在景色秀丽的海滨城市青岛西海岸新区。公司现有员工60余人，其中各类专业人员15人。拥有主要生产设备，检验测试设备30台（套），年产阀门能力20万台（套）。<br></h3>
-                            <h3>自主研发设计有15个系列300多种规格型号的球阀以及蝶阀、止回阀。适用条件从全包/半包，真空，V型流道，温度(-49℃～260℃)，压力，加长延杆等都可依据实际使用工况环境选择。执行国家标准GB以及ANSI,DIN,JIS等国外标准。阀体/盖主要材质有WCB/1.0619，CF8/1.4301，CF8M/1.4408，CF3M/1.4435等。密封件材质主要有PTFE，RTFE，TFM1600，PPL，PEEK，PTFE+50%SS等。端口连接方式有螺纹、对焊、承插焊、法兰、卡箍等。控制方式有手动、齿轮、气动、电动等。广泛应用于石油，化工，钢铁，电力，工业环保，水处理，医药，饮料，食品等多个领域。<br></h3>
-                            <h3>威达阀门多年来秉持以客户满意为公司的质量目标，产品销往欧美，日本，韩国，台湾等多个国家和地区。主要客户有BP（UK），KSB，GEMU（Germany），AKZO NOBEL（Holland），TETRA PAK，ARMSTRONG Machinery。<br></h3>
-                            <h3>为了更快捷方便的为国内外客户提供优质服务，我们在上海、南京、深圳、美国等地设立了办事处。<br></h3>
-                            <h3>竭诚欢迎各界朋友到企业参观，洽谈和指导！威达阀门与您携手并进，共创辉煌明天！</h3><!-- HTML_TAG_END -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-    <div class="section" id="section-fbdb63d9">
-        <section class="section-container svelte-l5de5u">
-            <h2 class="heading svelte-l5de5u">威达专注于</h2>
-            <h3 class="subheading svelte-l5de5u"></h3>
-            <div class="cards svelte-l5de5u">
-                <div class="card svelte-l5de5u"><span class="stat svelte-l5de5u">您的需求</span>
-                    <span class="title svelte-l5de5u"></span>
-                </div>
-                <div class="card svelte-l5de5u"><span class="stat svelte-l5de5u">品质+服务</span>
-                    <span class="title svelte-l5de5u"></span>
-                </div>
-                <div class="card svelte-l5de5u"><span class="stat svelte-l5de5u">专业+责任</span>
-                    <span class="title svelte-l5de5u"></span>
-                </div>
-            </div>
-        </section>
-    </div>
-    <div class="section" id="section-0a0a12eb">
-        <section class="section-container svelte-1u7vqb1">
-            <div class="heading-group svelte-1u7vqb1"><span class="superhead svelte-1u7vqb1">真实的声音</span>
-                <h2 class="heading">客户的反馈</h2>
-            </div>
-            <ul class="svelte-1u7vqb1">
-                <li class="svelte-1u7vqb1">
-                    <div class="quote svelte-1u7vqb1" data-key="testimonials[0].quote"><!-- HTML_TAG_START -->
-                        <p>威达的阀门，第一感觉就是非常厚实。合作久了发现威达的人也一样的厚实。</p><!-- HTML_TAG_END -->
-                    </div>
-                    <div class="person svelte-1u7vqb1"><img src="https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690867310736user-woman-fav-icon.png" alt="" class="svelte-1u7vqb1">
-                        <div class="text svelte-1u7vqb1"><span class="name svelte-1u7vqb1"></span>
-                            <span class="subtitle svelte-1u7vqb1">杨女士</span>
-                        </div>
-                    </div>
-                </li>
-                <li class="svelte-1u7vqb1">
-                    <div class="quote svelte-1u7vqb1" data-key="testimonials[1].quote"><!-- HTML_TAG_START -->
-                        <p>我们出口海外的阀门，以及一些要求高的工程项目会选用威达的阀门，不是最便宜的，但品质的确可靠。</p><!-- HTML_TAG_END -->
-                    </div>
-                    <div class="person svelte-1u7vqb1"><img src="https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690867295630user-fav-icon.png" alt="" class="svelte-1u7vqb1">
-                        <div class="text svelte-1u7vqb1"><span class="name svelte-1u7vqb1"></span>
-                            <span class="subtitle svelte-1u7vqb1">范先生</span>
-                        </div>
-                    </div>
-                </li>
-                <li class="svelte-1u7vqb1">
-                    <div class="quote svelte-1u7vqb1" data-key="testimonials[2].quote"><!-- HTML_TAG_START -->
-                        <p>威达不止一次帮我们抢出来很紧的交期。</p><!-- HTML_TAG_END -->
-                    </div>
-                    <div class="person svelte-1u7vqb1"><img src="https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690867295630user-fav-icon.png" alt="" class="svelte-1u7vqb1">
-                        <div class="text svelte-1u7vqb1"><span class="name svelte-1u7vqb1"></span>
-                            <span class="subtitle svelte-1u7vqb1">于先生</span>
-                        </div>
-                    </div>
-                </li>
-                <li class="svelte-1u7vqb1">
-                    <div class="quote svelte-1u7vqb1" data-key="testimonials[3].quote"><!-- HTML_TAG_START -->
-                        <p>这些年我们的阀门一直是威达帮助设计生产的，团队很负责，响应也很及时。</p><!-- HTML_TAG_END -->
-                    </div>
-                    <div class="person svelte-1u7vqb1"><img src="https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690867310736user-woman-fav-icon.png" alt="" class="svelte-1u7vqb1">
-                        <div class="text svelte-1u7vqb1"><span class="name svelte-1u7vqb1"></span>
-                            <span class="subtitle svelte-1u7vqb1">孙女士</span>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </section>
-    </div>
-    <div class="section" id="section-b43aa185">
-        <div class="section-container svelte-1nxn5fd">
-            <hr>
-        </div>
-    </div>
-    <div class="section" id="section-0b240126">
-        <footer class="svelte-1xojwgl">
-            <div class="section-container svelte-1xojwgl">
-                <div class="content svelte-1xojwgl"><!-- HTML_TAG_START -->
-                    <h3 id="br">青岛威达阀门工业有限公司 <br></h3>
-                    <p>山东省 青岛市 西海岸新区</p>
-                    <p>松花江路 122号</p>
-                    <p>电话：(0532) 8676-3651</p>
-                    <p>邮箱：info@vdvx.com</p><!-- HTML_TAG_END -->
-                </div>
-                <div class="nav-items svelte-1xojwgl">
-                    <nav>
-                        <h3 class="svelte-1xojwgl">威达阀门</h3>
-                        <ul class="svelte-1xojwgl">
-                            <li><a class="link svelte-1xojwgl" href="/">首页</a>
-                            </li>
-                            <li><a class="link svelte-1xojwgl" href="/about">关于我们</a>
-                            </li>
-                            <li><a class="link svelte-1xojwgl" href="/contact">联系我们</a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <nav>
-                        <h3 class="svelte-1xojwgl">产品中心</h3>
-                        <ul class="svelte-1xojwgl">
-                            <li><a class="link svelte-1xojwgl" href="/product/ball-valve">球阀</a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <nav>
-                        <h3 class="svelte-1xojwgl">咨询</h3>
-                        <ul class="svelte-1xojwgl">
-                            <li><a class="link svelte-1xojwgl" href="mailto:info@vdvx.com">info@vdvx.com</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </footer>
-    </div>
-
-    <script type="module">
-        const path = window.location.pathname === '/' ? '' : window.location.pathname
-        const [{
-            default: App
-        }] = await Promise.all([
-            import(path + '/_module.js')
-        ]).catch(e => console.error(e))
-        new App({
-            target: document.querySelector('body'),
-            hydrate: true,
-        })
-    </script>
-</body>
-
-</html>
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta name="generator" content="Primo" />
+      <title>About Us</title><!-- HEAD_svelte-1az0o38_START --><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="UTF-8"><link rel="preconnect" href="https://fonts.bunny.net"><link href="https://fonts.bunny.net/css?family=fredoka:300,400,500,600,700|space-grotesk:300,400,500,600,700" rel="stylesheet"><link href="https://fonts.bunny.net/css?family=fredoka:300,400,500,600,700|open-sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i|space-grotesk:300,400,500,600,700" rel="stylesheet"><link rel="icon" type="image/png" sizes="32x32" href="https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690578965858logo%20r%20small.png"><meta name="description" content="We're passionate about building a better meeting workflow"><style>/* Reset & standardize default styles */
+@import url("https://unpkg.com/@primo-app/primo@1.3.64/reset.css") layer;
+
+/* Design tokens (apply to components) */
+:root {
+  --color-tint: #f8fbff;
+
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-body: "Open Sans", sans-serif;
+
+  /* Colors */
+  --color-base: #183b56;
+  --color-brand: #1565d8;
+  --color-accent: #36b37e;
+  --color-accent-2: #0d2436;
+  --color-light: #fcfcfd;
+  --color-shade: #cbcace;
+  --color-inverted: white;
+  --color-tint: #e5eaf4;
+
+  /* Base values */
+  --color: var(--color-base);
+  --box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);
+  --border-radius: 8px;
+  --border-color: #eee;
+  --background: white;
+}
+
+/* Root element (use instead of `body`) */
+#page {
+  font-family: var(--font-body);
+  color: var(--color-base);
+  line-height: 1.2;
+  font-size: 1.125rem;
+  background: var(--background);
+}
+
+.section.has-content {
+  display: flex;
+  justify-content: center;
+  padding: 5rem 2rem;
+}
+
+.section.has-content .content {
+    max-width: 800px;
+    width: 100%;
+  }
+
+.section-container {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}
+
+.heading-group {
+  display: grid;
+  gap: 1rem;
+  place-content: center;
+  text-align: center;
+}
+
+.heading-group .superhead {
+    font-family: var(--font-body);
+    color: var(--color-accent);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+.heading-group .subheading {
+    color: #4f6373;
+    line-height: 1.4;
+    max-width: 600px;
+    font-weight: 400;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+.heading {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  line-height: 1.1;
+  font-weight: 500;
+  max-width: 600px;
+}
+
+.button {
+  color: var(--color-brand, white);
+  background: var(--color-inverted);
+  border: 2px solid var(--color-brand);
+  border-radius: 6px;
+  padding: 8px 20px;
+  transition: 0.1s background, 0.1s color;
+}
+
+.button:hover {
+    color: var(--color-inverted);
+    background: var(--color-brand);
+    border-color: var(--color-inverted);
+  }
+
+.button.inverted {
+    background: var(--color-white);
+    color: var(--color-brand);
+    border-color: #0d2436;
+  }
+
+.link {
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: var(--color-brand);
+}
+
+.link .arrow {
+    transition: transform 0.1s;
+  }
+
+.link:hover .arrow {
+    transform: translateX(4px);
+  }
+</style><!-- HEAD_svelte-1az0o38_END -->
+      <style>header.svelte-138qntj.svelte-138qntj{display:flex;justify-content:space-between;align-items:center;padding-top:1rem;padding-bottom:1rem}.logo.svelte-138qntj.svelte-138qntj{font-size:1.5rem;font-weight:600;line-height:1.4;margin-right:1.5rem;width:var(--size)}.link.svelte-138qntj.svelte-138qntj{border-color:transparent;font-weight:bold}.link.svelte-138qntj.svelte-138qntj:hover{border-color:var(--color-accent)}button#open.svelte-138qntj.svelte-138qntj{font-size:3rem}nav.svelte-138qntj.svelte-138qntj{display:flex;align-items:center;justify-content:space-between;gap:0.5rem}@media(min-width: 700px){nav.svelte-138qntj.svelte-138qntj{gap:1.5rem
+}}nav.svelte-138qntj select{background:transparent}nav.svelte-138qntj .menu-icon.svelte-138qntj{font-size:2rem}nav.svelte-138qntj button#close.svelte-138qntj{display:none}nav.svelte-138qntj .nav-item.svelte-138qntj{position:relative}nav.svelte-138qntj .nav-item .top-link.svelte-138qntj{display:none;align-items:center;gap:0.5rem;position:relative;font-weight:bold;color:var(--color-brand)}nav.svelte-138qntj .nav-item .top-link span.svelte-138qntj{border-bottom:2px solid transparent}nav.svelte-138qntj .nav-item .top-link .icon.svelte-138qntj{font-size:.9rem}nav.svelte-138qntj .nav-item .top-link.svelte-138qntj:hover{border-color:var(--color-accent);color:red}nav.svelte-138qntj .nav-item .top-link a.svelte-138qntj{border-bottom:2px solid transparent}nav.svelte-138qntj .nav-item .top-link a.svelte-138qntj:hover,nav.svelte-138qntj .nav-item .top-link a.active.svelte-138qntj{border-color:var(--color-accent);color:red}nav.svelte-138qntj .nav-item .dropdown.svelte-138qntj{font-weight:400;font-size:1rem;top:100%;position:absolute;display:none;width:auto;white-space:nowrap;border:1px solid var(--border-color);padding:1.25rem 1rem;background:var(--background);box-shadow:var(--box-shadow);z-index:999}nav.svelte-138qntj .nav-item .dropdown a.svelte-138qntj{border-bottom:2px solid transparent}nav.svelte-138qntj .nav-item .dropdown a.svelte-138qntj:hover,nav.svelte-138qntj .nav-item .dropdown a.active.svelte-138qntj{border-color:var(--color-accent);color:red}nav.svelte-138qntj .nav-item:focus-within .dropdown.svelte-138qntj{display:grid;place-items:flex-start;gap:0.5rem}nav#mobile-nav.svelte-138qntj.svelte-138qntj{position:absolute;flex-direction:column;text-align:center;background:var(--background);border:var(--border);box-shadow:var(--box-shadow);border-radius:var(--border-radius);left:0.5rem;top:0.5rem;right:0.5rem;padding:2rem;z-index:999}nav#mobile-nav.svelte-138qntj a.link.svelte-138qntj{display:block}nav#mobile-nav.svelte-138qntj button#close.svelte-138qntj{display:block;position:absolute;right:1rem;top:1rem;color:var(--color-accent, #154bf4);font-size:1.5rem}@media(min-width: 700px){#open.svelte-138qntj.svelte-138qntj,#mobile-nav.svelte-138qntj.svelte-138qntj{display:none}nav.svelte-138qntj .nav-item .top-link.svelte-138qntj{display:flex}}
+header.svelte-oai1pc.svelte-oai1pc{color:var(--color-inverted);position:relative;overflow:hidden;background:var(--color-brand)}header.simple.svelte-oai1pc.svelte-oai1pc{background:var(--background)}header.simple.svelte-oai1pc .heading-group.svelte-oai1pc{color:var(--color);background:linear-gradient(180deg, transparent 0%, #f8fbff 100%)}header.simple.svelte-oai1pc svg.svelte-oai1pc{background:#f8fbff}img.svelte-oai1pc.svelte-oai1pc{position:absolute;inset:0;height:100%;width:100%;-o-object-fit:cover;object-fit:cover;z-index:0}.heading-group.svelte-oai1pc.svelte-oai1pc{background:#183b56a6;display:grid;padding-top:6rem;padding-bottom:3rem;position:relative;gap:2rem}.heading-group.svelte-oai1pc .heading.svelte-oai1pc{font-size:clamp(2rem, 10vw, 3.5rem)}.heading-group.svelte-oai1pc .subheading.svelte-oai1pc{place-self:center;font-size:1.125rem;line-height:1.3;color:var(--color-inverted)}.buttons.svelte-oai1pc.svelte-oai1pc{margin-top:1rem;display:flex;justify-content:center;gap:1rem}.buttons.svelte-oai1pc .button.svelte-oai1pc{background:transparent;color:var(--color-inverted);border:1.5px solid white}svg.svelte-oai1pc.svelte-oai1pc{width:100%;background:#183b56a6;position:relative;fill:var(--background)}
+.teasers.svelte-1re4jxk.svelte-1re4jxk{display:grid;gap:6rem}.teaser.svelte-1re4jxk.svelte-1re4jxk{display:grid;gap:3rem}@media(min-width: 1200px){.teaser.svelte-1re4jxk.svelte-1re4jxk{gap:6rem
+}}.teaser.svelte-1re4jxk img.svelte-1re4jxk{width:100%;border-radius:var(--border-radius)}.teaser.svelte-1re4jxk .body.svelte-1re4jxk{display:grid;place-items:flex-start;gap:1rem;padding:0;line-height:1.5;max-width:450px}.teaser.svelte-1re4jxk .body .title.svelte-1re4jxk{font-size:2rem;font-family:var(--font-heading);font-weight:500;line-height:1.1}.teaser.svelte-1re4jxk .body a.link.svelte-1re4jxk{display:flex;align-items:center;gap:0.5rem}@media(min-width: 800px){.teaser.svelte-1re4jxk.svelte-1re4jxk{grid-template-columns:1fr 1fr;place-items:center
+
+    /* switch direction for even items */
+}.teaser.svelte-1re4jxk:nth-child(odd) img.svelte-1re4jxk{grid-row:1;grid-column:2}.teaser.svelte-1re4jxk:nth-child(even) img.svelte-1re4jxk{grid-row:1;grid-column:1}}
+.section-container.svelte-l5de5u.svelte-l5de5u{text-align:center}.heading.svelte-l5de5u.svelte-l5de5u{margin-bottom:3rem}.subheading.svelte-l5de5u.svelte-l5de5u{font-size:1.25rem;margin-bottom:2rem}.cards.svelte-l5de5u.svelte-l5de5u{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit, minmax(10rem, 15rem));justify-content:center}.cards.svelte-l5de5u .card.svelte-l5de5u{display:grid;gap:.5rem;border:1px solid var(--border-color);border-radius:var(--border-radius);padding:1.5rem 2rem}.cards.svelte-l5de5u .card .stat.svelte-l5de5u{color:var(--color-accent, rebeccapurple);font-size:2rem;font-weight:bold}.cards.svelte-l5de5u .card .title.svelte-l5de5u{font-weight:500}
+.section-container.svelte-1u7vqb1.svelte-1u7vqb1{display:grid;gap:4rem}.heading-group.svelte-1u7vqb1.svelte-1u7vqb1{display:grid;gap:.5rem;place-content:center;text-align:center}.heading-group.svelte-1u7vqb1 .superhead.svelte-1u7vqb1{font-family:var(--font-body);color:var(--color-accent);font-size:0.875rem;font-weight:500;letter-spacing:1.5px;text-transform:uppercase}ul.svelte-1u7vqb1.svelte-1u7vqb1{display:grid;place-content:center;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:4rem}ul.svelte-1u7vqb1 li.svelte-1u7vqb1{display:grid;place-content:start;gap:2rem}ul.svelte-1u7vqb1 li .quote.svelte-1u7vqb1{font-size:1.125rem;line-height:1.5}ul.svelte-1u7vqb1 li .person.svelte-1u7vqb1{display:flex;gap:1rem}ul.svelte-1u7vqb1 li .person img.svelte-1u7vqb1{width:40px;height:40px;-o-object-fit:cover;object-fit:cover;border-radius:50%}ul.svelte-1u7vqb1 li .person .text.svelte-1u7vqb1{display:grid;gap:0.25rem}ul.svelte-1u7vqb1 li .person .name.svelte-1u7vqb1{font-weight:600}ul.svelte-1u7vqb1 li .person .subtitle.svelte-1u7vqb1{font-size:0.875rem}
+.section-container.svelte-1nxn5fd{padding-block:5rem}
+footer.svelte-1xojwgl.svelte-1xojwgl{background:var(--color-background, black);color:white}.section-container.svelte-1xojwgl.svelte-1xojwgl{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4rem}.content.svelte-1xojwgl.svelte-1xojwgl{margin:initial;padding:0;line-height:1.5}.nav-items.svelte-1xojwgl.svelte-1xojwgl{display:flex;flex-wrap:wrap;gap:4rem}.nav-items.svelte-1xojwgl ul.svelte-1xojwgl{display:grid;gap:0.5rem}.nav-items.svelte-1xojwgl ul .link.svelte-1xojwgl{border-bottom:2px solid white}.nav-items.svelte-1xojwgl ul .link.svelte-1xojwgl:hover{border-color:transparent}.nav-items.svelte-1xojwgl h3.svelte-1xojwgl{font-weight:400;font-size:1.2rem;margin-bottom:0.6rem}</style>
+    </head>
+    <body id="page">
+       
+<div class="section" id="section-445c982f"><header class="section-container svelte-138qntj"><a href="/" class="logo svelte-138qntj" style="--size: 20rem;"><img src="https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690536473454logo%20R%20name%20small.png" alt=""></a>
+  <nav class="svelte-138qntj">
+      <div class="nav-item svelte-138qntj"><div class="top-link svelte-138qntj"><a href="/" class="link svelte-138qntj">首页</a></div>
+        
+      </div>
+      <div class="nav-item svelte-138qntj"><div class="top-link svelte-138qntj"><button tabindex="0" class="top-link svelte-138qntj"><span class="svelte-138qntj">产品中心</span>
+            <span class="icon svelte-138qntj"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 24 24" class="iconify iconify--akar-icons"><!-- HTML_TAG_START --><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 9l8 8l8-8"/><!-- HTML_TAG_END --></svg></span>
+            </button></div>
+        <div class="dropdown svelte-138qntj"><a href="/product/ball-valve" class="link svelte-138qntj">球阀</a><a href="/" class="link svelte-138qntj">蝶阀</a><a href="/" class="link svelte-138qntj">止回阀</a><a href="/" class="link svelte-138qntj">执行器</a>
+          </div>
+      </div>
+      <div class="nav-item svelte-138qntj"><div class="top-link svelte-138qntj"><a href="/about" class="link svelte-138qntj">关于我们</a></div>
+        
+      </div>
+      <div class="nav-item svelte-138qntj"><div class="top-link svelte-138qntj"><a href="/contact" class="link svelte-138qntj">联系我们</a></div>
+        
+      </div>
+    <button id="open" class="svelte-138qntj"><div class="menu-icon svelte-138qntj"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 24 24" class="iconify iconify--eva"><!-- HTML_TAG_START --><g id="iconifySvelte0"><g id="iconifySvelte1"><g id="iconifySvelte2" fill="currentColor"><rect width="18" height="2" x="3" y="11" rx=".95" ry=".95"/><rect width="18" height="2" x="3" y="16" rx=".95" ry=".95"/><rect width="18" height="2" x="3" y="6" rx=".95" ry=".95"/></g></g></g><!-- HTML_TAG_END --></svg></div></button></nav>
+  </header></div> 
+<div class="section" id="section-0d85c1dd"><header class=" svelte-oai1pc"><img src="https://images.unsplash.com/photo-1564069114553-7215e1ff1890?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2832&amp;q=80" alt="" class="svelte-oai1pc">
+  <div class="heading-group svelte-oai1pc"><h1 class="heading svelte-oai1pc">关于威达</h1>
+    <span class="subheading svelte-oai1pc"></span>
+    <div class="buttons svelte-oai1pc"></div></div>
+  </header></div> 
+<div class="section" id="section-ea1beada"><section class="section-container"><div class="teasers svelte-1re4jxk"><div class="teaser svelte-1re4jxk"><img src="https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/hdl2.jpg1690867950356" alt="" class="svelte-1re4jxk">
+        <div class="body svelte-1re4jxk"><h2 class="title svelte-1re4jxk">公司简介</h2>
+          <div class="content"><!-- HTML_TAG_START --><h3>青岛威达阀门工业有限公司成立于2003年6月，坐落在景色秀丽的海滨城市青岛西海岸新区。公司现有员工60余人，其中各类专业人员15人。拥有主要生产设备，检验测试设备30台（套），年产阀门能力20万台（套）。<br></h3><h3>自主研发设计有15个系列300多种规格型号的球阀以及蝶阀、止回阀。适用条件从全包/半包，真空，V型流道，温度(-49℃～260℃)，压力，加长延杆等都可依据实际使用工况环境选择。执行国家标准GB以及ANSI,DIN,JIS等国外标准。阀体/盖主要材质有WCB/1.0619，CF8/1.4301，CF8M/1.4408，CF3M/1.4435等。密封件材质主要有PTFE，RTFE，TFM1600，PPL，PEEK，PTFE+50%SS等。端口连接方式有螺纹、对焊、承插焊、法兰、卡箍等。控制方式有手动、齿轮、气动、电动等。广泛应用于石油，化工，钢铁，电力，工业环保，水处理，医药，饮料，食品等多个领域。<br></h3><h3>威达阀门多年来秉持以客户满意为公司的质量目标，产品销往欧美，日本，韩国，台湾等多个国家和地区。主要客户有BP（UK），KSB，GEMU（Germany），AKZO NOBEL（Holland），TETRA PAK，ARMSTRONG Machinery。<br></h3><h3>为了更快捷方便的为国内外客户提供优质服务，我们在上海、南京、深圳、美国等地设立了办事处。<br></h3><h3>竭诚欢迎各界朋友到企业参观，洽谈和指导！威达阀门与您携手并进，共创辉煌明天！</h3><!-- HTML_TAG_END --></div>
+          </div>
+      </div></div></section></div> 
+<div class="section" id="section-fbdb63d9"><section class="section-container svelte-l5de5u"><h2 class="heading svelte-l5de5u">威达专注于</h2>
+  <h3 class="subheading svelte-l5de5u"></h3>
+  <div class="cards svelte-l5de5u"><div class="card svelte-l5de5u"><span class="stat svelte-l5de5u">您的需求</span>
+      <span class="title svelte-l5de5u"></span>
+    </div><div class="card svelte-l5de5u"><span class="stat svelte-l5de5u">品质+服务</span>
+      <span class="title svelte-l5de5u"></span>
+    </div><div class="card svelte-l5de5u"><span class="stat svelte-l5de5u">专业+责任</span>
+      <span class="title svelte-l5de5u"></span>
+    </div></div></section></div> 
+<div class="section" id="section-0a0a12eb"><section class="section-container svelte-1u7vqb1"><div class="heading-group svelte-1u7vqb1"><span class="superhead svelte-1u7vqb1">真实的声音</span>
+    <h2 class="heading">客户的信赖</h2></div>
+  <ul class="svelte-1u7vqb1"><li class="svelte-1u7vqb1"><div class="quote svelte-1u7vqb1" data-key="testimonials[0].quote"><!-- HTML_TAG_START --><p>威达的阀门，第一感觉就是非常厚实。合作久了发现威达的人也一样的厚实。</p><!-- HTML_TAG_END --></div>
+        <div class="person svelte-1u7vqb1"><img src="https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690867310736user-woman-fav-icon.png" alt="" class="svelte-1u7vqb1">
+          <div class="text svelte-1u7vqb1"><span class="name svelte-1u7vqb1"></span>
+            <span class="subtitle svelte-1u7vqb1">杨女士</span>
+          </div></div>
+      </li><li class="svelte-1u7vqb1"><div class="quote svelte-1u7vqb1" data-key="testimonials[1].quote"><!-- HTML_TAG_START --><p>我们出口海外的阀门，以及一些要求高的工程项目会选用威达的阀门，不是最便宜的，但品质的确可靠。</p><!-- HTML_TAG_END --></div>
+        <div class="person svelte-1u7vqb1"><img src="https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690867295630user-fav-icon.png" alt="" class="svelte-1u7vqb1">
+          <div class="text svelte-1u7vqb1"><span class="name svelte-1u7vqb1"></span>
+            <span class="subtitle svelte-1u7vqb1">范先生</span>
+          </div></div>
+      </li><li class="svelte-1u7vqb1"><div class="quote svelte-1u7vqb1" data-key="testimonials[2].quote"><!-- HTML_TAG_START --><p>威达不止一次帮我们抢出来很紧的交期。</p><!-- HTML_TAG_END --></div>
+        <div class="person svelte-1u7vqb1"><img src="https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690867295630user-fav-icon.png" alt="" class="svelte-1u7vqb1">
+          <div class="text svelte-1u7vqb1"><span class="name svelte-1u7vqb1"></span>
+            <span class="subtitle svelte-1u7vqb1">于先生</span>
+          </div></div>
+      </li><li class="svelte-1u7vqb1"><div class="quote svelte-1u7vqb1" data-key="testimonials[3].quote"><!-- HTML_TAG_START --><p>这些年我们的阀门一直是威达帮助设计生产的，团队很负责，响应也很及时。</p><!-- HTML_TAG_END --></div>
+        <div class="person svelte-1u7vqb1"><img src="https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690867310736user-woman-fav-icon.png" alt="" class="svelte-1u7vqb1">
+          <div class="text svelte-1u7vqb1"><span class="name svelte-1u7vqb1"></span>
+            <span class="subtitle svelte-1u7vqb1">孙女士</span>
+          </div></div>
+      </li></ul></section></div> 
+<div class="section" id="section-b43aa185"><div class="section-container svelte-1nxn5fd"><hr></div></div> 
+<div class="section" id="section-0b240126"><footer class="svelte-1xojwgl"><div class="section-container svelte-1xojwgl"><div class="content svelte-1xojwgl"><!-- HTML_TAG_START --><h3 id="br">青岛威达阀门工业有限公司 <br></h3>
+<p>山东省 青岛市 西海岸新区</p>
+<p>松花江路 122号</p>
+<p>电话：(0532) 8676-3651</p>
+<p>邮箱：info@vdvx.com</p><!-- HTML_TAG_END --></div>
+    <div class="nav-items svelte-1xojwgl"><nav><h3 class="svelte-1xojwgl">威达阀门</h3>
+          <ul class="svelte-1xojwgl"><li><a class="link svelte-1xojwgl" href="/">首页</a>
+              </li><li><a class="link svelte-1xojwgl" href="/about">关于我们</a>
+              </li><li><a class="link svelte-1xojwgl" href="/contact">联系我们</a>
+              </li></ul>
+        </nav><nav><h3 class="svelte-1xojwgl">产品中心</h3>
+          <ul class="svelte-1xojwgl"><li><a class="link svelte-1xojwgl" href="/product/ball-valve">球阀</a>
+              </li></ul>
+        </nav><nav><h3 class="svelte-1xojwgl">咨询</h3>
+          <ul class="svelte-1xojwgl"><li><a class="link svelte-1xojwgl" href="mailto:info@vdvx.com">info@vdvx.com</a>
+              </li></ul>
+        </nav></div></div></footer></div> 
+
+      <script type="module">      const path = window.location.pathname === '/' ? '' : window.location.pathname
+      const [ {default:App} ] = await Promise.all([
+        import(path + '/_module.js')
+      ]).catch(e => console.error(e))
+      new App({
+        target: document.querySelector('body'),
+        hydrate: true,
+      })</script>
+    </body>
+  </html>
+  

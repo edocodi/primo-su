@@ -1,734 +1,227 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta name="generator" content="Primo" />
-    <!-- HEAD_svelte-95cp5n_START -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=fredoka:300,400,500,600,700|space-grotesk:300,400,500,600,700" rel="stylesheet">
-    <link href="https://fonts.bunny.net/css?family=fredoka:300,400,500,600,700|open-sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i|space-grotesk:300,400,500,600,700" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690578965858logo%20r%20small.png">
-    <style>
-        /* Reset & standardize default styles */
-        @import url("https://unpkg.com/@primo-app/primo@1.3.64/reset.css") layer;
-
-        /* Design tokens (apply to components) */
-        :root {
-            --color-tint: #f8fbff;
-
-            --font-heading: "Space Grotesk", sans-serif;
-            --font-body: "Open Sans", sans-serif;
-
-            /* Colors */
-            --color-base: #183b56;
-            --color-brand: #1565d8;
-            --color-accent: #36b37e;
-            --color-accent-2: #0d2436;
-            --color-light: #fcfcfd;
-            --color-shade: #cbcace;
-            --color-inverted: white;
-            --color-tint: #e5eaf4;
-
-            /* Base values */
-            --color: var(--color-base);
-            --box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);
-            --border-radius: 8px;
-            --border-color: #eee;
-            --background: white;
-        }
-
-        /* Root element (use instead of `body`) */
-        #page {
-            font-family: var(--font-body);
-            color: var(--color-base);
-            line-height: 1.2;
-            font-size: 1.125rem;
-            background: var(--background);
-        }
-
-        .section.has-content {
-            display: flex;
-            justify-content: center;
-            padding: 5rem 2rem;
-        }
-
-        .section.has-content .content {
-            max-width: 800px;
-            width: 100%;
-        }
-
-        .section-container {
-            max-width: 1250px;
-            margin: 0 auto;
-            padding: 5rem 2rem;
-        }
-
-        .heading-group {
-            display: grid;
-            gap: 1rem;
-            place-content: center;
-            text-align: center;
-        }
-
-        .heading-group .superhead {
-            font-family: var(--font-body);
-            color: var(--color-accent);
-            font-size: 0.875rem;
-            font-weight: 500;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-        }
-
-        .heading-group .subheading {
-            color: #4f6373;
-            line-height: 1.4;
-            max-width: 600px;
-            font-weight: 400;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .heading {
-            font-family: var(--font-heading);
-            font-size: 2rem;
-            line-height: 1.1;
-            font-weight: 500;
-            max-width: 600px;
-        }
-
-        .button {
-            color: var(--color-brand, white);
-            background: var(--color-inverted);
-            border: 2px solid var(--color-brand);
-            border-radius: 6px;
-            padding: 8px 20px;
-            transition: 0.1s background, 0.1s color;
-        }
-
-        .button:hover {
-            color: var(--color-inverted);
-            background: var(--color-brand);
-            border-color: var(--color-inverted);
-        }
-
-        .button.inverted {
-            background: var(--color-white);
-            color: var(--color-brand);
-            border-color: #0d2436;
-        }
-
-        .link {
-            font-size: 1.125rem;
-            font-weight: 400;
-            color: var(--color-brand);
-        }
-
-        .link .arrow {
-            transition: transform 0.1s;
-        }
-
-        .link:hover .arrow {
-            transform: translateX(4px);
-        }
-    </style><!-- HEAD_svelte-95cp5n_END -->
-    <style>
-        header.svelte-138qntj.svelte-138qntj {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 1rem;
-            padding-bottom: 1rem
-        }
-
-        .logo.svelte-138qntj.svelte-138qntj {
-            font-size: 1.5rem;
-            font-weight: 600;
-            line-height: 1.4;
-            margin-right: 1.5rem;
-            width: var(--size)
-        }
-
-        .link.svelte-138qntj.svelte-138qntj {
-            border-color: transparent;
-            font-weight: bold
-        }
-
-        .link.svelte-138qntj.svelte-138qntj:hover {
-            border-color: var(--color-accent)
-        }
-
-        button#open.svelte-138qntj.svelte-138qntj {
-            font-size: 3rem
-        }
-
-        nav.svelte-138qntj.svelte-138qntj {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 0.5rem
-        }
-
-        @media(min-width: 700px) {
-            nav.svelte-138qntj.svelte-138qntj {
-                gap: 1.5rem
-            }
-        }
-
-        nav.svelte-138qntj select {
-            background: transparent
-        }
-
-        nav.svelte-138qntj .menu-icon.svelte-138qntj {
-            font-size: 2rem
-        }
-
-        nav.svelte-138qntj button#close.svelte-138qntj {
-            display: none
-        }
-
-        nav.svelte-138qntj .nav-item.svelte-138qntj {
-            position: relative
-        }
-
-        nav.svelte-138qntj .nav-item .top-link.svelte-138qntj {
-            display: none;
-            align-items: center;
-            gap: 0.5rem;
-            position: relative;
-            font-weight: bold;
-            color: var(--color-brand)
-        }
-
-        nav.svelte-138qntj .nav-item .top-link span.svelte-138qntj {
-            border-bottom: 2px solid transparent
-        }
-
-        nav.svelte-138qntj .nav-item .top-link .icon.svelte-138qntj {
-            font-size: .9rem
-        }
-
-        nav.svelte-138qntj .nav-item .top-link.svelte-138qntj:hover {
-            border-color: var(--color-accent);
-            color: red
-        }
-
-        nav.svelte-138qntj .nav-item .top-link a.svelte-138qntj {
-            border-bottom: 2px solid transparent
-        }
-
-        nav.svelte-138qntj .nav-item .top-link a.svelte-138qntj:hover,
-        nav.svelte-138qntj .nav-item .top-link a.active.svelte-138qntj {
-            border-color: var(--color-accent);
-            color: red
-        }
-
-        nav.svelte-138qntj .nav-item .dropdown.svelte-138qntj {
-            font-weight: 400;
-            font-size: 1rem;
-            top: 100%;
-            position: absolute;
-            display: none;
-            width: auto;
-            white-space: nowrap;
-            border: 1px solid var(--border-color);
-            padding: 1.25rem 1rem;
-            background: var(--background);
-            box-shadow: var(--box-shadow);
-            z-index: 999
-        }
-
-        nav.svelte-138qntj .nav-item .dropdown a.svelte-138qntj {
-            border-bottom: 2px solid transparent
-        }
-
-        nav.svelte-138qntj .nav-item .dropdown a.svelte-138qntj:hover,
-        nav.svelte-138qntj .nav-item .dropdown a.active.svelte-138qntj {
-            border-color: var(--color-accent);
-            color: red
-        }
-
-        nav.svelte-138qntj .nav-item:focus-within .dropdown.svelte-138qntj {
-            display: grid;
-            place-items: flex-start;
-            gap: 0.5rem
-        }
-
-        nav#mobile-nav.svelte-138qntj.svelte-138qntj {
-            position: absolute;
-            flex-direction: column;
-            text-align: center;
-            background: var(--background);
-            border: var(--border);
-            box-shadow: var(--box-shadow);
-            border-radius: var(--border-radius);
-            left: 0.5rem;
-            top: 0.5rem;
-            right: 0.5rem;
-            padding: 2rem;
-            z-index: 999
-        }
-
-        nav#mobile-nav.svelte-138qntj a.link.svelte-138qntj {
-            display: block
-        }
-
-        nav#mobile-nav.svelte-138qntj button#close.svelte-138qntj {
-            display: block;
-            position: absolute;
-            right: 1rem;
-            top: 1rem;
-            color: var(--color-accent, #154bf4);
-            font-size: 1.5rem
-        }
-
-        @media(min-width: 700px) {
-
-            #open.svelte-138qntj.svelte-138qntj,
-            #mobile-nav.svelte-138qntj.svelte-138qntj {
-                display: none
-            }
-
-            nav.svelte-138qntj .nav-item .top-link.svelte-138qntj {
-                display: flex
-            }
-        }
-
-        section.svelte-1qk24ik.svelte-1qk24ik {
-            background: var(--color-brand);
-            overflow: hidden
-        }
-
-        section.image-left.svelte-1qk24ik figure.svelte-1qk24ik {
-            grid-column: 1;
-            grid-row: 1
-        }
-
-        section.image-left.svelte-1qk24ik .body.svelte-1qk24ik {
-            grid-column: 2
-        }
-
-        .section-container.svelte-1qk24ik.svelte-1qk24ik {
-            display: flex;
-            flex-direction: column-reverse;
-            gap: 2rem
-        }
-
-        @media(min-width: 800px) {
-            .section-container.svelte-1qk24ik.svelte-1qk24ik {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                place-items: center;
-                gap: 6rem;
-                padding-block: 6rem
-            }
-        }
-
-        .body.svelte-1qk24ik.svelte-1qk24ik {
-            color: var(--color-inverted);
-            display: grid;
-            place-items: start;
-            padding-top: 2rem
-        }
-
-        .body.svelte-1qk24ik .headline.svelte-1qk24ik {
-            font-family: var(--font-heading);
-            font-weight: 700;
-            font-size: clamp(2.75rem, 10vw, 3rem);
-            line-height: 1.1;
-            margin-bottom: 1.5rem
-        }
-
-        .body.svelte-1qk24ik .subheading.svelte-1qk24ik {
-            font-weight: 400;
-            font-size: 1.125rem;
-            line-height: 1.5;
-            margin-bottom: 2rem
-        }
-
-        .body.svelte-1qk24ik .button.svelte-1qk24ik {
-            font-weight: 500
-        }
-
-        figure.svelte-1qk24ik.svelte-1qk24ik {
-            position: relative
-        }
-
-        figure.svelte-1qk24ik img.svelte-1qk24ik {
-            border-radius: var(--border-radius);
-            z-index: 1;
-            position: relative
-        }
-
-        .section-container.svelte-sqs4td.svelte-sqs4td {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem
-        }
-
-        .heading.svelte-sqs4td.svelte-sqs4td {
-            text-align: center
-        }
-
-        ul.svelte-sqs4td.svelte-sqs4td {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-            gap: 1.75rem
-        }
-
-        ul.svelte-sqs4td li.svelte-sqs4td {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            border: 1px solid var(--border-color, #eee);
-            border-radius: var(--border-radius);
-            padding: 1.5rem
-        }
-
-        ul.svelte-sqs4td li .title.svelte-sqs4td {
-            display: flex;
-            gap: 0.5rem;
-            font-size: 1.25rem;
-            font-weight: bold;
-            align-items: center
-        }
-
-        ul.svelte-sqs4td li .title .label.svelte-sqs4td {
-            line-height: 1.1;
-            font-weight: 600
-        }
-
-        .section-container.svelte-1nxn5fd {
-            padding-block: 5rem
-        }
-
-        @media(min-width: 1200px) {
-            section.svelte-1elc4xu.svelte-1elc4xu {
-                gap: 6rem
-            }
-        }
-
-        .callouts.svelte-1elc4xu.svelte-1elc4xu {
-            display: grid;
-            gap: 6rem
-        }
-
-        .callout.svelte-1elc4xu.svelte-1elc4xu {
-            display: grid;
-            gap: 3rem
-        }
-
-        @media(min-width: 1200px) {
-            .callout.svelte-1elc4xu.svelte-1elc4xu {
-                gap: 6rem
-            }
-        }
-
-        .callout.svelte-1elc4xu img.svelte-1elc4xu {
-            width: 100%;
-            border-radius: var(--border-radius)
-        }
-
-        .callout.svelte-1elc4xu .body.svelte-1elc4xu {
-            display: grid;
-            padding: 0;
-            line-height: 1.5;
-            max-width: 450px
-        }
-
-        .callout.svelte-1elc4xu .body .heading-group.svelte-1elc4xu {
-            place-content: start;
-            text-align: left;
-            margin-bottom: 1rem
-        }
-
-        @media(min-width: 800px) {
-            .callout.svelte-1elc4xu.svelte-1elc4xu {
-                grid-template-columns: 1fr 1fr;
-                place-items: center
-                    /* switch direction for even items */
-            }
-
-            .callout.svelte-1elc4xu:nth-child(odd) img.svelte-1elc4xu {
-                grid-row: 1;
-                grid-column: 2
-            }
-
-            .callout.svelte-1elc4xu:nth-child(even) img.svelte-1elc4xu {
-                grid-row: 1;
-                grid-column: 1
-            }
-        }
-
-        .section-container.svelte-1nxn5fd {
-            padding-block: 5rem
-        }
-
-        footer.svelte-1xojwgl.svelte-1xojwgl {
-            background: var(--color-background, black);
-            color: white
-        }
-
-        .section-container.svelte-1xojwgl.svelte-1xojwgl {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 4rem
-        }
-
-        .content.svelte-1xojwgl.svelte-1xojwgl {
-            margin: initial;
-            padding: 0;
-            line-height: 1.5
-        }
-
-        .nav-items.svelte-1xojwgl.svelte-1xojwgl {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 4rem
-        }
-
-        .nav-items.svelte-1xojwgl ul.svelte-1xojwgl {
-            display: grid;
-            gap: 0.5rem
-        }
-
-        .nav-items.svelte-1xojwgl ul .link.svelte-1xojwgl {
-            border-bottom: 2px solid white
-        }
-
-        .nav-items.svelte-1xojwgl ul .link.svelte-1xojwgl:hover {
-            border-color: transparent
-        }
-
-        .nav-items.svelte-1xojwgl h3.svelte-1xojwgl {
-            font-weight: 400;
-            font-size: 1.2rem;
-            margin-bottom: 0.6rem
-        }
-    </style>
-</head>
-
-<body id="page">
-
-    <div class="section" id="section-3d380bca">
-        <header class="section-container svelte-138qntj"><a href="/" class="logo svelte-138qntj" style="--size: 20rem;"><img src="https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690536473454logo%20R%20name%20small.png" alt=""></a>
-            <nav class="svelte-138qntj">
-                <div class="nav-item svelte-138qntj">
-                    <div class="top-link svelte-138qntj"><a href="/" class="link svelte-138qntj">首页</a></div>
-
-                </div>
-                <div class="nav-item svelte-138qntj">
-                    <div class="top-link svelte-138qntj"><button tabindex="0" class="top-link svelte-138qntj"><span class="svelte-138qntj">产品中心</span>
-                            <span class="icon svelte-138qntj"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 24 24" class="iconify iconify--akar-icons"><!-- HTML_TAG_START -->
-                                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 9l8 8l8-8" /><!-- HTML_TAG_END -->
-                                </svg></span>
-                        </button></div>
-                    <div class="dropdown svelte-138qntj"><a href="/product/ball-valve" class="link svelte-138qntj">球阀</a><a href="/" class="link svelte-138qntj">蝶阀</a><a href="/" class="link svelte-138qntj">止回阀</a><a href="/" class="link svelte-138qntj">执行器</a>
-                    </div>
-                </div>
-                <div class="nav-item svelte-138qntj">
-                    <div class="top-link svelte-138qntj"><a href="/about" class="link svelte-138qntj">关于我们</a></div>
-
-                </div>
-                <div class="nav-item svelte-138qntj">
-                    <div class="top-link svelte-138qntj"><a href="/contact" class="link svelte-138qntj">联系我们</a></div>
-
-                </div>
-                <button id="open" class="svelte-138qntj">
-                    <div class="menu-icon svelte-138qntj"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 24 24" class="iconify iconify--eva"><!-- HTML_TAG_START -->
-                            <g id="iconifySvelte0">
-                                <g id="iconifySvelte1">
-                                    <g id="iconifySvelte2" fill="currentColor">
-                                        <rect width="18" height="2" x="3" y="11" rx=".95" ry=".95" />
-                                        <rect width="18" height="2" x="3" y="16" rx=".95" ry=".95" />
-                                        <rect width="18" height="2" x="3" y="6" rx=".95" ry=".95" />
-                                    </g>
-                                </g>
-                            </g><!-- HTML_TAG_END -->
-                        </svg></div>
-                </button>
-            </nav>
-        </header>
-    </div>
-    <div class="section" id="section-5852b272">
-        <section class="svelte-1qk24ik">
-            <div class="section-container svelte-1qk24ik">
-                <div class="body svelte-1qk24ik">
-                    <h1 class="headline svelte-1qk24ik">球阀</h1>
-                    <div class="subheading svelte-1qk24ik">多种设计组合，可全定制。</div>
-                    <a href="/contact" class="button svelte-1qk24ik">咨询</a>
-                </div>
-                <figure class="svelte-1qk24ik"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=2070&amp;q=80" alt="" class="svelte-1qk24ik"></figure>
-            </div>
-        </section>
-    </div>
-    <div class="section" id="section-ef06bbab">
-        <section class="section-container svelte-sqs4td">
-            <h2 class="heading svelte-sqs4td"></h2>
-            <ul class="svelte-sqs4td">
-                <li class="svelte-sqs4td">
-                    <h3 class="title svelte-sqs4td"><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="22" height="22" viewBox="0 0 24 24" style="color: var(--color-accent, rebeccapurple)" class="iconify iconify--material-symbols"><!-- HTML_TAG_START -->
-                                <path fill="currentColor" d="m10.6 13.8l-2.15-2.15q-.275-.275-.7-.275t-.7.275q-.275.275-.275.7t.275.7L9.9 15.9q.3.3.7.3t.7-.3l5.65-5.65q.275-.275.275-.7t-.275-.7q-.275-.275-.7-.275t-.7.275L10.6 13.8ZM12 22q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Z" /><!-- HTML_TAG_END -->
-                            </svg></span>
-                        <span class="label svelte-sqs4td">设计结构</span>
-                    </h3>
-                    <div class="description"><!-- HTML_TAG_START -->
-                        <p>1、2、3、5片式</p><!-- HTML_TAG_END -->
-                    </div>
-                </li>
-                <li class="svelte-sqs4td">
-                    <h3 class="title svelte-sqs4td"><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="22" height="22" viewBox="0 0 24 24" style="color: var(--color-accent, rebeccapurple)" class="iconify iconify--material-symbols"><!-- HTML_TAG_START -->
-                                <path fill="currentColor" d="m10.6 13.8l-2.15-2.15q-.275-.275-.7-.275t-.7.275q-.275.275-.275.7t.275.7L9.9 15.9q.3.3.7.3t.7-.3l5.65-5.65q.275-.275.275-.7t-.275-.7q-.275-.275-.7-.275t-.7.275L10.6 13.8ZM12 22q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Z" /><!-- HTML_TAG_END -->
-                            </svg></span>
-                        <span class="label svelte-sqs4td">阀体材质</span>
-                    </h3>
-                    <div class="description"><!-- HTML_TAG_START -->
-                        <p>碳钢、不锈钢、镍基合金等</p><!-- HTML_TAG_END -->
-                    </div>
-                </li>
-                <li class="svelte-sqs4td">
-                    <h3 class="title svelte-sqs4td"><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="22" height="22" viewBox="0 0 24 24" style="color: var(--color-accent, rebeccapurple)" class="iconify iconify--material-symbols"><!-- HTML_TAG_START -->
-                                <path fill="currentColor" d="m10.6 13.8l-2.15-2.15q-.275-.275-.7-.275t-.7.275q-.275.275-.275.7t.275.7L9.9 15.9q.3.3.7.3t.7-.3l5.65-5.65q.275-.275.275-.7t-.275-.7q-.275-.275-.7-.275t-.7.275L10.6 13.8ZM12 22q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Z" /><!-- HTML_TAG_END -->
-                            </svg></span>
-                        <span class="label svelte-sqs4td">密封材质</span>
-                    </h3>
-                    <div class="description"><!-- HTML_TAG_START -->
-                        <p>PTFE、PEEK、PPL、石墨、全包球垫等</p><!-- HTML_TAG_END -->
-                    </div>
-                </li>
-                <li class="svelte-sqs4td">
-                    <h3 class="title svelte-sqs4td"><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="22" height="22" viewBox="0 0 24 24" style="color: var(--color-accent, rebeccapurple)" class="iconify iconify--material-symbols"><!-- HTML_TAG_START -->
-                                <path fill="currentColor" d="m10.6 13.8l-2.15-2.15q-.275-.275-.7-.275t-.7.275q-.275.275-.275.7t.275.7L9.9 15.9q.3.3.7.3t.7-.3l5.65-5.65q.275-.275.275-.7t-.275-.7q-.275-.275-.7-.275t-.7.275L10.6 13.8ZM12 22q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Z" /><!-- HTML_TAG_END -->
-                            </svg></span>
-                        <span class="label svelte-sqs4td">连接方式</span>
-                    </h3>
-                    <div class="description"><!-- HTML_TAG_START -->
-                        <p>对焊、卡箍、法兰、螺纹等</p><!-- HTML_TAG_END -->
-                    </div>
-                </li>
-                <li class="svelte-sqs4td">
-                    <h3 class="title svelte-sqs4td"><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="22" height="22" viewBox="0 0 24 24" style="color: var(--color-accent, rebeccapurple)" class="iconify iconify--material-symbols"><!-- HTML_TAG_START -->
-                                <path fill="currentColor" d="m10.6 13.8l-2.15-2.15q-.275-.275-.7-.275t-.7.275q-.275.275-.275.7t.275.7L9.9 15.9q.3.3.7.3t.7-.3l5.65-5.65q.275-.275.275-.7t-.275-.7q-.275-.275-.7-.275t-.7.275L10.6 13.8ZM12 22q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Z" /><!-- HTML_TAG_END -->
-                            </svg></span>
-                        <span class="label svelte-sqs4td">驱动方式</span>
-                    </h3>
-                    <div class="description"><!-- HTML_TAG_START -->
-                        <p>手动、电动、气动、带限制阀等</p><!-- HTML_TAG_END -->
-                    </div>
-                </li>
-                <li class="svelte-sqs4td">
-                    <h3 class="title svelte-sqs4td"><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="22" height="22" viewBox="0 0 24 24" style="color: var(--color-accent, rebeccapurple)" class="iconify iconify--material-symbols"><!-- HTML_TAG_START -->
-                                <path fill="currentColor" d="m10.6 13.8l-2.15-2.15q-.275-.275-.7-.275t-.7.275q-.275.275-.275.7t.275.7L9.9 15.9q.3.3.7.3t.7-.3l5.65-5.65q.275-.275.275-.7t-.275-.7q-.275-.275-.7-.275t-.7.275L10.6 13.8ZM12 22q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Z" /><!-- HTML_TAG_END -->
-                            </svg></span>
-                        <span class="label svelte-sqs4td">通路设计</span>
-                    </h3>
-                    <div class="description"><!-- HTML_TAG_START -->
-                        <p>双通、三通、多通、L型、T型、V型等</p><!-- HTML_TAG_END -->
-                    </div>
-                </li>
-            </ul>
-        </section>
-    </div>
-    <div class="section" id="section-7eb56d14">
-        <div class="section-container svelte-1nxn5fd">
-            <hr>
-        </div>
-    </div>
-    <div class="section" id="section-4eb90720">
-        <section class="svelte-1elc4xu">
-            <div class="section-container">
-                <div class="callouts svelte-1elc4xu">
-                    <div class="callout svelte-1elc4xu"><img src="https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/V-30F.png1690842810733" alt="" class="svelte-1elc4xu">
-                        <div class="body svelte-1elc4xu">
-                            <div class="heading-group svelte-1elc4xu">
-                                <div class="superhead">Interesting Feature</div>
-                                <h2 class="heading">参数范围</h2>
-                            </div>
-                            <div class="content"><!-- HTML_TAG_START -->
-                                <p>公称通径：</p>
-                                <p>公称压力：</p>
-                                <p>适用温度：</p><!-- HTML_TAG_END -->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="callout svelte-1elc4xu"><img src="https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/V-70W.jpg1690843203059" alt="" class="svelte-1elc4xu">
-                        <div class="body svelte-1elc4xu">
-                            <div class="heading-group svelte-1elc4xu">
-                                <div class="superhead">Another one</div>
-                                <h2 class="heading">特种需求</h2>
-                            </div>
-                            <div class="content"><!-- HTML_TAG_START -->
-                                <p>全包球垫</p>
-                                <p>加长中轴</p>
-                                <p>特殊材质密封</p>
-                                <p>品牌定制</p><!-- HTML_TAG_END -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-    <div class="section" id="section-74f737ca">
-        <div class="section-container svelte-1nxn5fd">
-            <hr>
-        </div>
-    </div>
-    <div class="section" id="section-3c2a3014">
-        <footer class="svelte-1xojwgl">
-            <div class="section-container svelte-1xojwgl">
-                <div class="content svelte-1xojwgl"><!-- HTML_TAG_START -->
-                    <h3 id="br">青岛威达阀门工业有限公司 <br></h3>
-                    <p>山东省 青岛市 西海岸新区</p>
-                    <p>松花江路 122号</p>
-                    <p>电话：(0532) 8676-3651</p>
-                    <p>邮箱：info@vdvx.com</p><!-- HTML_TAG_END -->
-                </div>
-                <div class="nav-items svelte-1xojwgl">
-                    <nav>
-                        <h3 class="svelte-1xojwgl">威达阀门</h3>
-                        <ul class="svelte-1xojwgl">
-                            <li><a class="link svelte-1xojwgl" href="/">首页</a>
-                            </li>
-                            <li><a class="link svelte-1xojwgl" href="/about">关于我们</a>
-                            </li>
-                            <li><a class="link svelte-1xojwgl" href="/contact">联系我们</a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <nav>
-                        <h3 class="svelte-1xojwgl">产品中心</h3>
-                        <ul class="svelte-1xojwgl">
-                            <li><a class="link svelte-1xojwgl" href="/product/ball-valve">球阀</a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <nav>
-                        <h3 class="svelte-1xojwgl">咨询</h3>
-                        <ul class="svelte-1xojwgl">
-                            <li><a class="link svelte-1xojwgl" href="mailto:info@vdvx.com">info@vdvx.com</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </footer>
-    </div>
-
-    <script type="module">
-        const path = window.location.pathname === '/' ? '' : window.location.pathname
-        const [{
-            default: App
-        }] = await Promise.all([
-            import(path + '/_module.js')
-        ]).catch(e => console.error(e))
-        new App({
-            target: document.querySelector('body'),
-            hydrate: true,
-        })
-    </script>
-</body>
-
-</html>
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta name="generator" content="Primo" />
+      <!-- HEAD_svelte-95cp5n_START --><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="UTF-8"><link rel="preconnect" href="https://fonts.bunny.net"><link href="https://fonts.bunny.net/css?family=fredoka:300,400,500,600,700|space-grotesk:300,400,500,600,700" rel="stylesheet"><link href="https://fonts.bunny.net/css?family=fredoka:300,400,500,600,700|open-sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i|space-grotesk:300,400,500,600,700" rel="stylesheet"><link rel="icon" type="image/png" sizes="32x32" href="https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690578965858logo%20r%20small.png"><style>/* Reset & standardize default styles */
+@import url("https://unpkg.com/@primo-app/primo@1.3.64/reset.css") layer;
+
+/* Design tokens (apply to components) */
+:root {
+  --color-tint: #f8fbff;
+
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-body: "Open Sans", sans-serif;
+
+  /* Colors */
+  --color-base: #183b56;
+  --color-brand: #1565d8;
+  --color-accent: #36b37e;
+  --color-accent-2: #0d2436;
+  --color-light: #fcfcfd;
+  --color-shade: #cbcace;
+  --color-inverted: white;
+  --color-tint: #e5eaf4;
+
+  /* Base values */
+  --color: var(--color-base);
+  --box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);
+  --border-radius: 8px;
+  --border-color: #eee;
+  --background: white;
+}
+
+/* Root element (use instead of `body`) */
+#page {
+  font-family: var(--font-body);
+  color: var(--color-base);
+  line-height: 1.2;
+  font-size: 1.125rem;
+  background: var(--background);
+}
+
+.section.has-content {
+  display: flex;
+  justify-content: center;
+  padding: 5rem 2rem;
+}
+
+.section.has-content .content {
+    max-width: 800px;
+    width: 100%;
+  }
+
+.section-container {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}
+
+.heading-group {
+  display: grid;
+  gap: 1rem;
+  place-content: center;
+  text-align: center;
+}
+
+.heading-group .superhead {
+    font-family: var(--font-body);
+    color: var(--color-accent);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+.heading-group .subheading {
+    color: #4f6373;
+    line-height: 1.4;
+    max-width: 600px;
+    font-weight: 400;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+.heading {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  line-height: 1.1;
+  font-weight: 500;
+  max-width: 600px;
+}
+
+.button {
+  color: var(--color-brand, white);
+  background: var(--color-inverted);
+  border: 2px solid var(--color-brand);
+  border-radius: 6px;
+  padding: 8px 20px;
+  transition: 0.1s background, 0.1s color;
+}
+
+.button:hover {
+    color: var(--color-inverted);
+    background: var(--color-brand);
+    border-color: var(--color-inverted);
+  }
+
+.button.inverted {
+    background: var(--color-white);
+    color: var(--color-brand);
+    border-color: #0d2436;
+  }
+
+.link {
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: var(--color-brand);
+}
+
+.link .arrow {
+    transition: transform 0.1s;
+  }
+
+.link:hover .arrow {
+    transform: translateX(4px);
+  }
+</style><!-- HEAD_svelte-95cp5n_END -->
+      <style>header.svelte-138qntj.svelte-138qntj{display:flex;justify-content:space-between;align-items:center;padding-top:1rem;padding-bottom:1rem}.logo.svelte-138qntj.svelte-138qntj{font-size:1.5rem;font-weight:600;line-height:1.4;margin-right:1.5rem;width:var(--size)}.link.svelte-138qntj.svelte-138qntj{border-color:transparent;font-weight:bold}.link.svelte-138qntj.svelte-138qntj:hover{border-color:var(--color-accent)}button#open.svelte-138qntj.svelte-138qntj{font-size:3rem}nav.svelte-138qntj.svelte-138qntj{display:flex;align-items:center;justify-content:space-between;gap:0.5rem}@media(min-width: 700px){nav.svelte-138qntj.svelte-138qntj{gap:1.5rem
+}}nav.svelte-138qntj select{background:transparent}nav.svelte-138qntj .menu-icon.svelte-138qntj{font-size:2rem}nav.svelte-138qntj button#close.svelte-138qntj{display:none}nav.svelte-138qntj .nav-item.svelte-138qntj{position:relative}nav.svelte-138qntj .nav-item .top-link.svelte-138qntj{display:none;align-items:center;gap:0.5rem;position:relative;font-weight:bold;color:var(--color-brand)}nav.svelte-138qntj .nav-item .top-link span.svelte-138qntj{border-bottom:2px solid transparent}nav.svelte-138qntj .nav-item .top-link .icon.svelte-138qntj{font-size:.9rem}nav.svelte-138qntj .nav-item .top-link.svelte-138qntj:hover{border-color:var(--color-accent);color:red}nav.svelte-138qntj .nav-item .top-link a.svelte-138qntj{border-bottom:2px solid transparent}nav.svelte-138qntj .nav-item .top-link a.svelte-138qntj:hover,nav.svelte-138qntj .nav-item .top-link a.active.svelte-138qntj{border-color:var(--color-accent);color:red}nav.svelte-138qntj .nav-item .dropdown.svelte-138qntj{font-weight:400;font-size:1rem;top:100%;position:absolute;display:none;width:auto;white-space:nowrap;border:1px solid var(--border-color);padding:1.25rem 1rem;background:var(--background);box-shadow:var(--box-shadow);z-index:999}nav.svelte-138qntj .nav-item .dropdown a.svelte-138qntj{border-bottom:2px solid transparent}nav.svelte-138qntj .nav-item .dropdown a.svelte-138qntj:hover,nav.svelte-138qntj .nav-item .dropdown a.active.svelte-138qntj{border-color:var(--color-accent);color:red}nav.svelte-138qntj .nav-item:focus-within .dropdown.svelte-138qntj{display:grid;place-items:flex-start;gap:0.5rem}nav#mobile-nav.svelte-138qntj.svelte-138qntj{position:absolute;flex-direction:column;text-align:center;background:var(--background);border:var(--border);box-shadow:var(--box-shadow);border-radius:var(--border-radius);left:0.5rem;top:0.5rem;right:0.5rem;padding:2rem;z-index:999}nav#mobile-nav.svelte-138qntj a.link.svelte-138qntj{display:block}nav#mobile-nav.svelte-138qntj button#close.svelte-138qntj{display:block;position:absolute;right:1rem;top:1rem;color:var(--color-accent, #154bf4);font-size:1.5rem}@media(min-width: 700px){#open.svelte-138qntj.svelte-138qntj,#mobile-nav.svelte-138qntj.svelte-138qntj{display:none}nav.svelte-138qntj .nav-item .top-link.svelte-138qntj{display:flex}}
+section.svelte-1qk24ik.svelte-1qk24ik{background:var(--color-brand);overflow:hidden}section.image-left.svelte-1qk24ik figure.svelte-1qk24ik{grid-column:1;grid-row:1}section.image-left.svelte-1qk24ik .body.svelte-1qk24ik{grid-column:2}.section-container.svelte-1qk24ik.svelte-1qk24ik{display:flex;flex-direction:column-reverse;gap:2rem}@media(min-width: 800px){.section-container.svelte-1qk24ik.svelte-1qk24ik{display:grid;grid-template-columns:1fr 1fr;place-items:center;gap:6rem;padding-block:6rem
+}}.body.svelte-1qk24ik.svelte-1qk24ik{color:var(--color-inverted);display:grid;place-items:start;padding-top:2rem}.body.svelte-1qk24ik .headline.svelte-1qk24ik{font-family:var(--font-heading);font-weight:700;font-size:clamp(2.75rem, 10vw, 3rem);line-height:1.1;margin-bottom:1.5rem}.body.svelte-1qk24ik .subheading.svelte-1qk24ik{font-weight:400;font-size:1.125rem;line-height:1.5;margin-bottom:2rem}.body.svelte-1qk24ik .button.svelte-1qk24ik{font-weight:500}figure.svelte-1qk24ik.svelte-1qk24ik{position:relative}figure.svelte-1qk24ik img.svelte-1qk24ik{border-radius:var(--border-radius);z-index:1;position:relative}
+.section-container.svelte-sqs4td.svelte-sqs4td{display:flex;flex-direction:column;gap:2rem}.heading.svelte-sqs4td.svelte-sqs4td{text-align:center}ul.svelte-sqs4td.svelte-sqs4td{display:grid;grid-template-columns:repeat(auto-fit, minmax(15rem, 1fr));gap:1.75rem}ul.svelte-sqs4td li.svelte-sqs4td{display:flex;flex-direction:column;gap:1rem;border:1px solid var(--border-color, #eee);border-radius:var(--border-radius);padding:1.5rem}ul.svelte-sqs4td li .title.svelte-sqs4td{display:flex;gap:0.5rem;font-size:1.25rem;font-weight:bold;align-items:center}ul.svelte-sqs4td li .title .label.svelte-sqs4td{line-height:1.1;font-weight:600}
+.section-container.svelte-1nxn5fd{padding-block:5rem}
+@media(min-width: 1200px){section.svelte-1elc4xu.svelte-1elc4xu{gap:6rem
+}}.callouts.svelte-1elc4xu.svelte-1elc4xu{display:grid;gap:6rem}.callout.svelte-1elc4xu.svelte-1elc4xu{display:grid;gap:3rem}@media(min-width: 1200px){.callout.svelte-1elc4xu.svelte-1elc4xu{gap:6rem
+}}.callout.svelte-1elc4xu img.svelte-1elc4xu{width:100%;border-radius:var(--border-radius)}.callout.svelte-1elc4xu .body.svelte-1elc4xu{display:grid;padding:0;line-height:1.5;max-width:450px}.callout.svelte-1elc4xu .body .heading-group.svelte-1elc4xu{place-content:start;text-align:left;margin-bottom:1rem}@media(min-width: 800px){.callout.svelte-1elc4xu.svelte-1elc4xu{grid-template-columns:1fr 1fr;place-items:center
+
+    /* switch direction for even items */
+}.callout.svelte-1elc4xu:nth-child(odd) img.svelte-1elc4xu{grid-row:1;grid-column:2}.callout.svelte-1elc4xu:nth-child(even) img.svelte-1elc4xu{grid-row:1;grid-column:1}}
+.section-container.svelte-1nxn5fd{padding-block:5rem}
+footer.svelte-1xojwgl.svelte-1xojwgl{background:var(--color-background, black);color:white}.section-container.svelte-1xojwgl.svelte-1xojwgl{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4rem}.content.svelte-1xojwgl.svelte-1xojwgl{margin:initial;padding:0;line-height:1.5}.nav-items.svelte-1xojwgl.svelte-1xojwgl{display:flex;flex-wrap:wrap;gap:4rem}.nav-items.svelte-1xojwgl ul.svelte-1xojwgl{display:grid;gap:0.5rem}.nav-items.svelte-1xojwgl ul .link.svelte-1xojwgl{border-bottom:2px solid white}.nav-items.svelte-1xojwgl ul .link.svelte-1xojwgl:hover{border-color:transparent}.nav-items.svelte-1xojwgl h3.svelte-1xojwgl{font-weight:400;font-size:1.2rem;margin-bottom:0.6rem}</style>
+    </head>
+    <body id="page">
+       
+<div class="section" id="section-3d380bca"><header class="section-container svelte-138qntj"><a href="/" class="logo svelte-138qntj" style="--size: 20rem;"><img src="https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690536473454logo%20R%20name%20small.png" alt=""></a>
+  <nav class="svelte-138qntj">
+      <div class="nav-item svelte-138qntj"><div class="top-link svelte-138qntj"><a href="/" class="link svelte-138qntj">首页</a></div>
+        
+      </div>
+      <div class="nav-item svelte-138qntj"><div class="top-link svelte-138qntj"><button tabindex="0" class="top-link svelte-138qntj"><span class="svelte-138qntj">产品中心</span>
+            <span class="icon svelte-138qntj"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 24 24" class="iconify iconify--akar-icons"><!-- HTML_TAG_START --><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 9l8 8l8-8"/><!-- HTML_TAG_END --></svg></span>
+            </button></div>
+        <div class="dropdown svelte-138qntj"><a href="/product/ball-valve" class="link svelte-138qntj">球阀</a><a href="/" class="link svelte-138qntj">蝶阀</a><a href="/" class="link svelte-138qntj">止回阀</a><a href="/" class="link svelte-138qntj">执行器</a>
+          </div>
+      </div>
+      <div class="nav-item svelte-138qntj"><div class="top-link svelte-138qntj"><a href="/about" class="link svelte-138qntj">关于我们</a></div>
+        
+      </div>
+      <div class="nav-item svelte-138qntj"><div class="top-link svelte-138qntj"><a href="/contact" class="link svelte-138qntj">联系我们</a></div>
+        
+      </div>
+    <button id="open" class="svelte-138qntj"><div class="menu-icon svelte-138qntj"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 24 24" class="iconify iconify--eva"><!-- HTML_TAG_START --><g id="iconifySvelte0"><g id="iconifySvelte1"><g id="iconifySvelte2" fill="currentColor"><rect width="18" height="2" x="3" y="11" rx=".95" ry=".95"/><rect width="18" height="2" x="3" y="16" rx=".95" ry=".95"/><rect width="18" height="2" x="3" y="6" rx=".95" ry=".95"/></g></g></g><!-- HTML_TAG_END --></svg></div></button></nav>
+  </header></div> 
+<div class="section" id="section-5852b272"><section class="svelte-1qk24ik"><div class="section-container svelte-1qk24ik"><div class="body svelte-1qk24ik"><h1 class="headline svelte-1qk24ik">球阀</h1>
+      <div class="subheading svelte-1qk24ik">多种设计组合，可全定制。</div>
+      <a href="/contact" class="button svelte-1qk24ik">咨询</a></div>
+    <figure class="svelte-1qk24ik"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=2070&amp;q=80" alt="" class="svelte-1qk24ik"></figure></div></section></div> 
+<div class="section" id="section-ef06bbab"><section class="section-container svelte-sqs4td"><h2 class="heading svelte-sqs4td"></h2>
+  <ul class="svelte-sqs4td"><li class="svelte-sqs4td"><h3 class="title svelte-sqs4td"><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="22" height="22" viewBox="0 0 24 24" style="color: var(--color-accent, rebeccapurple)" class="iconify iconify--material-symbols"><!-- HTML_TAG_START --><path fill="currentColor" d="m10.6 13.8l-2.15-2.15q-.275-.275-.7-.275t-.7.275q-.275.275-.275.7t.275.7L9.9 15.9q.3.3.7.3t.7-.3l5.65-5.65q.275-.275.275-.7t-.275-.7q-.275-.275-.7-.275t-.7.275L10.6 13.8ZM12 22q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Z"/><!-- HTML_TAG_END --></svg></span>
+          <span class="label svelte-sqs4td">设计结构</span></h3>
+        <div class="description"><!-- HTML_TAG_START --><p>1、2、3、5片式</p><!-- HTML_TAG_END --></div>
+      </li><li class="svelte-sqs4td"><h3 class="title svelte-sqs4td"><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="22" height="22" viewBox="0 0 24 24" style="color: var(--color-accent, rebeccapurple)" class="iconify iconify--material-symbols"><!-- HTML_TAG_START --><path fill="currentColor" d="m10.6 13.8l-2.15-2.15q-.275-.275-.7-.275t-.7.275q-.275.275-.275.7t.275.7L9.9 15.9q.3.3.7.3t.7-.3l5.65-5.65q.275-.275.275-.7t-.275-.7q-.275-.275-.7-.275t-.7.275L10.6 13.8ZM12 22q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Z"/><!-- HTML_TAG_END --></svg></span>
+          <span class="label svelte-sqs4td">阀体材质</span></h3>
+        <div class="description"><!-- HTML_TAG_START --><p>碳钢、不锈钢、镍基合金等</p><!-- HTML_TAG_END --></div>
+      </li><li class="svelte-sqs4td"><h3 class="title svelte-sqs4td"><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="22" height="22" viewBox="0 0 24 24" style="color: var(--color-accent, rebeccapurple)" class="iconify iconify--material-symbols"><!-- HTML_TAG_START --><path fill="currentColor" d="m10.6 13.8l-2.15-2.15q-.275-.275-.7-.275t-.7.275q-.275.275-.275.7t.275.7L9.9 15.9q.3.3.7.3t.7-.3l5.65-5.65q.275-.275.275-.7t-.275-.7q-.275-.275-.7-.275t-.7.275L10.6 13.8ZM12 22q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Z"/><!-- HTML_TAG_END --></svg></span>
+          <span class="label svelte-sqs4td">密封材质</span></h3>
+        <div class="description"><!-- HTML_TAG_START --><p>PTFE、PEEK、PPL、石墨、全包球垫等</p><!-- HTML_TAG_END --></div>
+      </li><li class="svelte-sqs4td"><h3 class="title svelte-sqs4td"><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="22" height="22" viewBox="0 0 24 24" style="color: var(--color-accent, rebeccapurple)" class="iconify iconify--material-symbols"><!-- HTML_TAG_START --><path fill="currentColor" d="m10.6 13.8l-2.15-2.15q-.275-.275-.7-.275t-.7.275q-.275.275-.275.7t.275.7L9.9 15.9q.3.3.7.3t.7-.3l5.65-5.65q.275-.275.275-.7t-.275-.7q-.275-.275-.7-.275t-.7.275L10.6 13.8ZM12 22q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Z"/><!-- HTML_TAG_END --></svg></span>
+          <span class="label svelte-sqs4td">连接方式</span></h3>
+        <div class="description"><!-- HTML_TAG_START --><p>对焊、卡箍、法兰、螺纹等</p><!-- HTML_TAG_END --></div>
+      </li><li class="svelte-sqs4td"><h3 class="title svelte-sqs4td"><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="22" height="22" viewBox="0 0 24 24" style="color: var(--color-accent, rebeccapurple)" class="iconify iconify--material-symbols"><!-- HTML_TAG_START --><path fill="currentColor" d="m10.6 13.8l-2.15-2.15q-.275-.275-.7-.275t-.7.275q-.275.275-.275.7t.275.7L9.9 15.9q.3.3.7.3t.7-.3l5.65-5.65q.275-.275.275-.7t-.275-.7q-.275-.275-.7-.275t-.7.275L10.6 13.8ZM12 22q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Z"/><!-- HTML_TAG_END --></svg></span>
+          <span class="label svelte-sqs4td">驱动方式</span></h3>
+        <div class="description"><!-- HTML_TAG_START --><p>手动、电动、气动、带限制阀等</p><!-- HTML_TAG_END --></div>
+      </li><li class="svelte-sqs4td"><h3 class="title svelte-sqs4td"><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="22" height="22" viewBox="0 0 24 24" style="color: var(--color-accent, rebeccapurple)" class="iconify iconify--material-symbols"><!-- HTML_TAG_START --><path fill="currentColor" d="m10.6 13.8l-2.15-2.15q-.275-.275-.7-.275t-.7.275q-.275.275-.275.7t.275.7L9.9 15.9q.3.3.7.3t.7-.3l5.65-5.65q.275-.275.275-.7t-.275-.7q-.275-.275-.7-.275t-.7.275L10.6 13.8ZM12 22q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Z"/><!-- HTML_TAG_END --></svg></span>
+          <span class="label svelte-sqs4td">通路设计</span></h3>
+        <div class="description"><!-- HTML_TAG_START --><p>双通、三通、多通、L型、T型、V型等</p><!-- HTML_TAG_END --></div>
+      </li></ul></section></div> 
+<div class="section" id="section-7eb56d14"><div class="section-container svelte-1nxn5fd"><hr></div></div> 
+<div class="section" id="section-4eb90720"><section class="svelte-1elc4xu"><div class="section-container"><div class="callouts svelte-1elc4xu"><div class="callout svelte-1elc4xu"><img src="https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/V-30F.png1690842810733" alt="" class="svelte-1elc4xu">
+          <div class="body svelte-1elc4xu"><div class="heading-group svelte-1elc4xu"><div class="superhead">Interesting Feature</div>
+              <h2 class="heading">参数范围</h2></div>
+            <div class="content"><!-- HTML_TAG_START --><p>公称通径：</p><p>公称压力：</p><p>适用温度：</p><!-- HTML_TAG_END --></div></div>
+        </div><div class="callout svelte-1elc4xu"><img src="https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/V-70W.jpg1690843203059" alt="" class="svelte-1elc4xu">
+          <div class="body svelte-1elc4xu"><div class="heading-group svelte-1elc4xu"><div class="superhead">Another one</div>
+              <h2 class="heading">特种需求</h2></div>
+            <div class="content"><!-- HTML_TAG_START --><p>全包球垫</p><p>加长中轴</p><p>特殊材质密封</p><p>品牌定制</p><!-- HTML_TAG_END --></div></div>
+        </div></div></div></section></div> 
+<div class="section" id="section-74f737ca"><div class="section-container svelte-1nxn5fd"><hr></div></div> 
+<div class="section" id="section-3c2a3014"><footer class="svelte-1xojwgl"><div class="section-container svelte-1xojwgl"><div class="content svelte-1xojwgl"><!-- HTML_TAG_START --><h3 id="br">青岛威达阀门工业有限公司 <br></h3>
+<p>山东省 青岛市 西海岸新区</p>
+<p>松花江路 122号</p>
+<p>电话：(0532) 8676-3651</p>
+<p>邮箱：info@vdvx.com</p><!-- HTML_TAG_END --></div>
+    <div class="nav-items svelte-1xojwgl"><nav><h3 class="svelte-1xojwgl">威达阀门</h3>
+          <ul class="svelte-1xojwgl"><li><a class="link svelte-1xojwgl" href="/">首页</a>
+              </li><li><a class="link svelte-1xojwgl" href="/about">关于我们</a>
+              </li><li><a class="link svelte-1xojwgl" href="/contact">联系我们</a>
+              </li></ul>
+        </nav><nav><h3 class="svelte-1xojwgl">产品中心</h3>
+          <ul class="svelte-1xojwgl"><li><a class="link svelte-1xojwgl" href="/product/ball-valve">球阀</a>
+              </li></ul>
+        </nav><nav><h3 class="svelte-1xojwgl">咨询</h3>
+          <ul class="svelte-1xojwgl"><li><a class="link svelte-1xojwgl" href="mailto:info@vdvx.com">info@vdvx.com</a>
+              </li></ul>
+        </nav></div></div></footer></div> 
+
+      <script type="module">      const path = window.location.pathname === '/' ? '' : window.location.pathname
+      const [ {default:App} ] = await Promise.all([
+        import(path + '/_module.js')
+      ]).catch(e => console.error(e))
+      new App({
+        target: document.querySelector('body'),
+        hydrate: true,
+      })</script>
+    </body>
+  </html>
+  

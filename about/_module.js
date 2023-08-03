@@ -6464,7 +6464,7 @@ function create_fragment$9(ctx) {
 				descriptio: "Deserunt aliquip est",
 				description: "We're passionate about building a better meeting workflow",
 				superhead: "真实的声音",
-				heading: "客户的反馈",
+				heading: "客户的信赖",
 				testimonials: [
 					{
 						"name": "",
