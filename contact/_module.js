@@ -4275,17 +4275,17 @@ class Component$3 extends SvelteComponent {
 
 function get_each_context$2(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[4] = list[i].label;
-	child_ctx[5] = list[i].type;
-	child_ctx[6] = list[i].placeholder;
+	child_ctx[6] = list[i].label;
+	child_ctx[7] = list[i].type;
+	child_ctx[8] = list[i].placeholder;
 	return child_ctx;
 }
 
-// (78:6) {:else}
+// (84:6) {:else}
 function create_else_block$2(ctx) {
 	let label;
 	let span;
-	let t0_value = /*label*/ ctx[4] + "";
+	let t0_value = /*label*/ ctx[6] + "";
 	let t0;
 	let t1;
 	let input;
@@ -4324,10 +4324,10 @@ function create_else_block$2(ctx) {
 		h() {
 			attr(span, "class", "label svelte-prx89c");
 			input.required = true;
-			attr(input, "name", input_name_value = /*label*/ ctx[4]);
+			attr(input, "name", input_name_value = /*label*/ ctx[6]);
 			attr(input, "class", "placeholder svelte-prx89c");
-			attr(input, "type", input_type_value = /*type*/ ctx[5]);
-			attr(input, "placeholder", input_placeholder_value = /*placeholder*/ ctx[6]);
+			attr(input, "type", input_type_value = /*type*/ ctx[7]);
+			attr(input, "placeholder", input_placeholder_value = /*placeholder*/ ctx[8]);
 			attr(label, "class", "svelte-prx89c");
 		},
 		m(target, anchor) {
@@ -4338,17 +4338,17 @@ function create_else_block$2(ctx) {
 			append_hydration(label, input);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*inputs*/ 4 && t0_value !== (t0_value = /*label*/ ctx[4] + "")) set_data(t0, t0_value);
+			if (dirty & /*inputs*/ 4 && t0_value !== (t0_value = /*label*/ ctx[6] + "")) set_data(t0, t0_value);
 
-			if (dirty & /*inputs*/ 4 && input_name_value !== (input_name_value = /*label*/ ctx[4])) {
+			if (dirty & /*inputs*/ 4 && input_name_value !== (input_name_value = /*label*/ ctx[6])) {
 				attr(input, "name", input_name_value);
 			}
 
-			if (dirty & /*inputs*/ 4 && input_type_value !== (input_type_value = /*type*/ ctx[5])) {
+			if (dirty & /*inputs*/ 4 && input_type_value !== (input_type_value = /*type*/ ctx[7])) {
 				attr(input, "type", input_type_value);
 			}
 
-			if (dirty & /*inputs*/ 4 && input_placeholder_value !== (input_placeholder_value = /*placeholder*/ ctx[6])) {
+			if (dirty & /*inputs*/ 4 && input_placeholder_value !== (input_placeholder_value = /*placeholder*/ ctx[8])) {
 				attr(input, "placeholder", input_placeholder_value);
 			}
 		},
@@ -4358,11 +4358,11 @@ function create_else_block$2(ctx) {
 	};
 }
 
-// (73:6) {#if type === "textarea"}
+// (79:6) {#if type === "textarea"}
 function create_if_block$3(ctx) {
 	let label;
 	let span;
-	let t0_value = /*label*/ ctx[4] + "";
+	let t0_value = /*label*/ ctx[6] + "";
 	let t0;
 	let t1;
 	let textarea;
@@ -4402,10 +4402,10 @@ function create_if_block$3(ctx) {
 		h() {
 			attr(span, "class", "label svelte-prx89c");
 			textarea.required = true;
-			attr(textarea, "name", textarea_name_value = /*label*/ ctx[4]);
+			attr(textarea, "name", textarea_name_value = /*label*/ ctx[6]);
 			attr(textarea, "class", "placeholder svelte-prx89c");
-			attr(textarea, "type", textarea_type_value = /*type*/ ctx[5]);
-			attr(textarea, "placeholder", textarea_placeholder_value = /*placeholder*/ ctx[6]);
+			attr(textarea, "type", textarea_type_value = /*type*/ ctx[7]);
+			attr(textarea, "placeholder", textarea_placeholder_value = /*placeholder*/ ctx[8]);
 			attr(label, "class", "svelte-prx89c");
 		},
 		m(target, anchor) {
@@ -4416,17 +4416,17 @@ function create_if_block$3(ctx) {
 			append_hydration(label, textarea);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*inputs*/ 4 && t0_value !== (t0_value = /*label*/ ctx[4] + "")) set_data(t0, t0_value);
+			if (dirty & /*inputs*/ 4 && t0_value !== (t0_value = /*label*/ ctx[6] + "")) set_data(t0, t0_value);
 
-			if (dirty & /*inputs*/ 4 && textarea_name_value !== (textarea_name_value = /*label*/ ctx[4])) {
+			if (dirty & /*inputs*/ 4 && textarea_name_value !== (textarea_name_value = /*label*/ ctx[6])) {
 				attr(textarea, "name", textarea_name_value);
 			}
 
-			if (dirty & /*inputs*/ 4 && textarea_type_value !== (textarea_type_value = /*type*/ ctx[5])) {
+			if (dirty & /*inputs*/ 4 && textarea_type_value !== (textarea_type_value = /*type*/ ctx[7])) {
 				attr(textarea, "type", textarea_type_value);
 			}
 
-			if (dirty & /*inputs*/ 4 && textarea_placeholder_value !== (textarea_placeholder_value = /*placeholder*/ ctx[6])) {
+			if (dirty & /*inputs*/ 4 && textarea_placeholder_value !== (textarea_placeholder_value = /*placeholder*/ ctx[8])) {
 				attr(textarea, "placeholder", textarea_placeholder_value);
 			}
 		},
@@ -4436,12 +4436,12 @@ function create_if_block$3(ctx) {
 	};
 }
 
-// (72:4) {#each inputs as { label, type, placeholder }}
+// (78:4) {#each inputs as { label, type, placeholder }}
 function create_each_block$2(ctx) {
 	let if_block_anchor;
 
 	function select_block_type(ctx, dirty) {
-		if (/*type*/ ctx[5] === "textarea") return create_if_block$3;
+		if (/*type*/ ctx[7] === "textarea") return create_if_block$3;
 		return create_else_block$2;
 	}
 
@@ -4492,7 +4492,7 @@ function create_fragment$4(ctx) {
 	let p;
 	let t2;
 	let t3;
-	let form;
+	let form_1;
 	let t4;
 	let button;
 	let t5;
@@ -4515,7 +4515,7 @@ function create_fragment$4(ctx) {
 			p = element("p");
 			t2 = text(/*subheading*/ ctx[1]);
 			t3 = space();
-			form = element("form");
+			form_1 = element("form");
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
 				each_blocks[i].c();
@@ -4546,19 +4546,19 @@ function create_fragment$4(ctx) {
 			p_nodes.forEach(detach);
 			div0_nodes.forEach(detach);
 			t3 = claim_space(div1_nodes);
-			form = claim_element(div1_nodes, "FORM", { action: true, method: true, class: true });
-			var form_nodes = children(form);
+			form_1 = claim_element(div1_nodes, "FORM", { action: true, method: true, class: true });
+			var form_1_nodes = children(form_1);
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
-				each_blocks[i].l(form_nodes);
+				each_blocks[i].l(form_1_nodes);
 			}
 
-			t4 = claim_space(form_nodes);
-			button = claim_element(form_nodes, "BUTTON", { type: true, class: true });
+			t4 = claim_space(form_1_nodes);
+			button = claim_element(form_1_nodes, "BUTTON", { type: true, class: true, onclick: true });
 			var button_nodes = children(button);
 			t5 = claim_text(button_nodes, "提交");
 			button_nodes.forEach(detach);
-			form_nodes.forEach(detach);
+			form_1_nodes.forEach(detach);
 			div1_nodes.forEach(detach);
 			section_nodes.forEach(detach);
 			div2_nodes.forEach(detach);
@@ -4570,9 +4570,10 @@ function create_fragment$4(ctx) {
 			attr(div0, "class", "heading-group svelte-prx89c");
 			attr(button, "type", "submit");
 			attr(button, "class", "button svelte-prx89c");
-			attr(form, "action", "https://fabform.io/f/oAWsO6G");
-			attr(form, "method", "post");
-			attr(form, "class", "svelte-prx89c");
+			attr(button, "onclick", "myFunction()");
+			attr(form_1, "action", "https://fabform.io/f/oAWsO6G");
+			attr(form_1, "method", "post");
+			attr(form_1, "class", "svelte-prx89c");
 			attr(div1, "class", "box svelte-prx89c");
 			attr(section, "class", "section-container svelte-prx89c");
 			attr(div2, "class", "section");
@@ -4589,16 +4590,16 @@ function create_fragment$4(ctx) {
 			append_hydration(div0, p);
 			append_hydration(p, t2);
 			append_hydration(div1, t3);
-			append_hydration(div1, form);
+			append_hydration(div1, form_1);
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
 				if (each_blocks[i]) {
-					each_blocks[i].m(form, null);
+					each_blocks[i].m(form_1, null);
 				}
 			}
 
-			append_hydration(form, t4);
-			append_hydration(form, button);
+			append_hydration(form_1, t4);
+			append_hydration(form_1, button);
 			append_hydration(button, t5);
 		},
 		p(ctx, [dirty]) {
@@ -4617,7 +4618,7 @@ function create_fragment$4(ctx) {
 					} else {
 						each_blocks[i] = create_each_block$2(child_ctx);
 						each_blocks[i].c();
-						each_blocks[i].m(form, t4);
+						each_blocks[i].m(form_1, t4);
 					}
 				}
 
@@ -4642,6 +4643,7 @@ function instance$4($$self, $$props, $$invalidate) {
 	let { heading } = $$props;
 	let { subheading } = $$props;
 	let { inputs } = $$props;
+	var form = document.getElementById('f');
 
 	$$self.$$set = $$props => {
 		if ('favicon' in $$props) $$invalidate(3, favicon = $$props.favicon);
