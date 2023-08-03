@@ -4323,6 +4323,7 @@ function create_else_block$2(ctx) {
 		},
 		h() {
 			attr(span, "class", "label svelte-prx89c");
+			input.required = true;
 			attr(input, "name", input_name_value = /*label*/ ctx[4]);
 			attr(input, "class", "placeholder svelte-prx89c");
 			attr(input, "type", input_type_value = /*type*/ ctx[5]);
@@ -4400,6 +4401,7 @@ function create_if_block$3(ctx) {
 		},
 		h() {
 			attr(span, "class", "label svelte-prx89c");
+			textarea.required = true;
 			attr(textarea, "name", textarea_name_value = /*label*/ ctx[4]);
 			attr(textarea, "class", "placeholder svelte-prx89c");
 			attr(textarea, "type", textarea_type_value = /*type*/ ctx[5]);
@@ -4521,7 +4523,7 @@ function create_fragment$4(ctx) {
 
 			t4 = space();
 			button = element("button");
-			t5 = text("Submit");
+			t5 = text("提交");
 			this.h();
 		},
 		l(nodes) {
@@ -4554,7 +4556,7 @@ function create_fragment$4(ctx) {
 			t4 = claim_space(form_nodes);
 			button = claim_element(form_nodes, "BUTTON", { type: true, class: true });
 			var button_nodes = children(button);
-			t5 = claim_text(button_nodes, "Submit");
+			t5 = claim_text(button_nodes, "提交");
 			button_nodes.forEach(detach);
 			form_nodes.forEach(detach);
 			div1_nodes.forEach(detach);
@@ -5281,22 +5283,22 @@ function create_fragment$7(ctx) {
 					"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690578965858logo%20r%20small.png",
 					"size": 9
 				},
-				heading: "Get in touch",
-				subheading: "We'd love to hear from you. Drop us a line anytime.",
+				heading: "问问威达",
+				subheading: "开发新项目？寻找更优方案？",
 				inputs: [
 					{
 						"type": "text",
-						"label": "Name",
+						"label": "您的姓名",
 						"placeholder": ""
 					},
 					{
 						"type": "email",
-						"label": "Email",
+						"label": "您的邮箱",
 						"placeholder": ""
 					},
 					{
 						"type": "textarea",
-						"label": "Message",
+						"label": "您希望咨询的事宜",
 						"placeholder": ""
 					}
 				]
