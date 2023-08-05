@@ -5283,32 +5283,32 @@ function create_fragment$8(ctx) {
 						"icon": "material-symbols:check-circle-rounded",
 						"title": "密封材质",
 						"description": {
-							"html": "<p>PTFE、PEEK、PPL、石墨、全包球垫等</p>",
-							"markdown": "PTFE、PEEK、PPL、石墨、全包球垫等"
+							"html": "<p>PTFE、PTFE + 50% SS、PEEK、PPL、TFM1600、石墨等</p>",
+							"markdown": "PTFE、PTFE + 50% SS、PEEK、PPL、TFM1600、石墨等\n\n"
 						}
 					},
 					{
 						"icon": "material-symbols:check-circle-rounded",
 						"title": "连接方式",
 						"description": {
-							"html": "<p>对焊、卡箍、法兰、螺纹等</p>",
-							"markdown": "对焊、卡箍、法兰、螺纹等"
+							"html": "<p>对焊、承插焊、卡箍、法兰、螺纹等</p>",
+							"markdown": "对焊、承插焊、卡箍、法兰、螺纹等\n\n"
 						}
 					},
 					{
 						"icon": "material-symbols:check-circle-rounded",
 						"title": "驱动方式",
 						"description": {
-							"html": "<p>手动、电动、气动、带限制阀等</p>",
-							"markdown": "手动、电动、气动、带限制阀等"
+							"html": "<p>手动、涡轮、电动、气动等</p>",
+							"markdown": "手动、涡轮、电动、气动等\n\n"
 						}
 					},
 					{
 						"icon": "material-symbols:check-circle-rounded",
 						"title": "通路设计",
 						"description": {
-							"html": "<p>直通、三通、多通、L型、T型、V型等</p>",
-							"markdown": "直通、三通、多通、L型、T型、V型等\n\n"
+							"html": "<p>直通、三通、多通、L型、T型等</p>",
+							"markdown": "直通、三通、多通、L型、T型等\n\n"
 						}
 					}
 				]
@@ -5330,11 +5330,11 @@ function create_fragment$8(ctx) {
 							"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/V-30F.png1690842810733"
 						},
 						"content": {
-							"html": "<p>公称通径：DN8 ~ DN200</p><p>公称压力：PN16 ~ PN140</p><p>适用温度：-20°C ~ 260°C</p>",
+							"html": "<p>公称通径：DN8 ~ DN200</p>\n<p>公称压力：PN16 ~ PN140</p>\n<p>适用温度：-20°C ~ 260°C</p>",
 							"markdown": "公称通径：DN8 \\~ DN200\n\n公称压力：PN16 \\~ PN140\n\n适用温度：-20°C \\~ 260°C\n\n"
 						},
 						"heading": "参数范围",
-						"superhead": "Interesting Feature"
+						"superhead": "高可定制"
 					},
 					{
 						"image": {
@@ -5342,11 +5342,11 @@ function create_fragment$8(ctx) {
 							"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/V-70W.jpg1690843203059"
 						},
 						"content": {
-							"html": "<p>全包球垫</p><p>加长中轴</p><p>特殊材质密封</p><p>端盖特殊壁厚</p><p>品牌定制</p>",
-							"markdown": "全包球垫\n\n加长中轴\n\n特殊材质密封\n\n端盖特殊壁厚\n\n品牌定制\n\n"
+							"html": "<p>全包球垫</p>\n<p>加长中轴</p>\n<p>V型球</p>\n<p>特殊材质密封</p>\n<p>端盖特殊壁厚</p>\n<p>带限制阀</p>\n<p>品牌定制</p>",
+							"markdown": "全包球垫\n\n加长中轴\n\nV型球\n\n特殊材质密封\n\n端盖特殊壁厚\n\n带限制阀\n\n品牌定制\n\n"
 						},
 						"heading": "特种需求",
-						"superhead": "Another one"
+						"superhead": "按需设计"
 					}
 				]
 			}
