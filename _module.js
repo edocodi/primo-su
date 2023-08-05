@@ -4299,7 +4299,7 @@ function get_each_context$1(ctx, list, i) {
 	return child_ctx;
 }
 
-// (83:6) {#if person.image.url}
+// (85:6) {#if person.image.url}
 function create_if_block$3(ctx) {
 	let figure;
 	let img;
@@ -4322,8 +4322,8 @@ function create_if_block$3(ctx) {
 		h() {
 			attr(img, "alt", img_alt_value = /*person*/ ctx[3].image.alt);
 			if (!src_url_equal(img.src, img_src_value = /*person*/ ctx[3].image.url)) attr(img, "src", img_src_value);
-			attr(img, "class", "svelte-1wq4942");
-			attr(figure, "class", "svelte-1wq4942");
+			attr(img, "class", "svelte-1oph4pj");
+			attr(figure, "class", "svelte-1oph4pj");
 		},
 		m(target, anchor) {
 			insert_hydration(target, figure, anchor);
@@ -4344,7 +4344,7 @@ function create_if_block$3(ctx) {
 	};
 }
 
-// (81:4) {#each people as person}
+// (83:4) {#each people as person}
 function create_each_block$1(ctx) {
 	let li;
 	let t0;
@@ -4400,11 +4400,11 @@ function create_each_block$1(ctx) {
 			this.h();
 		},
 		h() {
-			attr(span0, "class", "name svelte-1wq4942");
-			attr(span1, "class", "title svelte-1wq4942");
-			attr(div0, "class", "details svelte-1wq4942");
+			attr(span0, "class", "name svelte-1oph4pj");
+			attr(span1, "class", "title svelte-1oph4pj");
+			attr(div0, "class", "details svelte-1oph4pj");
 			attr(div1, "class", "info");
-			attr(li, "class", "svelte-1wq4942");
+			attr(li, "class", "svelte-1oph4pj");
 		},
 		m(target, anchor) {
 			insert_hydration(target, li, anchor);
@@ -4495,9 +4495,9 @@ function create_fragment$4(ctx) {
 			this.h();
 		},
 		h() {
-			attr(h2, "class", "heading svelte-1wq4942");
-			attr(ul, "class", "cards svelte-1wq4942");
-			attr(section, "class", "section-container svelte-1wq4942");
+			attr(h2, "class", "heading svelte-1oph4pj");
+			attr(ul, "class", "cards svelte-1oph4pj");
+			attr(section, "class", "section-container svelte-1oph4pj");
 			attr(div, "class", "section");
 			attr(div, "id", "section-b78ae523");
 		},
@@ -4639,7 +4639,7 @@ function get_each_context$2(ctx, list, i) {
 	return child_ctx;
 }
 
-// (71:8) {#if item.image.url}
+// (78:8) {#if item.image.url}
 function create_if_block$4(ctx) {
 	let a;
 	let img;
@@ -4663,7 +4663,7 @@ function create_if_block$4(ctx) {
 		h() {
 			if (!src_url_equal(img.src, img_src_value = /*item*/ ctx[3].image.url)) attr(img, "src", img_src_value);
 			attr(img, "alt", img_alt_value = /*item*/ ctx[3].image.alt);
-			attr(img, "class", "svelte-1fb0v25");
+			attr(img, "class", "svelte-1wfhgwd");
 			attr(a, "href", a_href_value = /*item*/ ctx[3].link.url);
 		},
 		m(target, anchor) {
@@ -4689,7 +4689,7 @@ function create_if_block$4(ctx) {
 	};
 }
 
-// (69:4) {#each items as item}
+// (76:4) {#each items as item}
 function create_each_block$2(ctx) {
 	let div2;
 	let t0;
@@ -4743,11 +4743,11 @@ function create_each_block$2(ctx) {
 			this.h();
 		},
 		h() {
-			attr(h2, "class", "title heading svelte-1fb0v25");
+			attr(h2, "class", "title heading svelte-1wfhgwd");
 			attr(a, "href", a_href_value = /*item*/ ctx[3].link.url);
-			attr(div0, "class", "description");
-			attr(div1, "class", "body svelte-1fb0v25");
-			attr(div2, "class", "item svelte-1fb0v25");
+			attr(div0, "class", "description svelte-1wfhgwd");
+			attr(div1, "class", "body svelte-1wfhgwd");
+			attr(div2, "class", "item svelte-1wfhgwd");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div2, anchor);
@@ -4842,9 +4842,9 @@ function create_fragment$6(ctx) {
 			this.h();
 		},
 		h() {
-			attr(h2, "class", "heading svelte-1fb0v25");
-			attr(div0, "class", "items svelte-1fb0v25");
-			attr(section, "class", "section-container svelte-1fb0v25");
+			attr(h2, "class", "heading svelte-1wfhgwd");
+			attr(div0, "class", "items svelte-1wfhgwd");
+			attr(section, "class", "section-container svelte-1wfhgwd");
 			attr(div1, "class", "section");
 			attr(div1, "id", "section-f08b3612");
 		},
@@ -6143,17 +6143,7 @@ function create_fragment$b(ctx) {
 							"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690359273304pneumatic-valves-proportional-valve-selection.jpg",
 							"size": 56
 						},
-						"title": "",
-						"social_links": [
-							{
-								"icon": "mdi:twitter",
-								"link": { "url": "/", "label": "officia" }
-							},
-							{
-								"icon": "mdi:twitter",
-								"link": { "url": "/", "label": "consequat" }
-							}
-						]
+						"title": ""
 					},
 					{
 						"name": "生物医药",
@@ -6163,17 +6153,7 @@ function create_fragment$b(ctx) {
 							"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690359487355Lang-feature-e1598539126745.jpg",
 							"size": 93
 						},
-						"title": "",
-						"social_links": [
-							{
-								"icon": "mdi:twitter",
-								"link": { "url": "/", "label": "esse" }
-							},
-							{
-								"icon": "mdi:twitter",
-								"link": { "url": "/", "label": "quis" }
-							}
-						]
+						"title": ""
 					},
 					{
 						"name": "石油化工",
@@ -6183,20 +6163,7 @@ function create_fragment$b(ctx) {
 							"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690359829655refinery-plant-equipment-pipe-line-oil-gas-valves_478515-7313.jpg",
 							"size": 470
 						},
-						"title": "",
-						"social_links": [
-							{
-								"icon": "mdi:linkedin",
-								"link": {
-									"url": "https://linkedin.com",
-									"label": "Linkedin"
-								}
-							},
-							{
-								"icon": "mdi:twitter",
-								"link": { "url": "/", "label": "Twitter" }
-							}
-						]
+						"title": ""
 					}
 				]
 			}
@@ -6299,7 +6266,7 @@ function create_fragment$b(ctx) {
 							"size": 53
 						},
 						"title": "更多需求",
-						"description": "如需其他阀门、配件、密封件等欢迎联系我们！"
+						"description": "如需其他阀门、配件、密封件等，联系我们！"
 					}
 				]
 			}
