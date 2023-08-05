@@ -5205,8 +5205,8 @@ function create_fragment$7(ctx) {
 						"icon": "material-symbols:check-circle-rounded",
 						"title": "设计结构",
 						"description": {
-							"html": "<p>1、2、3、5片式</p>",
-							"markdown": "1、2、3、5片式"
+							"html": "<p>偏置板式、垂直板式、斜板式和杠杆式等</p>",
+							"markdown": "偏置板式、垂直板式、斜板式和杠杆式等"
 						}
 					},
 					{
@@ -5221,32 +5221,24 @@ function create_fragment$7(ctx) {
 						"icon": "material-symbols:check-circle-rounded",
 						"title": "密封材质",
 						"description": {
-							"html": "<p>PTFE、PEEK、PPL、石墨、全包球垫等</p>",
-							"markdown": "PTFE、PEEK、PPL、石墨、全包球垫等"
+							"html": "<p>PTFE、PEEK、PPL、石墨等</p>",
+							"markdown": "PTFE、PEEK、PPL、石墨等"
 						}
 					},
 					{
 						"icon": "material-symbols:check-circle-rounded",
 						"title": "接口类别",
 						"description": {
-							"html": "<p>对焊、卡箍、法兰、螺纹等</p>",
-							"markdown": "对焊、卡箍、法兰、螺纹等"
+							"html": "<p>法兰、对夹式等</p>",
+							"markdown": "法兰、对夹式等"
 						}
 					},
 					{
 						"icon": "material-symbols:check-circle-rounded",
 						"title": "执行器",
 						"description": {
-							"html": "<p>手动、电动、气动、带限制阀等</p>",
-							"markdown": "手动、电动、气动、带限制阀等"
-						}
-					},
-					{
-						"icon": "material-symbols:check-circle-rounded",
-						"title": "通路设计",
-						"description": {
-							"html": "<p>双通、三通、多通、L型、T型、V型等</p>",
-							"markdown": "双通、三通、多通、L型、T型、V型等"
+							"html": "<p>手动、齿轮传动、气动、液动、电动等</p>",
+							"markdown": "手动、齿轮传动、气动、液动、电动等"
 						}
 					}
 				]
@@ -5265,30 +5257,23 @@ function create_fragment$7(ctx) {
 					{
 						"image": {
 							"alt": "",
-							"src": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-							"url": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-							"size": null
+							"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/butterfly%20valve%202.png1691223828251"
 						},
 						"content": {
-							"html": "<p>Details about that interesting info, that will hopefully interest your target audience.</p>",
-							"markdown": "Details about that interesting info, that will hopefully interest your target audience."
+							"html": "<p>公称通径：DN50 ~ DN1100</p>\n<p>公称压力：PN10 ~ 16</p>\n<p>适用温度：-10℃～+100℃</p>",
+							"markdown": "公称通径：DN50 \\~ DN1100\n\n公称压力：PN10 ~ 16\n\n适用温度：-10℃～+100℃\n"
 						},
-						"heading": "Some interesting info",
-						"superhead": "Interesting Feature"
+						"heading": "参数范围",
+						"superhead": "高可定制"
 					},
 					{
 						"image": {
 							"alt": "",
-							"src": "https://images.unsplash.com/photo-1508739826987-b79cd8b7da12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=900&q=60",
-							"url": "https://images.unsplash.com/photo-1508739826987-b79cd8b7da12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=900&q=60",
-							"size": null
+							"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/butterfly%20valve%203.png1691223840076"
 						},
-						"content": {
-							"html": "<p>Anything that will explain the title will do. You just got to get ChatGPT to help you write it.</p>",
-							"markdown": "Anything that will explain the title will do. You just got to get ChatGPT to help you write it."
-						},
-						"heading": "Real-time collaboration",
-						"superhead": "Another one"
+						"content": { "html": "", "markdown": "" },
+						"heading": "特种需求",
+						"superhead": "按需设计"
 					}
 				]
 			}

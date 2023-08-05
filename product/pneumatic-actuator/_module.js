@@ -4216,273 +4216,6 @@ class Component$3 extends SvelteComponent {
 
 function get_each_context$1(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[3] = list[i];
-	return child_ctx;
-}
-
-// (51:4) {#each cards as card}
-function create_each_block$1(ctx) {
-	let li;
-	let h3;
-	let span0;
-	let icon;
-	let t0;
-	let span1;
-	let t1_value = /*card*/ ctx[3].title + "";
-	let t1;
-	let t2;
-	let div;
-	let raw_value = /*card*/ ctx[3].description.html + "";
-	let t3;
-	let current;
-
-	icon = new Component$1({
-			props: {
-				icon: /*card*/ ctx[3].icon,
-				width: "22",
-				height: "22",
-				style: "color: var(--color-accent, rebeccapurple)"
-			}
-		});
-
-	return {
-		c() {
-			li = element("li");
-			h3 = element("h3");
-			span0 = element("span");
-			create_component(icon.$$.fragment);
-			t0 = space();
-			span1 = element("span");
-			t1 = text(t1_value);
-			t2 = space();
-			div = element("div");
-			t3 = space();
-			this.h();
-		},
-		l(nodes) {
-			li = claim_element(nodes, "LI", { class: true });
-			var li_nodes = children(li);
-			h3 = claim_element(li_nodes, "H3", { class: true });
-			var h3_nodes = children(h3);
-			span0 = claim_element(h3_nodes, "SPAN", {});
-			var span0_nodes = children(span0);
-			claim_component(icon.$$.fragment, span0_nodes);
-			span0_nodes.forEach(detach);
-			t0 = claim_space(h3_nodes);
-			span1 = claim_element(h3_nodes, "SPAN", { class: true });
-			var span1_nodes = children(span1);
-			t1 = claim_text(span1_nodes, t1_value);
-			span1_nodes.forEach(detach);
-			h3_nodes.forEach(detach);
-			t2 = claim_space(li_nodes);
-			div = claim_element(li_nodes, "DIV", { class: true });
-			var div_nodes = children(div);
-			div_nodes.forEach(detach);
-			t3 = claim_space(li_nodes);
-			li_nodes.forEach(detach);
-			this.h();
-		},
-		h() {
-			attr(span1, "class", "label svelte-sqs4td");
-			attr(h3, "class", "title svelte-sqs4td");
-			attr(div, "class", "description");
-			attr(li, "class", "svelte-sqs4td");
-		},
-		m(target, anchor) {
-			insert_hydration(target, li, anchor);
-			append_hydration(li, h3);
-			append_hydration(h3, span0);
-			mount_component(icon, span0, null);
-			append_hydration(h3, t0);
-			append_hydration(h3, span1);
-			append_hydration(span1, t1);
-			append_hydration(li, t2);
-			append_hydration(li, div);
-			div.innerHTML = raw_value;
-			append_hydration(li, t3);
-			current = true;
-		},
-		p(ctx, dirty) {
-			const icon_changes = {};
-			if (dirty & /*cards*/ 2) icon_changes.icon = /*card*/ ctx[3].icon;
-			icon.$set(icon_changes);
-			if ((!current || dirty & /*cards*/ 2) && t1_value !== (t1_value = /*card*/ ctx[3].title + "")) set_data(t1, t1_value);
-			if ((!current || dirty & /*cards*/ 2) && raw_value !== (raw_value = /*card*/ ctx[3].description.html + "")) div.innerHTML = raw_value;		},
-		i(local) {
-			if (current) return;
-			transition_in(icon.$$.fragment, local);
-			current = true;
-		},
-		o(local) {
-			transition_out(icon.$$.fragment, local);
-			current = false;
-		},
-		d(detaching) {
-			if (detaching) detach(li);
-			destroy_component(icon);
-		}
-	};
-}
-
-function create_fragment$4(ctx) {
-	let div;
-	let section;
-	let h2;
-	let t0;
-	let t1;
-	let ul;
-	let current;
-	let each_value = /*cards*/ ctx[1];
-	let each_blocks = [];
-
-	for (let i = 0; i < each_value.length; i += 1) {
-		each_blocks[i] = create_each_block$1(get_each_context$1(ctx, each_value, i));
-	}
-
-	const out = i => transition_out(each_blocks[i], 1, 1, () => {
-		each_blocks[i] = null;
-	});
-
-	return {
-		c() {
-			div = element("div");
-			section = element("section");
-			h2 = element("h2");
-			t0 = text(/*heading*/ ctx[0]);
-			t1 = space();
-			ul = element("ul");
-
-			for (let i = 0; i < each_blocks.length; i += 1) {
-				each_blocks[i].c();
-			}
-
-			this.h();
-		},
-		l(nodes) {
-			div = claim_element(nodes, "DIV", { class: true, id: true });
-			var div_nodes = children(div);
-			section = claim_element(div_nodes, "SECTION", { class: true });
-			var section_nodes = children(section);
-			h2 = claim_element(section_nodes, "H2", { class: true });
-			var h2_nodes = children(h2);
-			t0 = claim_text(h2_nodes, /*heading*/ ctx[0]);
-			h2_nodes.forEach(detach);
-			t1 = claim_space(section_nodes);
-			ul = claim_element(section_nodes, "UL", { class: true });
-			var ul_nodes = children(ul);
-
-			for (let i = 0; i < each_blocks.length; i += 1) {
-				each_blocks[i].l(ul_nodes);
-			}
-
-			ul_nodes.forEach(detach);
-			section_nodes.forEach(detach);
-			div_nodes.forEach(detach);
-			this.h();
-		},
-		h() {
-			attr(h2, "class", "heading svelte-sqs4td");
-			attr(ul, "class", "svelte-sqs4td");
-			attr(section, "class", "section-container svelte-sqs4td");
-			attr(div, "class", "section");
-			attr(div, "id", "section-2f78ce60");
-		},
-		m(target, anchor) {
-			insert_hydration(target, div, anchor);
-			append_hydration(div, section);
-			append_hydration(section, h2);
-			append_hydration(h2, t0);
-			append_hydration(section, t1);
-			append_hydration(section, ul);
-
-			for (let i = 0; i < each_blocks.length; i += 1) {
-				if (each_blocks[i]) {
-					each_blocks[i].m(ul, null);
-				}
-			}
-
-			current = true;
-		},
-		p(ctx, [dirty]) {
-			if (!current || dirty & /*heading*/ 1) set_data(t0, /*heading*/ ctx[0]);
-
-			if (dirty & /*cards*/ 2) {
-				each_value = /*cards*/ ctx[1];
-				let i;
-
-				for (i = 0; i < each_value.length; i += 1) {
-					const child_ctx = get_each_context$1(ctx, each_value, i);
-
-					if (each_blocks[i]) {
-						each_blocks[i].p(child_ctx, dirty);
-						transition_in(each_blocks[i], 1);
-					} else {
-						each_blocks[i] = create_each_block$1(child_ctx);
-						each_blocks[i].c();
-						transition_in(each_blocks[i], 1);
-						each_blocks[i].m(ul, null);
-					}
-				}
-
-				group_outros();
-
-				for (i = each_value.length; i < each_blocks.length; i += 1) {
-					out(i);
-				}
-
-				check_outros();
-			}
-		},
-		i(local) {
-			if (current) return;
-
-			for (let i = 0; i < each_value.length; i += 1) {
-				transition_in(each_blocks[i]);
-			}
-
-			current = true;
-		},
-		o(local) {
-			each_blocks = each_blocks.filter(Boolean);
-
-			for (let i = 0; i < each_blocks.length; i += 1) {
-				transition_out(each_blocks[i]);
-			}
-
-			current = false;
-		},
-		d(detaching) {
-			if (detaching) detach(div);
-			destroy_each(each_blocks, detaching);
-		}
-	};
-}
-
-function instance$4($$self, $$props, $$invalidate) {
-	let { favicon } = $$props;
-	let { heading } = $$props;
-	let { cards } = $$props;
-
-	$$self.$$set = $$props => {
-		if ('favicon' in $$props) $$invalidate(2, favicon = $$props.favicon);
-		if ('heading' in $$props) $$invalidate(0, heading = $$props.heading);
-		if ('cards' in $$props) $$invalidate(1, cards = $$props.cards);
-	};
-
-	return [heading, cards, favicon];
-}
-
-class Component$4 extends SvelteComponent {
-	constructor(options) {
-		super();
-		init(this, options, instance$4, create_fragment$4, safe_not_equal, { favicon: 2, heading: 0, cards: 1 });
-	}
-}
-
-/* generated by Svelte v3.59.1 */
-
-function get_each_context$2(ctx, list, i) {
-	const child_ctx = ctx.slice();
 	child_ctx[2] = list[i];
 	return child_ctx;
 }
@@ -4526,7 +4259,7 @@ function create_if_block$3(ctx) {
 }
 
 // (71:6) {#each callouts as callout}
-function create_each_block$2(ctx) {
+function create_each_block$1(ctx) {
 	let div4;
 	let t0;
 	let div3;
@@ -4637,7 +4370,7 @@ function create_each_block$2(ctx) {
 	};
 }
 
-function create_fragment$5(ctx) {
+function create_fragment$4(ctx) {
 	let div2;
 	let section;
 	let div1;
@@ -4646,7 +4379,7 @@ function create_fragment$5(ctx) {
 	let each_blocks = [];
 
 	for (let i = 0; i < each_value.length; i += 1) {
-		each_blocks[i] = create_each_block$2(get_each_context$2(ctx, each_value, i));
+		each_blocks[i] = create_each_block$1(get_each_context$1(ctx, each_value, i));
 	}
 
 	return {
@@ -4707,12 +4440,12 @@ function create_fragment$5(ctx) {
 				let i;
 
 				for (i = 0; i < each_value.length; i += 1) {
-					const child_ctx = get_each_context$2(ctx, each_value, i);
+					const child_ctx = get_each_context$1(ctx, each_value, i);
 
 					if (each_blocks[i]) {
 						each_blocks[i].p(child_ctx, dirty);
 					} else {
-						each_blocks[i] = create_each_block$2(child_ctx);
+						each_blocks[i] = create_each_block$1(child_ctx);
 						each_blocks[i].c();
 						each_blocks[i].m(div0, null);
 					}
@@ -4734,7 +4467,7 @@ function create_fragment$5(ctx) {
 	};
 }
 
-function instance$5($$self, $$props, $$invalidate) {
+function instance$4($$self, $$props, $$invalidate) {
 	let { favicon } = $$props;
 	let { callouts } = $$props;
 
@@ -4746,16 +4479,16 @@ function instance$5($$self, $$props, $$invalidate) {
 	return [callouts, favicon];
 }
 
-class Component$5 extends SvelteComponent {
+class Component$4 extends SvelteComponent {
 	constructor(options) {
 		super();
-		init(this, options, instance$5, create_fragment$5, safe_not_equal, { favicon: 1, callouts: 0 });
+		init(this, options, instance$4, create_fragment$4, safe_not_equal, { favicon: 1, callouts: 0 });
 	}
 }
 
 /* generated by Svelte v3.59.1 */
 
-function get_each_context$3(ctx, list, i) {
+function get_each_context$2(ctx, list, i) {
 	const child_ctx = ctx.slice();
 	child_ctx[3] = list[i].title;
 	child_ctx[4] = list[i].links;
@@ -4820,7 +4553,7 @@ function create_each_block_1$1(ctx) {
 }
 
 // (59:6) {#each menus as { title, links }}
-function create_each_block$3(ctx) {
+function create_each_block$2(ctx) {
 	let nav;
 	let h3;
 	let t0_value = /*title*/ ctx[3] + "";
@@ -4922,7 +4655,7 @@ function create_each_block$3(ctx) {
 	};
 }
 
-function create_fragment$6(ctx) {
+function create_fragment$5(ctx) {
 	let div3;
 	let footer;
 	let div2;
@@ -4934,7 +4667,7 @@ function create_fragment$6(ctx) {
 	let each_blocks = [];
 
 	for (let i = 0; i < each_value.length; i += 1) {
-		each_blocks[i] = create_each_block$3(get_each_context$3(ctx, each_value, i));
+		each_blocks[i] = create_each_block$2(get_each_context$2(ctx, each_value, i));
 	}
 
 	return {
@@ -5006,12 +4739,12 @@ function create_fragment$6(ctx) {
 				let i;
 
 				for (i = 0; i < each_value.length; i += 1) {
-					const child_ctx = get_each_context$3(ctx, each_value, i);
+					const child_ctx = get_each_context$2(ctx, each_value, i);
 
 					if (each_blocks[i]) {
 						each_blocks[i].p(child_ctx, dirty);
 					} else {
-						each_blocks[i] = create_each_block$3(child_ctx);
+						each_blocks[i] = create_each_block$2(child_ctx);
 						each_blocks[i].c();
 						each_blocks[i].m(div1, null);
 					}
@@ -5033,7 +4766,7 @@ function create_fragment$6(ctx) {
 	};
 }
 
-function instance$6($$self, $$props, $$invalidate) {
+function instance$5($$self, $$props, $$invalidate) {
 	let { favicon } = $$props;
 	let { content } = $$props;
 	let { menus } = $$props;
@@ -5047,16 +4780,16 @@ function instance$6($$self, $$props, $$invalidate) {
 	return [content, menus, favicon];
 }
 
-class Component$6 extends SvelteComponent {
+class Component$5 extends SvelteComponent {
 	constructor(options) {
 		super();
-		init(this, options, instance$6, create_fragment$6, safe_not_equal, { favicon: 2, content: 0, menus: 1 });
+		init(this, options, instance$5, create_fragment$5, safe_not_equal, { favicon: 2, content: 0, menus: 1 });
 	}
 }
 
 /* generated by Svelte v3.59.1 */
 
-function instance$7($$self, $$props, $$invalidate) {
+function instance$6($$self, $$props, $$invalidate) {
 	let { favicon } = $$props;
 
 	$$self.$$set = $$props => {
@@ -5066,16 +4799,16 @@ function instance$7($$self, $$props, $$invalidate) {
 	return [favicon];
 }
 
-class Component$7 extends SvelteComponent {
+class Component$6 extends SvelteComponent {
 	constructor(options) {
 		super();
-		init(this, options, instance$7, null, safe_not_equal, { favicon: 0 });
+		init(this, options, instance$6, null, safe_not_equal, { favicon: 0 });
 	}
 }
 
 /* generated by Svelte v3.59.1 */
 
-function create_fragment$7(ctx) {
+function create_fragment$6(ctx) {
 	let component_0;
 	let t0;
 	let component_1;
@@ -5087,8 +4820,6 @@ function create_fragment$7(ctx) {
 	let component_4;
 	let t4;
 	let component_5;
-	let t5;
-	let component_6;
 	let current;
 
 	component_0 = new Component({
@@ -5183,9 +4914,7 @@ function create_fragment$7(ctx) {
 				link: { "url": "/contact", "label": "咨询" },
 				image: {
 					"alt": "",
-					"src": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-					"url": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-					"size": null
+					"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/pneumatic%20actuator%20tech.png1691225934291"
 				},
 				variation: ""
 			}
@@ -5199,102 +4928,36 @@ function create_fragment$7(ctx) {
 					"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690578965858logo%20r%20small.png",
 					"size": 9
 				},
-				heading: "",
-				cards: [
+				callouts: [
 					{
-						"icon": "material-symbols:check-circle-rounded",
-						"title": "设计结构",
-						"description": {
-							"html": "<p>1、2、3、5片式</p>",
-							"markdown": "1、2、3、5片式"
-						}
+						"image": {
+							"alt": "",
+							"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/pneumatic%20actuator%202.png1691224169828"
+						},
+						"content": {
+							"html": "<p>适配通径：DN8 ~ DN200</p>\n<p>气源压力：2.5 ~ 8 Bar</p>\n<p>单作用、双作用执行器</p>",
+							"markdown": "适配通径：DN8 ~ DN200\n\n气源压力：2.5 ~ 8 Bar\n\n单作用、双作用执行器"
+						},
+						"heading": "参数范围",
+						"superhead": "高可定制"
 					},
 					{
-						"icon": "material-symbols:check-circle-rounded",
-						"title": "材质",
-						"description": {
-							"html": "<p>碳钢、不锈钢、镍基合金等</p>",
-							"markdown": "碳钢、不锈钢、镍基合金等"
-						}
-					},
-					{
-						"icon": "material-symbols:check-circle-rounded",
-						"title": "密封材质",
-						"description": {
-							"html": "<p>PTFE、PEEK、PPL、石墨、全包球垫等</p>",
-							"markdown": "PTFE、PEEK、PPL、石墨、全包球垫等"
-						}
-					},
-					{
-						"icon": "material-symbols:check-circle-rounded",
-						"title": "接口类别",
-						"description": {
-							"html": "<p>对焊、卡箍、法兰、螺纹等</p>",
-							"markdown": "对焊、卡箍、法兰、螺纹等"
-						}
-					},
-					{
-						"icon": "material-symbols:check-circle-rounded",
-						"title": "执行器",
-						"description": {
-							"html": "<p>手动、电动、气动、带限制阀等</p>",
-							"markdown": "手动、电动、气动、带限制阀等"
-						}
-					},
-					{
-						"icon": "material-symbols:check-circle-rounded",
-						"title": "通路设计",
-						"description": {
-							"html": "<p>双通、三通、多通、L型、T型、V型等</p>",
-							"markdown": "双通、三通、多通、L型、T型、V型等"
-						}
+						"image": {
+							"alt": "",
+							"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/pneumatic%20actuator%203.png1691224189425"
+						},
+						"content": {
+							"html": "<p>电磁阀：双作用选二位五通，单作用选二位三通。</p><p>气源处三联件：对气源进行稳压、过滤、气缸润滑的作用。</p><p>限位开关：远程反馈开关信号。</p><p>定位器：输入模拟信号，4-20MA或0-10V，调节阀门开度。</p><p>备注：以上不是标准配件，如需配置订货时注明,电磁阀和限位开关分防爆和不防爆，如需防爆请注明防爆等级。</p>",
+							"markdown": "电磁阀：双作用选二位五通，单作用选二位三通。\n\n气源处三联件：对气源进行稳压、过滤、气缸润滑的作用。\n\n限位开关：远程反馈开关信号。\n\n定位器：输入模拟信号，4-20MA或0-10V，调节阀门开度。\n\n备注：以上不是标准配件，如需配置订货时注明,电磁阀和限位开关分防爆和不防爆，如需防爆请注明防爆等级。\n\n"
+						},
+						"heading": "附件选型",
+						"superhead": "按需设计"
 					}
 				]
 			}
 		});
 
 	component_4 = new Component$5({
-			props: {
-				favicon: {
-					"alt": "威达阀门",
-					"src": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690578965858logo%20r%20small.png",
-					"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690578965858logo%20r%20small.png",
-					"size": 9
-				},
-				callouts: [
-					{
-						"image": {
-							"alt": "",
-							"src": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-							"url": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-							"size": null
-						},
-						"content": {
-							"html": "<p>Details about that interesting info, that will hopefully interest your target audience.</p>",
-							"markdown": "Details about that interesting info, that will hopefully interest your target audience."
-						},
-						"heading": "Some interesting info",
-						"superhead": "Interesting Feature"
-					},
-					{
-						"image": {
-							"alt": "",
-							"src": "https://images.unsplash.com/photo-1508739826987-b79cd8b7da12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=900&q=60",
-							"url": "https://images.unsplash.com/photo-1508739826987-b79cd8b7da12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=900&q=60",
-							"size": null
-						},
-						"content": {
-							"html": "<p>Anything that will explain the title will do. You just got to get ChatGPT to help you write it.</p>",
-							"markdown": "Anything that will explain the title will do. You just got to get ChatGPT to help you write it."
-						},
-						"heading": "Real-time collaboration",
-						"superhead": "Another one"
-					}
-				]
-			}
-		});
-
-	component_5 = new Component$6({
 			props: {
 				favicon: {
 					"alt": "威达阀门",
@@ -5345,7 +5008,7 @@ function create_fragment$7(ctx) {
 			}
 		});
 
-	component_6 = new Component$7({
+	component_5 = new Component$6({
 			props: {
 				favicon: {
 					"alt": "威达阀门",
@@ -5369,8 +5032,6 @@ function create_fragment$7(ctx) {
 			create_component(component_4.$$.fragment);
 			t4 = space();
 			create_component(component_5.$$.fragment);
-			t5 = space();
-			create_component(component_6.$$.fragment);
 		},
 		l(nodes) {
 			claim_component(component_0.$$.fragment, nodes);
@@ -5384,8 +5045,6 @@ function create_fragment$7(ctx) {
 			claim_component(component_4.$$.fragment, nodes);
 			t4 = claim_space(nodes);
 			claim_component(component_5.$$.fragment, nodes);
-			t5 = claim_space(nodes);
-			claim_component(component_6.$$.fragment, nodes);
 		},
 		m(target, anchor) {
 			mount_component(component_0, target, anchor);
@@ -5399,8 +5058,6 @@ function create_fragment$7(ctx) {
 			mount_component(component_4, target, anchor);
 			insert_hydration(target, t4, anchor);
 			mount_component(component_5, target, anchor);
-			insert_hydration(target, t5, anchor);
-			mount_component(component_6, target, anchor);
 			current = true;
 		},
 		p: noop,
@@ -5412,7 +5069,6 @@ function create_fragment$7(ctx) {
 			transition_in(component_3.$$.fragment, local);
 			transition_in(component_4.$$.fragment, local);
 			transition_in(component_5.$$.fragment, local);
-			transition_in(component_6.$$.fragment, local);
 			current = true;
 		},
 		o(local) {
@@ -5422,7 +5078,6 @@ function create_fragment$7(ctx) {
 			transition_out(component_3.$$.fragment, local);
 			transition_out(component_4.$$.fragment, local);
 			transition_out(component_5.$$.fragment, local);
-			transition_out(component_6.$$.fragment, local);
 			current = false;
 		},
 		d(detaching) {
@@ -5437,17 +5092,15 @@ function create_fragment$7(ctx) {
 			destroy_component(component_4, detaching);
 			if (detaching) detach(t4);
 			destroy_component(component_5, detaching);
-			if (detaching) detach(t5);
-			destroy_component(component_6, detaching);
 		}
 	};
 }
 
-class Component$8 extends SvelteComponent {
+class Component$7 extends SvelteComponent {
 	constructor(options) {
 		super();
-		init(this, options, null, create_fragment$7, safe_not_equal, {});
+		init(this, options, null, create_fragment$6, safe_not_equal, {});
 	}
 }
 
-export default Component$8;
+export default Component$7;

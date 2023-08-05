@@ -5203,14 +5203,6 @@ function create_fragment$7(ctx) {
 				cards: [
 					{
 						"icon": "material-symbols:check-circle-rounded",
-						"title": "设计结构",
-						"description": {
-							"html": "<p>1、2、3、5片式</p>",
-							"markdown": "1、2、3、5片式"
-						}
-					},
-					{
-						"icon": "material-symbols:check-circle-rounded",
 						"title": "材质",
 						"description": {
 							"html": "<p>碳钢、不锈钢、镍基合金等</p>",
@@ -5231,22 +5223,6 @@ function create_fragment$7(ctx) {
 						"description": {
 							"html": "<p>对焊、卡箍、法兰、螺纹等</p>",
 							"markdown": "对焊、卡箍、法兰、螺纹等"
-						}
-					},
-					{
-						"icon": "material-symbols:check-circle-rounded",
-						"title": "执行器",
-						"description": {
-							"html": "<p>手动、电动、气动、带限制阀等</p>",
-							"markdown": "手动、电动、气动、带限制阀等"
-						}
-					},
-					{
-						"icon": "material-symbols:check-circle-rounded",
-						"title": "通路设计",
-						"description": {
-							"html": "<p>双通、三通、多通、L型、T型、V型等</p>",
-							"markdown": "双通、三通、多通、L型、T型、V型等"
 						}
 					}
 				]
@@ -5270,11 +5246,11 @@ function create_fragment$7(ctx) {
 							"size": null
 						},
 						"content": {
-							"html": "<p>Details about that interesting info, that will hopefully interest your target audience.</p>",
-							"markdown": "Details about that interesting info, that will hopefully interest your target audience."
+							"html": "<p>公称通径：DN15 ~ DN500</p>\n<p>公称压力：PN16</p>\n<p>适用温度：-20°C ~ +200°C</p>\n<p>滤网目数：10 ~ 60</p>",
+							"markdown": "公称通径：DN15 ~ DN500\n\n公称压力：PN16\n\n适用温度：-20°C ~ +200°C\n\n滤网目数：10 ~ 60"
 						},
-						"heading": "Some interesting info",
-						"superhead": "Interesting Feature"
+						"heading": "参数范围",
+						"superhead": "高可定制"
 					},
 					{
 						"image": {
@@ -5283,12 +5259,9 @@ function create_fragment$7(ctx) {
 							"url": "https://images.unsplash.com/photo-1508739826987-b79cd8b7da12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=900&q=60",
 							"size": null
 						},
-						"content": {
-							"html": "<p>Anything that will explain the title will do. You just got to get ChatGPT to help you write it.</p>",
-							"markdown": "Anything that will explain the title will do. You just got to get ChatGPT to help you write it."
-						},
-						"heading": "Real-time collaboration",
-						"superhead": "Another one"
+						"content": { "html": "", "markdown": "" },
+						"heading": "特种需求",
+						"superhead": "按需设计"
 					}
 				]
 			}
