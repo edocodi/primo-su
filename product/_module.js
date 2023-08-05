@@ -5151,6 +5151,13 @@ function create_fragment$7(ctx) {
 									"url": "/product/y-strainer",
 									"label": "Y型过滤器"
 								}
+							},
+							{
+								"link": {
+									"label": "气动执行器",
+									"url": "/product/pneumatic-actuator",
+									"active": false
+								}
 							}
 						]
 					},

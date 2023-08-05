@@ -6087,6 +6087,13 @@ function create_fragment$b(ctx) {
 									"url": "/product/y-strainer",
 									"label": "Y型过滤器"
 								}
+							},
+							{
+								"link": {
+									"label": "气动执行器",
+									"url": "/product/pneumatic-actuator",
+									"active": false
+								}
 							}
 						]
 					},
@@ -6139,9 +6146,7 @@ function create_fragment$b(ctx) {
 						"name": "食品饮料",
 						"image": {
 							"alt": "",
-							"src": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690359273304pneumatic-valves-proportional-valve-selection.jpg",
-							"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690359273304pneumatic-valves-proportional-valve-selection.jpg",
-							"size": 56
+							"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/foodbeverage.jpg1691226948869"
 						},
 						"title": ""
 					},
@@ -6149,9 +6154,7 @@ function create_fragment$b(ctx) {
 						"name": "生物医药",
 						"image": {
 							"alt": "",
-							"src": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690359487355Lang-feature-e1598539126745.jpg",
-							"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690359487355Lang-feature-e1598539126745.jpg",
-							"size": 93
+							"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/Pharmaceutical.jpeg1691226993594"
 						},
 						"title": ""
 					},
@@ -6159,9 +6162,7 @@ function create_fragment$b(ctx) {
 						"name": "石油化工",
 						"image": {
 							"alt": "",
-							"src": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690359829655refinery-plant-equipment-pipe-line-oil-gas-valves_478515-7313.jpg",
-							"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690359829655refinery-plant-equipment-pipe-line-oil-gas-valves_478515-7313.jpg",
-							"size": 470
+							"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/petrochemical.jpg1691227122110"
 						},
 						"title": ""
 					}
