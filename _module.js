@@ -6270,6 +6270,21 @@ function create_fragment$b(ctx) {
 						},
 						"title": "Y型过滤器",
 						"description": ""
+					},
+					{
+						"link": {
+							"url": "/product/pneumatic-actuator",
+							"label": "气动执行器",
+							"active": false
+						},
+						"image": {
+							"alt": "气动执行器",
+							"src": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1691197506425pneumatic%20actuator.png",
+							"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1691197506425pneumatic%20actuator.png",
+							"size": 140
+						},
+						"title": "气动执行器",
+						"description": ""
 					}
 				]
 			}
