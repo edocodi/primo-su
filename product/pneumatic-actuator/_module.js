@@ -4501,7 +4501,7 @@ function get_each_context_1$1(ctx, list, i) {
 	return child_ctx;
 }
 
-// (63:12) {#each links as { link }}
+// (66:12) {#each links as { link }}
 function create_each_block_1$1(ctx) {
 	let li;
 	let a;
@@ -4530,7 +4530,7 @@ function create_each_block_1$1(ctx) {
 			this.h();
 		},
 		h() {
-			attr(a, "class", "link svelte-1xojwgl");
+			attr(a, "class", "link svelte-xj11rl");
 			attr(a, "href", a_href_value = /*link*/ ctx[7].url);
 		},
 		m(target, anchor) {
@@ -4552,7 +4552,7 @@ function create_each_block_1$1(ctx) {
 	};
 }
 
-// (59:6) {#each menus as { title, links }}
+// (62:6) {#each menus as { title, links }}
 function create_each_block$2(ctx) {
 	let nav;
 	let h3;
@@ -4604,8 +4604,8 @@ function create_each_block$2(ctx) {
 			this.h();
 		},
 		h() {
-			attr(h3, "class", "svelte-1xojwgl");
-			attr(ul, "class", "svelte-1xojwgl");
+			attr(h3, "class", "svelte-xj11rl");
+			attr(ul, "class", "svelte-xj11rl");
 		},
 		m(target, anchor) {
 			insert_hydration(target, nav, anchor);
@@ -4710,10 +4710,10 @@ function create_fragment$5(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "content svelte-1xojwgl");
-			attr(div1, "class", "nav-items svelte-1xojwgl");
-			attr(div2, "class", "section-container svelte-1xojwgl");
-			attr(footer, "class", "svelte-1xojwgl");
+			attr(div0, "class", "content svelte-xj11rl");
+			attr(div1, "class", "nav-items svelte-xj11rl");
+			attr(div2, "class", "section-container svelte-xj11rl");
+			attr(footer, "class", "svelte-xj11rl");
 			attr(div3, "class", "section");
 			attr(div3, "id", "section-28630b72");
 		},
@@ -4971,6 +4971,7 @@ function create_fragment$6(ctx) {
 				},
 				menus: [
 					{
+						"title": "威达阀门",
 						"links": [
 							{ "link": { "url": "/", "label": "首页" } },
 							{
@@ -4979,21 +4980,49 @@ function create_fragment$6(ctx) {
 							{
 								"link": { "url": "/contact", "label": "联系我们" }
 							}
-						],
-						"title": "威达阀门"
+						]
 					},
 					{
+						"title": "产品中心",
 						"links": [
 							{
 								"link": {
 									"url": "/product/ball-valve",
 									"label": "球阀"
 								}
+							},
+							{
+								"link": {
+									"label": "蝶阀",
+									"url": "/product/butterfly-valve",
+									"active": false
+								}
+							},
+							{
+								"link": {
+									"label": "止回阀",
+									"url": "/product/check-valve",
+									"active": false
+								}
+							},
+							{
+								"link": {
+									"label": "Y型过滤器",
+									"url": "/product/y-strainer",
+									"active": false
+								}
+							},
+							{
+								"link": {
+									"label": "气动执行器",
+									"url": "/product/pneumatic-actuator",
+									"active": false
+								}
 							}
-						],
-						"title": "产品中心"
+						]
 					},
 					{
+						"title": "咨询",
 						"links": [
 							{
 								"link": {
@@ -5001,8 +5030,7 @@ function create_fragment$6(ctx) {
 									"label": "info@vdvx.com"
 								}
 							}
-						],
-						"title": "咨询"
+						]
 					}
 				]
 			}
