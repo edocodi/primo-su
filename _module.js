@@ -6285,6 +6285,21 @@ function create_fragment$b(ctx) {
 						},
 						"title": "气动执行器",
 						"description": ""
+					},
+					{
+						"link": {
+							"url": "/contact",
+							"label": "咨询",
+							"active": false
+						},
+						"image": {
+							"alt": "其他",
+							"src": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1691202387113assorted%20valves.jpg",
+							"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1691202387113assorted%20valves.jpg",
+							"size": 53
+						},
+						"title": "更多需求",
+						"description": "如需其他阀门、配件、密封件等欢迎联系我们！"
 					}
 				]
 			}
