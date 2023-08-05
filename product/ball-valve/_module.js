@@ -5307,8 +5307,8 @@ function create_fragment$8(ctx) {
 						"icon": "material-symbols:check-circle-rounded",
 						"title": "通路设计",
 						"description": {
-							"html": "<p>直通、三通、多通、L型、T型等</p>",
-							"markdown": "直通、三通、多通、L型、T型等\n\n"
+							"html": "<p>直通、三通、多通、L型、T型、缩径等</p>",
+							"markdown": "直通、三通、多通、L型、T型、缩径等\n\n"
 						}
 					}
 				]
@@ -5330,8 +5330,8 @@ function create_fragment$8(ctx) {
 							"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/V-30F.png1690842810733"
 						},
 						"content": {
-							"html": "<p>公称通径：DN8 ~ DN200</p>\n<p>公称压力：PN16 ~ PN140</p>\n<p>适用温度：-20°C ~ 260°C</p>",
-							"markdown": "公称通径：DN8 \\~ DN200\n\n公称压力：PN16 \\~ PN140\n\n适用温度：-20°C \\~ 260°C\n\n"
+							"html": "<p>公称通径：DN8 ~ DN200</p><p>公称压力：PN16 ~ PN140</p><p>适用温度：-20°C ~ +260°C</p>",
+							"markdown": "公称通径：DN8 \\~ DN200\n\n公称压力：PN16 \\~ PN140\n\n适用温度：-20°C \\~ +260°C\n\n"
 						},
 						"heading": "参数范围",
 						"superhead": "高可定制"
