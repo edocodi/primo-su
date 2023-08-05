@@ -5307,8 +5307,8 @@ function create_fragment$8(ctx) {
 						"icon": "material-symbols:check-circle-rounded",
 						"title": "通路设计",
 						"description": {
-							"html": "<p>双通、三通、多通、L型、T型、V型等</p>",
-							"markdown": "双通、三通、多通、L型、T型、V型等"
+							"html": "<p>直通、三通、多通、L型、T型、V型等</p>",
+							"markdown": "直通、三通、多通、L型、T型、V型等\n\n"
 						}
 					}
 				]
@@ -5342,8 +5342,8 @@ function create_fragment$8(ctx) {
 							"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/V-70W.jpg1690843203059"
 						},
 						"content": {
-							"html": "<p>全包球垫</p><p>加长中轴</p><p>特殊材质密封</p><p>品牌定制</p>",
-							"markdown": "全包球垫\n\n加长中轴\n\n特殊材质密封\n\n品牌定制\n\n"
+							"html": "<p>全包球垫</p><p>加长中轴</p><p>特殊材质密封</p><p>端盖特殊壁厚</p><p>品牌定制</p>",
+							"markdown": "全包球垫\n\n加长中轴\n\n特殊材质密封\n\n端盖特殊壁厚\n\n品牌定制\n\n"
 						},
 						"heading": "特种需求",
 						"superhead": "Another one"
