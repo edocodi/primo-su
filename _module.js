@@ -6070,9 +6070,24 @@ function create_fragment$b(ctx) {
 									"label": "球阀"
 								}
 							},
-							{ "link": { "url": "/", "label": "蝶阀" } },
-							{ "link": { "url": "/", "label": "止回阀" } },
-							{ "link": { "url": "/", "label": "执行器" } }
+							{
+								"link": {
+									"url": "/product/butterfly-valve",
+									"label": "蝶阀"
+								}
+							},
+							{
+								"link": {
+									"url": "/product/check-valve",
+									"label": "止回阀"
+								}
+							},
+							{
+								"link": {
+									"url": "/product/y-strainer",
+									"label": "Y型过滤器"
+								}
+							}
 						]
 					},
 					{
