@@ -5178,7 +5178,7 @@ function create_fragment$7(ctx) {
 					"url": "https://acmgqcnkhhcsbmowiozs.supabase.co/storage/v1/object/public/images/50e83390-6af3-4165-aa2d-4c7f1490ef21/1690578965858logo%20r%20small.png",
 					"size": 9
 				},
-				heading: "球阀",
+				heading: "气动执行器",
 				subheading: "多种设计组合，可定制。",
 				link: { "url": "/contact", "label": "咨询" },
 				image: {
